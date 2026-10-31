@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T14:31+05:30",
+  "updated": "2026-10-31T14:38+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "ipos": {
     "vedant-poly-fabs": {
@@ -17,6 +17,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": null,
         "qib_times": null,
@@ -65,6 +66,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 547200.0,
         "qib_times": null,
@@ -113,6 +115,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 683200.0,
         "qib_times": null,
@@ -161,6 +164,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 531000.0,
         "qib_times": null,
@@ -209,6 +213,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 960000.0,
         "qib_times": null,
@@ -251,6 +256,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 36000.0,
         "qib_times": null,
@@ -299,6 +305,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 11162012.0,
         "qib_times": null,
@@ -320,6 +327,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": null,
         "qib_times": null,
@@ -368,6 +376,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 668800.0,
         "qib_times": null,
@@ -422,6 +431,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 3400000.0,
         "qib_times": null,
@@ -476,6 +486,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 4045642.0,
         "qib_times": null,
@@ -530,6 +541,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 3400000.0,
         "qib_times": null,
@@ -578,6 +590,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1225800.0,
         "qib_times": null,
@@ -632,6 +645,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1441443.0,
         "qib_times": null,
@@ -680,6 +694,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1040400.0,
         "qib_times": null,
@@ -746,6 +761,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 49007828.0,
         "qib_times": null,
@@ -800,6 +816,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 6277056.0,
         "qib_times": null,
@@ -848,6 +865,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 604800.0,
         "qib_times": null,
@@ -908,6 +926,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 99392146.0,
         "qib_times": null,
@@ -968,6 +987,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 2432010.0,
         "qib_times": null,
@@ -1028,6 +1048,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 2714424.0,
         "qib_times": null,
@@ -1088,6 +1109,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 8637809.0,
         "qib_times": null,
@@ -1142,6 +1164,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 7287197.0,
         "qib_times": null,
@@ -1190,6 +1213,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1969200.0,
         "qib_times": null,
@@ -1238,6 +1262,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1494000.0,
         "qib_times": null,
@@ -1298,6 +1323,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 5242673.0,
         "qib_times": null,
@@ -1340,6 +1366,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 43200.0,
         "qib_times": null,
@@ -1388,6 +1415,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1026000.0,
         "qib_times": null,
@@ -1436,6 +1464,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 1179000.0,
         "qib_times": null,
@@ -1478,6 +1507,7 @@
       "status": "unknown",
       "effective": {
         "issue_price": null,
+        "mf_demand_shares": null,
         "lot_size": null,
         "net_qib_shares": 66000.0,
         "qib_times": null,

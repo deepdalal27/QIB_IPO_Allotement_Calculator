@@ -51,16 +51,19 @@ function pickIpo(slug) {
   set('lot', e.lot_size);
   set('netQib', e.net_qib_shares);
   set('times', e.qib_times);
+  $('mfDemand').value = e.mf_demand_shares ?? '';
   $('gmp').value = r.gmp ?? '';
   $('listing').value = e.listing_price ?? '';
   $('subSrc').textContent = r.override_qib_times ? '(manual)' : r.final_subscription ? '(final)' : e.qib_times ? '(live)' : '';
   const sub = r.final_subscription || r.subscription || {};
   const cats = ['qib', 'nii', 'bnii', 'snii', 'retail', 'total'].filter((k) => sub[k]?.times != null)
     .map((k) => `${k.toUpperCase()} ${sub[k].times}×`).join(' · ');
+  const split = r.final_qib_split_cr || r.qib_split_cr;
+  const splitTxt = split ? `QIB demand ₹cr: FII ${split.fii ?? '–'} · DII ${split.dii ?? '–'} · MF ${split.mf ?? '–'} · Others ${split.others ?? '–'}` : '';
   $('ipoInfo').innerHTML = `<span class="badge ${esc(r.status)}">${esc(r.status)}</span>
     ${r.price_band_low ? `₹${r.price_band_low}–${r.price_band_high}` : ''} · Lot ${esc(e.lot_size ?? '?')}
     · ${esc(r.open_date ?? '')} → ${esc(r.close_date ?? '')}${r.listing_date ? ` · Lists ${esc(r.listing_date)}` : ''}
-    ${cats ? `<br>${esc(cats)}` : ''}${r.listing_gain_pct != null ? `<br>Listing gain ${r.listing_gain_pct}%` : ''}
+    ${cats ? `<br>${esc(cats)}` : ''}${splitTxt ? `<br>${esc(splitTxt)}` : ''}${r.anchor_shares ? `<br>Anchor ${inr(r.anchor_shares)} sh (excluded) · Net QIB ${inr(e.net_qib_shares)} sh` : ''}${r.listing_gain_pct != null ? `<br>Listing gain ${r.listing_gain_pct}%` : ''}
     ${!e.net_qib_shares ? '<br><b>Net QIB shares missing.</b> Take them from the RHP or the exchange subscription page.' : ''}`;
   calc();
 }
