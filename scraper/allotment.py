@@ -35,8 +35,9 @@ def qib_allotment(bid_shares, net_qib_shares, subscription_times, lot_size=1,
     if not exact:
         raw *= haircut
 
-    unit = lot_size if rounding == "lot" else 1
-    allotted = min(bid_shares, math.floor(raw / unit + 1e-9) * unit)
+    unit = lot_size if rounding in ("lot", "nearest-lot") else 1
+    rnd = (lambda x: math.floor(x + 0.5)) if rounding.startswith("nearest") else (lambda x: math.floor(x + 1e-9))
+    allotted = min(bid_shares, rnd(raw / unit) * unit)
     return {
         "allotted_shares": int(allotted),
         "ratio": allotted / bid_shares,

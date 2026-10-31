@@ -39,7 +39,9 @@ export function bidFromAmount({ amount, price, lotSize }) {
  * @param {number|null} [p.mfDemandShares] total MF demand in shares (usually unknown,
  *        and if so MF demand is assumed to cover the whole 5% reserve, which gives the conservative answer)
  * @param {boolean} [p.isMutualFund=false]
- * @param {'share'|'lot'} [p.rounding='share']  round down to whole shares or whole lots
+ * @param {'share'|'lot'|'nearest'|'nearest-lot'} [p.rounding='share']
+ *        'share' = round DOWN to whole shares (Mainboard default) · 'lot' = round DOWN to whole lots
+ *        (SME default) · 'nearest' / 'nearest-lot' = round to the nearest share / lot
  * @param {number} [p.haircut=1]          empirical calibration factor (from your past allotments)
  * @param {number|null} [p.validDemandShares] EXACT MODE: final valid QIB demand in shares from the
  *        registrar's Basis of Allotment. Live exchange figures include bids later rejected during
@@ -83,8 +85,9 @@ export function qibAllotment(p) {
   }
   if (!exact) raw *= haircut;                            // calibration only when demand is estimated
 
-  const unit = rounding === 'lot' ? lotSize : 1;
-  const allottedShares = Math.min(bidShares, Math.floor(raw / unit + 1e-9) * unit);
+  const unit = rounding === 'lot' || rounding === 'nearest-lot' ? lotSize : 1;
+  const roundFn = rounding.startsWith('nearest') ? Math.round : (x) => Math.floor(x + 1e-9);
+  const allottedShares = Math.min(bidShares, roundFn(raw / unit) * unit);
   const naiveShares = Math.floor(bidShares / Math.max(exact ? D / N : subscriptionTimes, 1));
 
   return {
@@ -138,3 +141,41 @@ export function calibrationFromHistory(apps) {
   const mid = Math.floor(r.length / 2);
   return { haircut: r.length % 2 ? r[mid] : (r[mid - 1] + r[mid]) / 2, samples: r.length };
 }
+
+/**
+ * Work backwards from an ACTUAL allotment to the final valid QIB demand the registrar must have used.
+ * Assumes the method above (MF demand covers the 5% reserve; non-MF bidder; round down to whole shares).
+ * Returns the range of total valid QIB demand D consistent with `actualShares`, and its gap vs live demand.
+ */
+export function backSolveDemand({ bidShares, actualShares, netQibShares: N, mfReservePct = DEFAULT_MF_RESERVE_PCT,
+  liveTimes = null }) {
+  if (!(bidShares > 0) || !(actualShares > 0) || !(N > 0)) return null;
+  const M = Math.floor((N * mfReservePct) / 100);
+  const G = N - M;
+  // floor(B·G/(D−M)) = A  ⇔  A ≤ B·G/(D−M) < A+1  ⇔  B·G/(A+1) < D−M ≤ B·G/A
+  const dHi = (bidShares * G) / actualShares + M;
+  const dLo = (bidShares * G) / (actualShares + 1) + M;
+  const mid = (dLo + dHi) / 2;
+  const liveD = liveTimes ? liveTimes * N : null;
+  return {
+    demandLow: dLo, demandHigh: dHi, demand: mid, impliedTimes: mid / N,
+    liveDemand: liveD, gapPct: liveD ? ((mid - liveD) / liveD) * 100 : null,
+    ratio: actualShares / bidShares,
+  };
+}
+
+/** Allotment rules by segment (stated on the page, applied by default). */
+export const SEGMENT_RULES = {
+  main: {
+    label: 'Mainboard',
+    regs: 'SEBI ICDR Regulations, 2018: Reg. 32 (allocation in the net offer) and Schedule XIV (basis of allotment)',
+    rounding: 'share',
+    roundingNote: 'QIB allotments are in whole shares, not lots (e.g. BLS Polymers: 11,934 shares on a 100-share lot).',
+  },
+  sme: {
+    label: 'SME',
+    regs: 'SEBI ICDR Regulations, 2018: Chapter IX, Reg. 253 (allocation in the net offer) and Schedule XIV (basis of allotment)',
+    rounding: 'lot',
+    roundingNote: 'SME shares trade and are allotted in market lots, so the allotment is rounded down to whole lots. Check this against one of your SME allotments.',
+  },
+};

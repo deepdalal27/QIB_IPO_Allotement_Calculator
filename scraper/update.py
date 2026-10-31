@@ -216,7 +216,7 @@ def enrich_applications(db):
             r = qib_allotment(bid, e["net_qib_shares"], e["qib_times"], lot_size=lot,
                               is_mutual_fund=a.get("is_mutual_fund", False),
                               mf_demand_shares=a.get("mf_demand_shares") or e["mf_demand_shares"],
-                              rounding=a.get("rounding", "share"),
+                              rounding=a.get("rounding") or ("lot" if rec.get("is_sme") else "share"),
                               valid_demand_shares=e["valid_demand_shares"])
             a["predicted_allotted_shares"] = r["allotted_shares"]
             a["naive_allotted_shares"] = r["naive_shares"]

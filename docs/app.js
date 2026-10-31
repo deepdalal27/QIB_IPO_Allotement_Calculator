@@ -1,4 +1,4 @@
-import { bidFromAmount, qibAllotment, profitScenarios, calibrationFromHistory, QIB_MIN_APPLICATION } from './allotment.js';
+import { bidFromAmount, qibAllotment, profitScenarios, calibrationFromHistory, backSolveDemand, SEGMENT_RULES, QIB_MIN_APPLICATION } from './allotment.js';
 
 const $ = (id) => document.getElementById(id);
 const v = (id) => { const x = parseFloat($(id).value); return Number.isFinite(x) ? x : null; };
@@ -135,12 +135,18 @@ function pickIpo(slug) {
   set('gmp', r.gmp);
   set('listing', e.listing_price);
   set('validDemand', e.valid_demand_shares);
+  setSegment(r.is_sme ? 'sme' : 'main');
   $('subSrc').innerHTML = r.override_qib_times ? '<span class="pill p-warn">Manual ×</span>'
     : r.final_subscription ? '<span class="pill p-closed">Final ×</span>' : e.qib_times ? '<span class="pill p-open">Live ×</span>' : '';
   calc();
 }
 
 // ------------------------------------------------------------------ calculation
+function setSegment(seg) {
+  $('segment').value = seg;
+  $('rounding').value = SEGMENT_RULES[seg].rounding;
+}
+
 function syncBid() {
   const price = v('price'), lot = v('lot') || 1;
   if (bidMode === 'amount') {
@@ -214,11 +220,95 @@ function calc() {
     return `<tr class="${f === 1 ? 'hl' : ''}"><td>${inr(t * f, 2)}×</td><td>${inr(x.allottedShares)}</td><td>${inr(x.ratio * 100, 4)}%</td>
       <td class="${sign(gmp)}">${gmp != null ? inr(x.allottedShares * gmp) : '—'}</td></tr>`;
   }).join('') : '';
+  renderWorking(res, { shares, lots, lot, price, blocked, hc });
   return { res, shares, price, lot };
+}
+
+// ------------------------------------------------------------------ method & working
+const ROUND_TXT = { share: 'round DOWN to whole shares', lot: 'round DOWN to whole lots', nearest: 'round to the NEAREST share', 'nearest-lot': 'round to the NEAREST lot' };
+
+function renderWorking(res, { shares, lots, lot, price, blocked, hc }) {
+  const seg = $('segment').value;
+  const rules = SEGMENT_RULES[seg];
+  const mfPct = v('mfPct') ?? 5;
+  const rnd = $('rounding').value;
+  $('segBadge').innerHTML = `<span class="pill ${seg === 'sme' ? 'p-sme' : 'p-main'}">${rules.label} rules</span>`;
+  $('methodText').innerHTML = `<b>Method.</b> ${esc(rules.regs)}. QIB shares are allotted <b>proportionately</b> within the category.
+    Anchor shares are allocated before the issue opens and are <b>excluded</b>: the "QIB ×" figure is on the <b>net</b> QIB portion.
+    <b>${mfPct}%</b> of the net QIB portion is reserved for Mutual Funds and allotted among MF bids. Any part they don't take up joins the general pool.
+    The rest is allotted proportionately to <b>all</b> QIBs, including MFs for their unmet demand. Then: <b>${ROUND_TXT[rnd]}</b>. ${esc(rules.roundingNote)}`;
+  const tb = $('working').querySelector('tbody');
+  const b = res.breakdown;
+  if (!shares || !b) { tb.innerHTML = '<tr><td colspan="4" class="small">Enter a bid and the IPO figures to see the working.</td></tr>'; $('checks').innerHTML = ''; return; }
+  const mfDemand = v('mfDemand');
+  const isMf = $('isMf').checked;
+  const r = res.generalRatio;
+  const preHc = res.exact ? res.rawShares : res.rawShares / (hc || 1);
+  const rows = [
+    ['Your bid', 'lots × lot size', `${inr(lots)} × ${inr(lot)}`, `${inr(shares)} sh`],
+    ['Amount blocked', 'bid shares × bid price', `${inr(shares)} × ₹${inr(price, 2)}`, cr(blocked)],
+    ['Net QIB portion (N)', 'QIB portion − anchor portion', IPOS[currentSlug]?.anchor_shares ? `anchor ${inr(IPOS[currentSlug].anchor_shares)} excluded` : 'ex-anchor, as offered', `${inr(b.N)} sh`],
+    [res.exact ? 'Final valid QIB demand (D)' : 'Live QIB demand (D)', res.exact ? 'from the Basis of Allotment' : 'QIB × × N',
+      res.exact ? 'registrar figure (exact)' : `${inr(b.D / b.N, 2)} × ${inr(b.N)}`, `${inr(b.D)} sh`],
+    ['MF reserve (M)', `floor(${mfPct}% × N)`, `floor(${mfPct}% × ${inr(b.N)})`, `${inr(b.mfReserve)} sh`],
+    ['MF take-up from reserve', 'min(MF demand, M)', mfDemand != null ? `min(${inr(mfDemand)}, ${inr(b.mfReserve)})` : 'MF demand not given · assumed ≥ M', `${inr(b.mfFromReserve)} sh`],
+    ['General pool supply', 'N − M + unused MF reserve', `${inr(b.N)} − ${inr(b.mfReserve)} + ${inr(b.mfReserve - b.mfFromReserve)}`, `${inr(b.poolSupply)} sh`],
+    ['General pool demand', 'D − MF take-up', `${inr(b.D)} − ${inr(b.mfFromReserve)}`, `${inr(b.poolDemand)} sh`],
+    ['Allotment ratio (r)', 'min(1, supply ÷ demand)', `${inr(b.poolSupply)} ÷ ${inr(b.poolDemand)}`, `${(r * 100).toFixed(6)}%`],
+    isMf
+      ? ['Unrounded allotment (MF bidder)', 'bid × M/MF demand + rest × r', 'MF reserve share + general pool share', `${preHc.toFixed(4)} sh`]
+      : ['Unrounded allotment', 'bid × r', `${inr(shares)} × ${(r * 100).toFixed(6)}%`, `${preHc.toFixed(4)} sh`],
+  ];
+  if (!res.exact && Math.abs((hc || 1) - 1) > 1e-9) rows.push(['Calibration', 'unrounded × factor (from your history)', `${preHc.toFixed(4)} × ${(hc).toFixed(4)}`, `${res.rawShares.toFixed(4)} sh`]);
+  else rows.push(['Calibration', res.exact ? 'not applied in exact mode' : 'none (factor = 1)', '—', '—']);
+  rows.push(['Rounding', ROUND_TXT[rnd], rnd.includes('lot') ? `${rnd.startsWith('nearest') ? 'round' : 'floor'}(${res.rawShares.toFixed(2)} ÷ ${inr(lot)}) × ${inr(lot)}` : `${rnd.startsWith('nearest') ? 'round' : 'floor'}(${res.rawShares.toFixed(4)})`, `${inr(res.allottedShares)} sh`]);
+  tb.innerHTML = rows.map((x, i) => `<tr class="${x[0] === 'Calibration' && x[3] === '—' ? 'muted' : ''}"><td>${i + 1}</td><td>${esc(x[0])}</td><td>${esc(x[1])}<br><span style="color:var(--muted)">${esc(x[2])}</span></td><td>${esc(x[3])}</td></tr>`).join('')
+    + `<tr class="final"><td></td><td>Shares allotted</td><td>${res.exact ? 'Exact: final valid demand from the Basis of Allotment' : Math.abs((hc || 1) - 1) > 1e-9 ? 'Calibrated estimate (live demand × your factor)' : 'Estimate from live demand'}</td><td>${inr(res.allottedShares)} sh</td></tr>`;
+  const checks = [
+    [blocked > QIB_MIN_APPLICATION, `Application above ₹2,00,000 (QIB minimum): ${cr(blocked)}`],
+    [shares <= b.N, `Bid within the net QIB portion: ${inr(shares)} ≤ ${inr(b.N)}`],
+    [lots === Math.floor(lots), 'Bid in whole lots'],
+  ];
+  $('checks').innerHTML = checks.map(([ok, t]) => `<li class="${ok ? 'ok' : 'bad'}">${esc(t)}</li>`).join('')
+    + `<li class="info">${res.exact ? 'Exact mode: the result follows directly from the registrar\'s final figures.'
+      : 'Estimate: live exchange demand includes bids that are later rejected, so the final valid demand is usually a little lower and your allotment a little higher. Use exact mode after the Basis of Allotment, or let the calibration factor learn the gap.'}</li>`;
+}
+
+// ------------------------------------------------------------------ verify vs past allotments
+function renderVerify() {
+  const apps = store.get('qib-apps', []).map((a, i) => ({ ...a, i }))
+    .filter((a) => a.actual_allotted_shares > 0 && a.used_net_qib_shares > 0 && a.used_qib_times > 0 && a.bid_shares > 0);
+  const tb = $('verify').querySelector('tbody');
+  if (!apps.length) {
+    tb.innerHTML = '<tr><td colspan="8" class="small">No applications with an actual allotment yet. Save an application below, then type the shares you received in its <b>Actual</b> cell.</td></tr>';
+    $('verifySummary').innerHTML = ''; $('verifyStat').textContent = ''; return;
+  }
+  const rows = apps.map((a) => {
+    const model = qibAllotment({ bidShares: a.bid_shares, netQibShares: a.used_net_qib_shares, subscriptionTimes: a.used_qib_times,
+      lotSize: a.lot_size || 1, mfDemandShares: a.used_mf_demand_shares ?? null, isMutualFund: !!a.is_mutual_fund,
+      rounding: a.rounding || 'share', haircut: 1 });
+    const bs = backSolveDemand({ bidShares: a.bid_shares, actualShares: a.actual_allotted_shares, netQibShares: a.used_net_qib_shares, liveTimes: a.used_qib_times });
+    return { a, model: model.allottedShares, bs, diff: a.actual_allotted_shares - model.allottedShares };
+  });
+  tb.innerHTML = rows.map(({ a, model, bs, diff }) => `<tr><td>${esc(a.ipo_name || a.ipo_slug)}</td><td>${inr(a.bid_shares)}</td><td>${inr(model)}</td>
+    <td>${inr(a.actual_allotted_shares)}</td><td class="${diff === 0 ? 'match' : 'miss'}">${diff === 0 ? 'exact' : `${diff > 0 ? '+' : ''}${inr(diff)} (${((diff / model) * 100).toFixed(2)}%)`}</td>
+    <td>${inr(a.used_qib_times, 2)}×</td><td>${bs ? `${inr(bs.impliedTimes, 2)}×` : '—'}</td><td class="${sign(-(bs?.gapPct ?? 0))}">${bs?.gapPct != null ? `${bs.gapPct.toFixed(2)}%` : '—'}</td></tr>`).join('');
+  const gaps = rows.map((x) => x.bs?.gapPct).filter(Number.isFinite).sort((p, q) => p - q);
+  const med = gaps.length ? gaps[Math.floor(gaps.length / 2)] : null;
+  const spread = gaps.length > 1 ? gaps[gaps.length - 1] - gaps[0] : 0;
+  const exact = rows.filter((x) => x.diff === 0).length;
+  const c = calibrationFromHistory(store.get('qib-apps', []));
+  $('verifyStat').textContent = `${rows.length} checked · ${exact} exact on live data`;
+  $('verifySummary').innerHTML = `<b>Finding:</b> working backwards from your actual allotments, the registrar's final valid QIB demand was
+    <b>${med != null ? `${Math.abs(med).toFixed(2)}% ${med < 0 ? 'below' : 'above'}` : '—'}</b> the live figure (median${gaps.length > 1 ? `, range ${gaps[0].toFixed(2)}% to ${gaps[gaps.length - 1].toFixed(2)}%` : ''}).
+    ${gaps.length > 1 && spread < 2 ? 'The gap is small and consistent, so the method is right and the calibration factor corrects for it.' : ''}
+    ${gaps.length > 1 && spread >= 2 ? '<b class="neg">The gap varies a lot between IPOs.</b> Check those IPOs\' inputs (net QIB shares, QIB ×, rounding, segment), or use exact mode with the Basis of Allotment figure.' : ''}
+    Calibration factor now in use: <b>×${c.samples ? c.haircut.toFixed(4) : '1.0000'}</b>. Exact mode with the Basis of Allotment figure needs no factor.`;
 }
 
 // ------------------------------------------------------------------ book
 function renderHistory() {
+  renderVerify();
   const apps = store.get('qib-apps', []);
   const c = calibrationFromHistory(apps);
   $('bookStat').textContent = apps.length ? `${apps.length} saved · calibration ${c.samples ? `×${c.haircut.toFixed(4)} from ${c.samples}` : 'n/a'}` : '';
@@ -244,6 +334,7 @@ $('save').onclick = () => {
     is_mutual_fund: $('isMf').checked, rounding: $('rounding').value,
     predicted_allotted_shares: base.allottedShares, shown_allotted_shares: res.allottedShares,
     used_qib_times: v('times'), used_net_qib_shares: v('netQib'), used_mf_demand_shares: v('mfDemand'),
+    segment: $('segment').value, used_valid_demand_shares: v('validDemand'),
     actual_allotted_shares: null,
   });
   store.set('qib-apps', apps); renderHistory();
@@ -283,6 +374,7 @@ $('ipo').onchange = (e) => pickIpo(e.target.value);
 $('amount').addEventListener('input', () => { bidMode = 'amount'; calc(); });
 $('lots').addEventListener('input', () => { bidMode = 'lots'; calc(); });
 $('shares').addEventListener('input', () => { bidMode = 'shares'; calc(); });
+$('segment').addEventListener('input', () => { setSegment($('segment').value); calc(); });
 for (const id of ['price', 'lot', 'netQib', 'times', 'mfPct', 'rounding', 'isMf', 'mfDemand', 'haircut', 'charges', 'gmp', 'listing', 'rsSteps', 'pctSteps', 'validDemand']) {
   $(id).addEventListener('input', calc);
 }

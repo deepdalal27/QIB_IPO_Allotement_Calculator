@@ -33,6 +33,18 @@ Live exchange demand still includes bids that are rejected during reconciliation
 (≈67.76 cr vs 68.09 cr shares), which is why the model came in 57 shares short. Enter the final figure in the page's *Exact mode* box, or as
 `valid_demand_shares` in `data/overrides.json`.
 
+## Method shown on the page, and checking it against your history
+
+- **Method & working** panel: shows the applicable rules (Mainboard: ICDR Reg. 32 + Schedule XIV; SME: Chapter IX Reg. 253 + Schedule XIV)
+  and the full calculation with your live numbers: bid → net QIB (anchor excluded) → demand → 5% MF reserve → MF take-up →
+  general pool supply and demand → ratio → unrounded → calibration → rounding → shares. It also checks the bid (above ₹2 L, within the net QIB portion, whole lots).
+- **Segment defaults:** Mainboard rounds **down to whole shares** (confirmed by the real BLS allotment of 11,934 shares on a 100-share lot).
+  SME rounds **down to whole lots**. Check this against one of your SME allotments; "nearest share / lot" rounding is also available.
+- **Verify against your past allotments:** for every saved application with an actual allotment, the page works out the **final
+  valid QIB demand** the registrar must have used and its gap from the live figure. A small, consistent gap means the method is right
+  and the calibration factor fixes the rest. Large, erratic gaps point to wrong inputs for that IPO.
+
+
 ## Setup
 
 1. Create a new **private** GitHub repo (your applications are personal) and push this folder:

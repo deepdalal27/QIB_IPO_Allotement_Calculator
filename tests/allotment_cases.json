@@ -95,5 +95,30 @@
   "out": {
    "allotted_shares": 11934
   }
+ },
+ {
+  "name": "round to nearest share",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "rounding": "nearest"
+  },
+  "out": {
+   "allotted_shares": 950
+  }
+ },
+ {
+  "name": "round to nearest lot (SME)",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "lot_size": 140,
+   "rounding": "nearest-lot"
+  },
+  "out": {
+   "allotted_shares": 980
+  }
  }
 ]
