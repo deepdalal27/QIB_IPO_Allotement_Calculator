@@ -1,5 +1,1488 @@
 {
-  "updated": "2026-10-31T14:26+05:30",
+  "updated": "2026-10-31T14:27+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
-  "ipos": {}
+  "ipos": {
+    "vedant-poly-fabs-nse-sme": {
+      "slug": "vedant-poly-fabs-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd"
+      ],
+      "name": "Vedant Poly Fabs Ltd. (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd",
+      "is_sme": true,
+      "gmp": 4.25,
+      "exchange": "NSE SME",
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": null,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "hgs-india-nse-sme": {
+      "slug": "hgs-india-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1429/hgs"
+      ],
+      "name": "HGS (India) Ltd. (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1429/hgs",
+      "is_sme": true,
+      "gmp": 30.0,
+      "exchange": "NSE SME (Emerge)",
+      "qib_shares_offered": 547200.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 813600.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 547200.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 414000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 2880000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 547200.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "maxwell-engineering-nse-sme": {
+      "slug": "maxwell-engineering-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1430/maxwell-engineering-ltd"
+      ],
+      "name": "Maxwell Engineering Ltd. (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1430/maxwell-engineering-ltd",
+      "is_sme": true,
+      "gmp": 70.0,
+      "exchange": "NSE SME (Emerge)",
+      "qib_shares_offered": 683200.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1024000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 683200.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 518400.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 3648000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 683200.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "johnsoncab-electricals-bse-sme": {
+      "slug": "johnsoncab-electricals-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1428/johnsoncab-electricals-ltd"
+      ],
+      "name": "Johnsoncab Electricals Ltd.(BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1428/johnsoncab-electricals-ltd",
+      "is_sme": true,
+      "gmp": 5.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 531000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 795000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 531000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 400200.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 2800800.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 531000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "vectras-enprocon-bse-sme": {
+      "slug": "vectras-enprocon-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1431/vectras-enprocon"
+      ],
+      "name": "Vectras Enprocon (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1431/vectras-enprocon",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 960000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1438800.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 960000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 720000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 5052000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 960000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "antala-industries-bse-sme": {
+      "slug": "antala-industries-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1427/antala-industries-ltd"
+      ],
+      "name": "Antala Industries Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1427/antala-industries-ltd",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 36000.0,
+      "subscription": {
+        "qib": {
+          "times": null,
+          "shares_offered": 36000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 510000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 3482000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 36000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "bombay-coated-special-steels-mainboard": {
+      "slug": "bombay-coated-special-steels-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1424/bombay-coated-special-steels-ltd"
+      ],
+      "name": "Bombay Coated & Special Steels Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1424/bombay-coated-special-steels-ltd",
+      "is_sme": false,
+      "gmp": 10.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 11162012.0,
+      "subscription": {
+        "qib": {
+          "times": null,
+          "shares_offered": 11162012.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3348604.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 7813409.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 22324025.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 11162012.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "ajwa-projects-bse-sme": {
+      "slug": "ajwa-projects-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1426/ajwa-projects-ltd"
+      ],
+      "name": "Ajwa Projects Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1426/ajwa-projects-ltd",
+      "is_sme": true,
+      "gmp": 1.0,
+      "exchange": "BSE SME",
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": null,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "carver-roboweld-bse-sme": {
+      "slug": "carver-roboweld-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1425/carver-roboweld-ltd"
+      ],
+      "name": "Carver Roboweld Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1425/carver-roboweld-ltd",
+      "is_sme": true,
+      "gmp": 5.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 668800.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 996800.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 668800.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 512000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 3536000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 668800.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "m-k-sons-fine-jewels-mainboard": {
+      "slug": "m-k-sons-fine-jewels-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1422/mksons-fine-jewels-ltd"
+      ],
+      "name": "M.K.Sons Fine Jewels Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1422/mksons-fine-jewels-ltd",
+      "is_sme": false,
+      "gmp": 5.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 3400000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 5100000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 3400000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 2550000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 5950000.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 17000000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 3400000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "sfc-environmental-technologies-mainboard": {
+      "slug": "sfc-environmental-technologies-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1412/sfc-environmental-technologies-ltd"
+      ],
+      "name": "SFC Environmental Technologies Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1412/sfc-environmental-technologies-ltd",
+      "is_sme": false,
+      "gmp": 25.5,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 4045642.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 6068460.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 4045642.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3034231.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 7079871.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 20228204.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 4045642.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "bls-polymers-mainboard": {
+      "slug": "bls-polymers-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1414/bls-polymers-ltd"
+      ],
+      "name": "BLS Polymers Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1414/bls-polymers-ltd",
+      "is_sme": false,
+      "gmp": 66.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 3400000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 5100000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 3400000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 2550000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 5950000.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 17000000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 3400000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "wiscon-industries-bse-sme": {
+      "slug": "wiscon-industries-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1423/wiscon-industries-ltd"
+      ],
+      "name": "Wiscon Industries Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1423/wiscon-industries-ltd",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 1225800.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1225800.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1225800.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 772200.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 5392200.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1225800.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "eaaa-india-alternatives-mainboard": {
+      "slug": "eaaa-india-alternatives-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1407/eaaa-india-alternatives-ltd"
+      ],
+      "name": "EAAA India Alternatives Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1407/eaaa-india-alternatives-ltd",
+      "is_sme": false,
+      "gmp": 53.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 1441443.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 2162161.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1441443.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 1081081.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 2522523.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 7207208.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1441443.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "core4-engineers-bse-sme": {
+      "slug": "core4-engineers-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1215/core4-engineers-ltd"
+      ],
+      "name": "Core4 Engineers Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1215/core4-engineers-ltd",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 1040400.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1544400.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1040400.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 777600.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 5894400.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1040400.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "jio-platforms-mainboard": {
+      "slug": "jio-platforms-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1247/jio-platforms-ltd"
+      ],
+      "name": "Jio Platforms Ltd. (Mainboard)",
+      "url": "https://www.ipopremium.in/view/ipo/1247/jio-platforms-ltd",
+      "is_sme": false,
+      "gmp": 250.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 49007828.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 72474066.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 49007828.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 36444568.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 85037326.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 4694836.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "shareholder": {
+          "times": null,
+          "shares_offered": 22341376.0,
+          "shares_bid": null,
+          "label": "Shareholder"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 270000000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 49007828.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "paras-healthcare-mainboard": {
+      "slug": "paras-healthcare-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/829/paras-healthcare-limited"
+      ],
+      "name": "Paras Healthcare Limited (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/829/paras-healthcare-limited",
+      "is_sme": false,
+      "gmp": 13.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 6277056.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 9415584.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 6277056.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3138528.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 2092352.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 20923520.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 6277056.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "shellz-india-bse-sme": {
+      "slug": "shellz-india-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1421/shellz-india-ltd"
+      ],
+      "name": "Shellz India Ltd (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1421/shellz-india-ltd",
+      "is_sme": true,
+      "gmp": 7.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 604800.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 904800.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 604800.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 453600.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 3350400.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 604800.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "zetwerk-manufacturing-mainboard": {
+      "slug": "zetwerk-manufacturing-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1417/zetwerk-manufacturing-ltd"
+      ],
+      "name": "Zetwerk Manufacturing Ltd. (Mainboard)",
+      "url": "https://www.ipopremium.in/view/ipo/1417/zetwerk-manufacturing-ltd",
+      "is_sme": false,
+      "gmp": 1.2,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 99392146.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 149088220.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 99392146.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 49696073.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 33130716.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 700000.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 332007155.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 99392146.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "tonbo-imaging-india-mainboard": {
+      "slug": "tonbo-imaging-india-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1411/tonbo-imaging-india-ltd"
+      ],
+      "name": "Tonbo Imaging India Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1411/tonbo-imaging-india-ltd",
+      "is_sme": false,
+      "gmp": 452.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 2432010.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 3648013.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 2432010.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 1824007.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 4256016.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 14000.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 12174046.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 2432010.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "sahajanand-medical-technologies-mainboard": {
+      "slug": "sahajanand-medical-technologies-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1409/sahajanand-medical-technologies-ltd"
+      ],
+      "name": "Sahajanand Medical Technologies Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1409/sahajanand-medical-technologies-ltd",
+      "is_sme": false,
+      "gmp": 17.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 2714424.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 4071634.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 2714424.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 2035817.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 4750241.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 250000.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 13822116.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 2714424.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "bonfiglioli-transmissions-mainboard": {
+      "slug": "bonfiglioli-transmissions-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1413/bonfiglioli-transmissions-ltd"
+      ],
+      "name": "Bonfiglioli Transmissions Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1413/bonfiglioli-transmissions-ltd",
+      "is_sme": false,
+      "gmp": 66.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 8637809.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 12956712.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 8637809.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 6478356.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 15116165.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 50000.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 43239042.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 8637809.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "fusion-cx-mainboard": {
+      "slug": "fusion-cx-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1410/fusion-cx-ltd"
+      ],
+      "name": "Fusion CX Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1410/fusion-cx-ltd",
+      "is_sme": false,
+      "gmp": 13.5,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 7287197.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 10930795.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 7287197.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3643598.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 2429066.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 24290656.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 7287197.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "ravita-engineering-services-nse-sme": {
+      "slug": "ravita-engineering-services-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1420/ravita-engineering-services-ltd"
+      ],
+      "name": "Ravita Engineering Services Ltd (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1420/ravita-engineering-services-ltd",
+      "is_sme": true,
+      "gmp": 1.0,
+      "exchange": "NSE SME",
+      "qib_shares_offered": 1969200.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 2948400.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1969200.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 1998000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 10362000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1969200.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "vaibhav-vyapaar-nse-sme": {
+      "slug": "vaibhav-vyapaar-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1419/vaibhav-vyapaar-ltd"
+      ],
+      "name": "Vaibhav Vyapaar Ltd (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1419/vaibhav-vyapaar-ltd",
+      "is_sme": true,
+      "gmp": 3.0,
+      "exchange": "NSE SME (Emerge)",
+      "qib_shares_offered": 1494000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 2200000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1494000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 1116000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 7796000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1494000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "hd-fire-protect-mainboard": {
+      "slug": "hd-fire-protect-mainboard",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1416/hd-fire-protect-ltd"
+      ],
+      "name": "HD Fire Protect Ltd (MAINBOARD)",
+      "url": "https://www.ipopremium.in/view/ipo/1416/hd-fire-protect-ltd",
+      "is_sme": false,
+      "gmp": 70.0,
+      "exchange": "NSE,BSE",
+      "qib_shares_offered": 5242673.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 7864008.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 5242673.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3932004.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "retail": {
+          "times": null,
+          "shares_offered": 9174677.0,
+          "shares_bid": null,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": null,
+          "shares_offered": 71138.0,
+          "shares_bid": null,
+          "label": "Employee"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 26284500.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 5242673.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "r-k-fashion-accessories-nse-sme": {
+      "slug": "r-k-fashion-accessories-nse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1406/rkfashion-accessories-ltd"
+      ],
+      "name": "R.K.Fashion Accessories Ltd. (NSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1406/rkfashion-accessories-ltd",
+      "is_sme": true,
+      "gmp": 1.5,
+      "exchange": "NSE SME",
+      "qib_shares_offered": 43200.0,
+      "subscription": {
+        "qib": {
+          "times": null,
+          "shares_offered": 43200.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 1606400.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 4267200.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 43200.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "tna-solutions-bse-sme": {
+      "slug": "tna-solutions-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1399/tna-solutions-ltd"
+      ],
+      "name": "TNA Solutions Ltd. (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1399/tna-solutions-ltd",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 1026000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1536000.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1026000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 774000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 5408000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1026000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "acme-india-industries-bse-sme": {
+      "slug": "acme-india-industries-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1343/acme-india-industries-ltd"
+      ],
+      "name": "Acme India Industries Ltd. (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1343/acme-india-industries-ltd",
+      "is_sme": true,
+      "gmp": 43.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 1179000.0,
+      "subscription": {
+        "anchor": {
+          "times": null,
+          "shares_offered": 1765800.0,
+          "shares_bid": null,
+          "label": "Anchor"
+        },
+        "qib": {
+          "times": null,
+          "shares_offered": 1179000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 885600.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 6208800.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 1179000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    },
+    "paramount-syntex-bse-sme": {
+      "slug": "paramount-syntex-bse-sme",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1398/paramount-syntex-ltd"
+      ],
+      "name": "Paramount Syntex Ltd. (BSE SME)",
+      "url": "https://www.ipopremium.in/view/ipo/1398/paramount-syntex-ltd",
+      "is_sme": true,
+      "gmp": 0.0,
+      "exchange": "BSE SME",
+      "qib_shares_offered": 66000.0,
+      "subscription": {
+        "qib": {
+          "times": null,
+          "shares_offered": 66000.0,
+          "shares_bid": null,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": null,
+          "shares_offered": 3015000.0,
+          "shares_bid": null,
+          "label": "HNI"
+        },
+        "total": {
+          "times": null,
+          "shares_offered": 6440000.0,
+          "shares_bid": null,
+          "label": "Total"
+        }
+      },
+      "last_seen": "2026-10-31T14:27+05:30",
+      "status": "unknown",
+      "effective": {
+        "issue_price": null,
+        "lot_size": null,
+        "net_qib_shares": 66000.0,
+        "qib_times": null,
+        "listing_price": null
+      }
+    }
+  }
 }
