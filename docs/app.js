@@ -63,7 +63,7 @@ function pickIpo(slug) {
   $('ipoInfo').innerHTML = `<span class="badge ${esc(r.status)}">${esc(r.status)}</span>
     ${r.price_band_low ? `₹${r.price_band_low}–${r.price_band_high}` : ''} · Lot ${esc(e.lot_size ?? '?')}
     · ${esc(r.open_date ?? '')} → ${esc(r.close_date ?? '')}${r.listing_date ? ` · Lists ${esc(r.listing_date)}` : ''}
-    ${cats ? `<br>${esc(cats)}` : ''}${splitTxt ? `<br>${esc(splitTxt)}` : ''}${r.anchor_shares ? `<br>Anchor ${inr(r.anchor_shares)} sh (excluded) · Net QIB ${inr(e.net_qib_shares)} sh` : ''}${r.listing_gain_pct != null ? `<br>Listing gain ${r.listing_gain_pct}%` : ''}
+    ${cats ? `<br>${esc(cats)}` : ''}${splitTxt ? `<br>${esc(splitTxt)}` : ''}${r.anchor_shares ? `<br>Anchor ${inr(r.anchor_shares)} sh (excluded) · Net QIB ${inr(e.net_qib_shares)} sh` : ''}${r.listing_gain_pct != null ? `<br>Listed ${Object.entries(r.listing_prices || {}).map(([x, p]) => `${x.toUpperCase()} ₹${inr(p, 2)}`).join(' · ') || `₹${inr(e.listing_price, 2)}`} · gain ${r.listing_gain_pct}%` : ''}
     ${!e.net_qib_shares ? '<br><b>Net QIB shares missing.</b> Take them from the RHP or the exchange subscription page.' : ''}`;
   calc();
 }

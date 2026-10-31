@@ -253,6 +253,36 @@ def parse_reservation(soup):
     return {}
 
 
+def parse_listing(soup):
+    """'Exchange | Listed at | Gain | %' table -> {'nse': {'price', 'gain'}, 'bse': {...}}.
+
+    Falls back to the hero stat 'Listing Gain (NSE)  +₹460.00  +65.71% · listed at ₹1,160.00'.
+    """
+    out = {}
+    for table in soup.find_all("table"):
+        h = _headers(table)
+        i_ex, i_at, i_gain = _col(h, "exchange"), _col(h, "listed at", "listing price"), _col(h, "gain")
+        if i_ex is None or i_at is None:
+            continue
+        for tr in table.find_all("tr")[1:]:
+            c = _cells(tr)
+            if len(c) > i_at and num(c[i_at]) is not None:
+                out[c[i_ex].lower()] = {"price": num(c[i_at]),
+                                        "gain": num(c[i_gain]) if i_gain is not None and i_gain < len(c) else None}
+        if out:
+            return out
+    for st in soup.select(".ip-stat"):
+        text = clean(st.get_text(" "))
+        m = re.search(r"listed at\s*₹?\s*([\d,]+\.?\d*)", text, re.I)
+        if m:
+            ex = re.search(r"\((NSE|BSE)\)", text)
+            val = st.select_one(".ip-stat__value")
+            out[(ex.group(1) if ex else "nse").lower()] = {
+                "price": num(m.group(1)), "gain": num(val.get_text()) if val else None}
+            break
+    return out
+
+
 def parse_detail(html):
     soup = BeautifulSoup(html, "lxml")
     kv = _kv_pairs(soup)
@@ -298,6 +328,17 @@ def parse_detail(html):
         "site_status": site_status,
         "is_sme": bool(re.search(r"\bsme\b", hero_text, re.I)) if hero_text else None,
     }
+    listing = parse_listing(soup)
+    if listing:
+        main = listing.get("nse") or next(iter(listing.values()))
+        rec["listing_prices"] = {k: v["price"] for k, v in listing.items()}
+        rec["listing_price"] = main["price"]
+        if main.get("gain") is not None:
+            rec["issue_price"] = rec["issue_price"] or round(main["price"] - main["gain"], 2)
+        if not rec["listing_date"]:
+            m = re.search(r"listed on\s+([A-Za-z]{3,9}\s+\d{1,2},\s*\d{4})", hero_text, re.I)
+            rec["listing_date"] = iso(m.group(1)) if m else None
+
     sub, split = parse_subscription(soup)
     rec["subscription"] = sub
     if split:
