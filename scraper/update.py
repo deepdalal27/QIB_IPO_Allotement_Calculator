@@ -128,8 +128,14 @@ def apply_status_and_freeze(rec, today, stamp):
         g = rec.setdefault("gmp_history", [])
         if not g or g[-1]["gmp"] != rec["gmp"]:
             g.append({"at": stamp, "gmp": rec["gmp"]})
+    ip, lo, hi = rec.get("issue_price"), rec.get("price_band_low"), rec.get("price_band_high")
+    if ip and lo and hi and not (lo - 0.01 <= ip <= hi + 0.01):   # stored value outside the band
+        rec["issue_price_check"] = f"issue price {ip} outside band {lo}-{hi}; used upper band"
+        rec["issue_price"] = None
     e = effective(rec)
-    if e["listing_price"] and e["issue_price"]:
+    if rec.get("issue_price_check") and not rec.get("override_issue_price"):
+        rec["listing_gain_pct"] = None   # don't publish a gain built on an issue price we couldn't verify
+    elif e["listing_price"] and e["issue_price"]:
         rec["listing_gain_pct"] = round((e["listing_price"] / e["issue_price"] - 1) * 100, 2)
     return rec
 

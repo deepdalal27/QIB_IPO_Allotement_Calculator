@@ -55,3 +55,19 @@ def test_listed_excerpt_listing_price_and_lock():
     assert d["subscription"]["qib"]["times"] == 293.56 and d["anchor_shares"] == 3_648_013
     rec = update.apply_status_and_freeze(d, dt.date(2026, 10, 31), "t")
     assert rec["status"] == "listed" and rec["final_locked"] and rec["listing_gain_pct"] == 65.71
+
+
+def test_derived_issue_price_outside_band_is_rejected():
+    html = (F / "ipopremium_listed_excerpt.html").read_text().replace("+₹460.00", "+₹900.00")
+    d = ipopremium.parse_detail(html)
+    assert d["issue_price"] is None and "outside band" in d["issue_price_check"]
+    assert update.effective(d)["issue_price"] == 700          # falls back to the upper band
+
+
+def test_stored_issue_price_outside_band_is_corrected():
+    import datetime as dt
+    rec = {"issue_price": 55.8, "price_band_low": 88, "price_band_high": 93, "listing_price": 74.4,
+           "listing_date": "2026-10-20"}
+    rec = update.apply_status_and_freeze(rec, dt.date(2026, 10, 31), "t")
+    assert rec["issue_price"] is None and update.effective(rec)["issue_price"] == 93
+    assert rec["listing_gain_pct"] is None   # unverified issue price: no gain published

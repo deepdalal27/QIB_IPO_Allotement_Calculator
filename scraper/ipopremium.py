@@ -333,8 +333,15 @@ def parse_detail(html):
         main = listing.get("nse") or next(iter(listing.values()))
         rec["listing_prices"] = {k: v["price"] for k, v in listing.items()}
         rec["listing_price"] = main["price"]
-        if main.get("gain") is not None:
-            rec["issue_price"] = rec["issue_price"] or round(main["price"] - main["gain"], 2)
+        if main.get("gain") is not None and not rec["issue_price"]:
+            derived = round(main["price"] - main["gain"], 2)
+            lo, hi = rec["price_band_low"], rec["price_band_high"]
+            # Accept "listed at − gain" only if it lies inside the price band. Some pages (seen on
+            # SME issues) show gains that don't match the band; the upper band is used for those.
+            if lo is None or hi is None or lo - 0.01 <= derived <= hi + 0.01:
+                rec["issue_price"] = derived
+            else:
+                rec["issue_price_check"] = f"listed-at minus gain gave {derived}, outside band {lo}-{hi}; used upper band"
         if not rec["listing_date"]:
             m = re.search(r"listed on\s+([A-Za-z]{3,9}\s+\d{1,2},\s*\d{4})", hero_text, re.I)
             rec["listing_date"] = iso(m.group(1)) if m else None
