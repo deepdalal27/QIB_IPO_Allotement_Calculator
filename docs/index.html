@@ -81,8 +81,11 @@
         <summary>Advanced</summary>
         <div class="calcgrid">
           <div><label for="mfPct">MF reserve %</label><input id="mfPct" type="number" step="0.5" value="5"></div>
+          <div><label for="segment">Segment rules</label>
+            <select id="segment"><option value="main">Mainboard</option><option value="sme">SME</option></select></div>
           <div><label for="rounding">Rounding</label>
-            <select id="rounding"><option value="share">Down to whole shares</option><option value="lot">Down to whole lots</option></select></div>
+            <select id="rounding"><option value="share">Down · whole shares</option><option value="lot">Down · whole lots</option>
+              <option value="nearest">Nearest share</option><option value="nearest-lot">Nearest lot</option></select></div>
           <div><label for="mfDemand">MF demand (shares)</label><input id="mfDemand" type="number" step="1" min="0" inputmode="numeric"></div>
           <div><label for="haircut">Calibration factor <small id="calibSrc"></small></label><input id="haircut" type="number" step="0.0001" min="0" max="1.5" value="1"></div>
           <div><label for="charges">Sell charges %</label><input id="charges" type="number" step="0.01" min="0" value="0"></div>
@@ -111,6 +114,14 @@
         <ul id="warnings" class="warn"></ul>
       </section>
 
+      <section class="sect" id="workingSect">
+        <h3>Method &amp; working <span class="rt" id="segBadge"></span></h3>
+        <p class="method" id="methodText"></p>
+        <div class="tablewrap"><table class="ft working" id="working"><thead><tr>
+          <th>#</th><th>Step</th><th>Formula</th><th>Value</th></tr></thead><tbody></tbody></table></div>
+        <ul class="checks" id="checks"></ul>
+      </section>
+
       <section class="sect">
         <h3>Profit at listing <span class="rt" id="pnlNote"></span></h3>
         <div class="tablewrap"><table class="ft" id="pnl"><thead><tr>
@@ -121,6 +132,17 @@
       <section class="sect">
         <h3>If final QIB subscription changes</h3>
         <div class="tablewrap"><table class="ft" id="sens"><thead><tr><th>QIB ×</th><th>Shares</th><th>Ratio</th><th>P&amp;L at GMP ₹</th></tr></thead><tbody></tbody></table></div>
+      </section>
+
+      <section class="sect" id="verifySect">
+        <h3>🔍 Verify against your past allotments <span class="rt" id="verifyStat"></span></h3>
+        <p class="small" style="margin:0 0 8px">For each saved application where you enter the <b>actual</b> shares received, this works backwards to the
+          <b>final valid QIB demand</b> the registrar must have used, and compares it with the live figure the estimate was based on.
+          If the gap is similar across IPOs, the calibration factor will learn it. If the method itself were wrong, the gaps would be large and erratic.</p>
+        <div class="tablewrap"><table class="ft" id="verify"><thead><tr>
+          <th>IPO</th><th>Bid shares</th><th>Live-model</th><th>Actual</th><th>Diff</th><th>Live QIB ×</th><th>Implied final ×</th><th>Gap</th>
+        </tr></thead><tbody></tbody></table></div>
+        <div class="ev" id="verifySummary"></div>
       </section>
 
       <section class="sect">
