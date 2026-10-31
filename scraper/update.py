@@ -211,6 +211,17 @@ def enrich_applications(db):
     save(CALIB, calib)
 
 
+def migrate_slugs(db):
+    """Re-key records whose name still carries an exchange tag, e.g. '(MAINBOARD)'."""
+    out = {}
+    for slug, rec in db.items():
+        name = ipopremium.clean_name(rec.get("name", slug))
+        new = ipopremium.slugify(name) or slug
+        rec = {**rec, "name": name, "slug": new}
+        out[new] = merge(out[new], rec) if new in out else rec
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline", action="store_true")
@@ -219,7 +230,7 @@ def main(argv=None):
     stamp, today = now.isoformat(timespec="minutes"), now.date()
 
     store = load(IPOS, {"ipos": {}})
-    db = store.get("ipos", {})
+    db = migrate_slugs(store.get("ipos", {}))
     if not args.offline:
         scrape(db, today, stamp)
     apply_overrides(db)

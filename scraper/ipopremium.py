@@ -42,6 +42,16 @@ def clean(t):
     return re.sub(r"\s+", " ", (t or "")).strip()
 
 
+# Tags IPO Premium appends to names, e.g. "BLS Polymers Ltd (MAINBOARD)", "Vedant Poly Fabs Ltd. (NSE SME)"
+TAG_RE = re.compile(r"\(\s*((?:NSE|BSE)?\s*SME|MAIN\s*BOARD|NSE|BSE)\s*\)", re.I)
+
+
+def clean_name(name):
+    name = TAG_RE.sub("", name)
+    name = re.sub(r"\s*\bIPO\b\s*$", "", name, flags=re.I)
+    return clean(name)
+
+
 def slugify(name):
     s = re.sub(r"\b(ipo|limited|ltd\.?)\b", "", name.lower())
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
@@ -88,10 +98,12 @@ def parse_list(html, base_url=BASE_URL):
             seen.add(href)
             row_text = " ".join(cells).lower()
             pick = lambda i: cells[i] if i is not None and i < len(cells) else None  # noqa: E731
+            tag = TAG_RE.search(name)
             out.append({
-                "name": re.sub(r"\s*\bIPO\b\s*$", "", name, flags=re.I).strip(),
+                "name": clean_name(name),
                 "url": href,
-                "is_sme": "sme" in (pick(i_type) or row_text).lower(),
+                "is_sme": "sme" in (tag.group(1) if tag else (pick(i_type) or row_text)).lower(),
+                "exchange_tag": tag.group(1).strip() if tag else None,
                 "gmp": num(pick(i_gmp)),
                 "price_text": pick(i_price),
                 "date_text": pick(i_date),

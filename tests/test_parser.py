@@ -36,3 +36,11 @@ def test_status_and_freeze():
     later = update.merge(rec, {"final_subscription": {"qib": {"times": 1}}, "subscription": {"qib": {"times": 1}}})
     later = update.apply_status_and_freeze(later, dt.date(2026, 11, 12), "t3")
     assert later["final_subscription"]["qib"]["times"] == 152.31
+
+
+def test_exchange_tags_stripped():
+    assert ipopremium.clean_name("BLS Polymers Ltd (MAINBOARD)") == "BLS Polymers Ltd"
+    assert ipopremium.clean_name("Johnsoncab Electricals Ltd.(BSE SME)") == "Johnsoncab Electricals Ltd."
+    assert ipopremium.slugify(ipopremium.clean_name("Vedant Poly Fabs Ltd. (NSE SME)")) == "vedant-poly-fabs"
+    db = update.migrate_slugs({"bls-polymers-mainboard": {"name": "BLS Polymers Ltd (MAINBOARD)", "gmp": 66}})
+    assert list(db) == ["bls-polymers"] and db["bls-polymers"]["name"] == "BLS Polymers Ltd"

@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-31T14:27+05:30",
+  "updated": "2026-10-31T14:31+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "ipos": {
-    "vedant-poly-fabs-nse-sme": {
-      "slug": "vedant-poly-fabs-nse-sme",
+    "vedant-poly-fabs": {
+      "slug": "vedant-poly-fabs",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd"
       ],
-      "name": "Vedant Poly Fabs Ltd. (NSE SME)",
+      "name": "Vedant Poly Fabs Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd",
       "is_sme": true,
       "gmp": 4.25,
@@ -23,13 +23,13 @@
         "listing_price": null
       }
     },
-    "hgs-india-nse-sme": {
-      "slug": "hgs-india-nse-sme",
+    "hgs-india": {
+      "slug": "hgs-india",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1429/hgs"
       ],
-      "name": "HGS (India) Ltd. (NSE SME)",
+      "name": "HGS (India) Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1429/hgs",
       "is_sme": true,
       "gmp": 30.0,
@@ -71,13 +71,13 @@
         "listing_price": null
       }
     },
-    "maxwell-engineering-nse-sme": {
-      "slug": "maxwell-engineering-nse-sme",
+    "maxwell-engineering": {
+      "slug": "maxwell-engineering",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1430/maxwell-engineering-ltd"
       ],
-      "name": "Maxwell Engineering Ltd. (NSE SME)",
+      "name": "Maxwell Engineering Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1430/maxwell-engineering-ltd",
       "is_sme": true,
       "gmp": 70.0,
@@ -119,13 +119,13 @@
         "listing_price": null
       }
     },
-    "johnsoncab-electricals-bse-sme": {
-      "slug": "johnsoncab-electricals-bse-sme",
+    "johnsoncab-electricals": {
+      "slug": "johnsoncab-electricals",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1428/johnsoncab-electricals-ltd"
       ],
-      "name": "Johnsoncab Electricals Ltd.(BSE SME)",
+      "name": "Johnsoncab Electricals Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1428/johnsoncab-electricals-ltd",
       "is_sme": true,
       "gmp": 5.0,
@@ -167,13 +167,13 @@
         "listing_price": null
       }
     },
-    "vectras-enprocon-bse-sme": {
-      "slug": "vectras-enprocon-bse-sme",
+    "vectras-enprocon": {
+      "slug": "vectras-enprocon",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1431/vectras-enprocon"
       ],
-      "name": "Vectras Enprocon (BSE SME)",
+      "name": "Vectras Enprocon",
       "url": "https://www.ipopremium.in/view/ipo/1431/vectras-enprocon",
       "is_sme": true,
       "gmp": 0.0,
@@ -215,13 +215,13 @@
         "listing_price": null
       }
     },
-    "antala-industries-bse-sme": {
-      "slug": "antala-industries-bse-sme",
+    "antala-industries": {
+      "slug": "antala-industries",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1427/antala-industries-ltd"
       ],
-      "name": "Antala Industries Ltd (BSE SME)",
+      "name": "Antala Industries Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1427/antala-industries-ltd",
       "is_sme": true,
       "gmp": 0.0,
@@ -257,13 +257,13 @@
         "listing_price": null
       }
     },
-    "bombay-coated-special-steels-mainboard": {
-      "slug": "bombay-coated-special-steels-mainboard",
+    "bombay-coated-special-steels": {
+      "slug": "bombay-coated-special-steels",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1424/bombay-coated-special-steels-ltd"
       ],
-      "name": "Bombay Coated & Special Steels Ltd (MAINBOARD)",
+      "name": "Bombay Coated & Special Steels Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1424/bombay-coated-special-steels-ltd",
       "is_sme": false,
       "gmp": 10.0,
@@ -305,13 +305,13 @@
         "listing_price": null
       }
     },
-    "ajwa-projects-bse-sme": {
-      "slug": "ajwa-projects-bse-sme",
+    "ajwa-projects": {
+      "slug": "ajwa-projects",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1426/ajwa-projects-ltd"
       ],
-      "name": "Ajwa Projects Ltd (BSE SME)",
+      "name": "Ajwa Projects Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1426/ajwa-projects-ltd",
       "is_sme": true,
       "gmp": 1.0,
@@ -326,13 +326,13 @@
         "listing_price": null
       }
     },
-    "carver-roboweld-bse-sme": {
-      "slug": "carver-roboweld-bse-sme",
+    "carver-roboweld": {
+      "slug": "carver-roboweld",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1425/carver-roboweld-ltd"
       ],
-      "name": "Carver Roboweld Ltd (BSE SME)",
+      "name": "Carver Roboweld Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1425/carver-roboweld-ltd",
       "is_sme": true,
       "gmp": 5.0,
@@ -374,13 +374,13 @@
         "listing_price": null
       }
     },
-    "m-k-sons-fine-jewels-mainboard": {
-      "slug": "m-k-sons-fine-jewels-mainboard",
+    "m-k-sons-fine-jewels": {
+      "slug": "m-k-sons-fine-jewels",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1422/mksons-fine-jewels-ltd"
       ],
-      "name": "M.K.Sons Fine Jewels Ltd (MAINBOARD)",
+      "name": "M.K.Sons Fine Jewels Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1422/mksons-fine-jewels-ltd",
       "is_sme": false,
       "gmp": 5.0,
@@ -428,13 +428,13 @@
         "listing_price": null
       }
     },
-    "sfc-environmental-technologies-mainboard": {
-      "slug": "sfc-environmental-technologies-mainboard",
+    "sfc-environmental-technologies": {
+      "slug": "sfc-environmental-technologies",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1412/sfc-environmental-technologies-ltd"
       ],
-      "name": "SFC Environmental Technologies Ltd (MAINBOARD)",
+      "name": "SFC Environmental Technologies Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1412/sfc-environmental-technologies-ltd",
       "is_sme": false,
       "gmp": 25.5,
@@ -482,13 +482,13 @@
         "listing_price": null
       }
     },
-    "bls-polymers-mainboard": {
-      "slug": "bls-polymers-mainboard",
+    "bls-polymers": {
+      "slug": "bls-polymers",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1414/bls-polymers-ltd"
       ],
-      "name": "BLS Polymers Ltd (MAINBOARD)",
+      "name": "BLS Polymers Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1414/bls-polymers-ltd",
       "is_sme": false,
       "gmp": 66.0,
@@ -536,13 +536,13 @@
         "listing_price": null
       }
     },
-    "wiscon-industries-bse-sme": {
-      "slug": "wiscon-industries-bse-sme",
+    "wiscon-industries": {
+      "slug": "wiscon-industries",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1423/wiscon-industries-ltd"
       ],
-      "name": "Wiscon Industries Ltd (BSE SME)",
+      "name": "Wiscon Industries Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1423/wiscon-industries-ltd",
       "is_sme": true,
       "gmp": 0.0,
@@ -584,13 +584,13 @@
         "listing_price": null
       }
     },
-    "eaaa-india-alternatives-mainboard": {
-      "slug": "eaaa-india-alternatives-mainboard",
+    "eaaa-india-alternatives": {
+      "slug": "eaaa-india-alternatives",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1407/eaaa-india-alternatives-ltd"
       ],
-      "name": "EAAA India Alternatives Ltd (MAINBOARD)",
+      "name": "EAAA India Alternatives Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1407/eaaa-india-alternatives-ltd",
       "is_sme": false,
       "gmp": 53.0,
@@ -638,13 +638,13 @@
         "listing_price": null
       }
     },
-    "core4-engineers-bse-sme": {
-      "slug": "core4-engineers-bse-sme",
+    "core4-engineers": {
+      "slug": "core4-engineers",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1215/core4-engineers-ltd"
       ],
-      "name": "Core4 Engineers Ltd (BSE SME)",
+      "name": "Core4 Engineers Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1215/core4-engineers-ltd",
       "is_sme": true,
       "gmp": 0.0,
@@ -686,13 +686,13 @@
         "listing_price": null
       }
     },
-    "jio-platforms-mainboard": {
-      "slug": "jio-platforms-mainboard",
+    "jio-platforms": {
+      "slug": "jio-platforms",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1247/jio-platforms-ltd"
       ],
-      "name": "Jio Platforms Ltd. (Mainboard)",
+      "name": "Jio Platforms Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1247/jio-platforms-ltd",
       "is_sme": false,
       "gmp": 250.0,
@@ -752,13 +752,13 @@
         "listing_price": null
       }
     },
-    "paras-healthcare-mainboard": {
-      "slug": "paras-healthcare-mainboard",
+    "paras-healthcare": {
+      "slug": "paras-healthcare",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/829/paras-healthcare-limited"
       ],
-      "name": "Paras Healthcare Limited (MAINBOARD)",
+      "name": "Paras Healthcare Limited",
       "url": "https://www.ipopremium.in/view/ipo/829/paras-healthcare-limited",
       "is_sme": false,
       "gmp": 13.0,
@@ -806,13 +806,13 @@
         "listing_price": null
       }
     },
-    "shellz-india-bse-sme": {
-      "slug": "shellz-india-bse-sme",
+    "shellz-india": {
+      "slug": "shellz-india",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1421/shellz-india-ltd"
       ],
-      "name": "Shellz India Ltd (BSE SME)",
+      "name": "Shellz India Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1421/shellz-india-ltd",
       "is_sme": true,
       "gmp": 7.0,
@@ -854,13 +854,13 @@
         "listing_price": null
       }
     },
-    "zetwerk-manufacturing-mainboard": {
-      "slug": "zetwerk-manufacturing-mainboard",
+    "zetwerk-manufacturing": {
+      "slug": "zetwerk-manufacturing",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1417/zetwerk-manufacturing-ltd"
       ],
-      "name": "Zetwerk Manufacturing Ltd. (Mainboard)",
+      "name": "Zetwerk Manufacturing Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1417/zetwerk-manufacturing-ltd",
       "is_sme": false,
       "gmp": 1.2,
@@ -914,13 +914,13 @@
         "listing_price": null
       }
     },
-    "tonbo-imaging-india-mainboard": {
-      "slug": "tonbo-imaging-india-mainboard",
+    "tonbo-imaging-india": {
+      "slug": "tonbo-imaging-india",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1411/tonbo-imaging-india-ltd"
       ],
-      "name": "Tonbo Imaging India Ltd (MAINBOARD)",
+      "name": "Tonbo Imaging India Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1411/tonbo-imaging-india-ltd",
       "is_sme": false,
       "gmp": 452.0,
@@ -974,13 +974,13 @@
         "listing_price": null
       }
     },
-    "sahajanand-medical-technologies-mainboard": {
-      "slug": "sahajanand-medical-technologies-mainboard",
+    "sahajanand-medical-technologies": {
+      "slug": "sahajanand-medical-technologies",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1409/sahajanand-medical-technologies-ltd"
       ],
-      "name": "Sahajanand Medical Technologies Ltd (MAINBOARD)",
+      "name": "Sahajanand Medical Technologies Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1409/sahajanand-medical-technologies-ltd",
       "is_sme": false,
       "gmp": 17.0,
@@ -1034,13 +1034,13 @@
         "listing_price": null
       }
     },
-    "bonfiglioli-transmissions-mainboard": {
-      "slug": "bonfiglioli-transmissions-mainboard",
+    "bonfiglioli-transmissions": {
+      "slug": "bonfiglioli-transmissions",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1413/bonfiglioli-transmissions-ltd"
       ],
-      "name": "Bonfiglioli Transmissions Ltd (MAINBOARD)",
+      "name": "Bonfiglioli Transmissions Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1413/bonfiglioli-transmissions-ltd",
       "is_sme": false,
       "gmp": 66.0,
@@ -1094,13 +1094,13 @@
         "listing_price": null
       }
     },
-    "fusion-cx-mainboard": {
-      "slug": "fusion-cx-mainboard",
+    "fusion-cx": {
+      "slug": "fusion-cx",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1410/fusion-cx-ltd"
       ],
-      "name": "Fusion CX Ltd (MAINBOARD)",
+      "name": "Fusion CX Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1410/fusion-cx-ltd",
       "is_sme": false,
       "gmp": 13.5,
@@ -1148,13 +1148,13 @@
         "listing_price": null
       }
     },
-    "ravita-engineering-services-nse-sme": {
-      "slug": "ravita-engineering-services-nse-sme",
+    "ravita-engineering-services": {
+      "slug": "ravita-engineering-services",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1420/ravita-engineering-services-ltd"
       ],
-      "name": "Ravita Engineering Services Ltd (NSE SME)",
+      "name": "Ravita Engineering Services Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1420/ravita-engineering-services-ltd",
       "is_sme": true,
       "gmp": 1.0,
@@ -1196,13 +1196,13 @@
         "listing_price": null
       }
     },
-    "vaibhav-vyapaar-nse-sme": {
-      "slug": "vaibhav-vyapaar-nse-sme",
+    "vaibhav-vyapaar": {
+      "slug": "vaibhav-vyapaar",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1419/vaibhav-vyapaar-ltd"
       ],
-      "name": "Vaibhav Vyapaar Ltd (NSE SME)",
+      "name": "Vaibhav Vyapaar Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1419/vaibhav-vyapaar-ltd",
       "is_sme": true,
       "gmp": 3.0,
@@ -1244,13 +1244,13 @@
         "listing_price": null
       }
     },
-    "hd-fire-protect-mainboard": {
-      "slug": "hd-fire-protect-mainboard",
+    "hd-fire-protect": {
+      "slug": "hd-fire-protect",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1416/hd-fire-protect-ltd"
       ],
-      "name": "HD Fire Protect Ltd (MAINBOARD)",
+      "name": "HD Fire Protect Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1416/hd-fire-protect-ltd",
       "is_sme": false,
       "gmp": 70.0,
@@ -1304,13 +1304,13 @@
         "listing_price": null
       }
     },
-    "r-k-fashion-accessories-nse-sme": {
-      "slug": "r-k-fashion-accessories-nse-sme",
+    "r-k-fashion-accessories": {
+      "slug": "r-k-fashion-accessories",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1406/rkfashion-accessories-ltd"
       ],
-      "name": "R.K.Fashion Accessories Ltd. (NSE SME)",
+      "name": "R.K.Fashion Accessories Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1406/rkfashion-accessories-ltd",
       "is_sme": true,
       "gmp": 1.5,
@@ -1346,13 +1346,13 @@
         "listing_price": null
       }
     },
-    "tna-solutions-bse-sme": {
-      "slug": "tna-solutions-bse-sme",
+    "tna-solutions": {
+      "slug": "tna-solutions",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1399/tna-solutions-ltd"
       ],
-      "name": "TNA Solutions Ltd. (BSE SME)",
+      "name": "TNA Solutions Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1399/tna-solutions-ltd",
       "is_sme": true,
       "gmp": 0.0,
@@ -1394,13 +1394,13 @@
         "listing_price": null
       }
     },
-    "acme-india-industries-bse-sme": {
-      "slug": "acme-india-industries-bse-sme",
+    "acme-india-industries": {
+      "slug": "acme-india-industries",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1343/acme-india-industries-ltd"
       ],
-      "name": "Acme India Industries Ltd. (BSE SME)",
+      "name": "Acme India Industries Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1343/acme-india-industries-ltd",
       "is_sme": true,
       "gmp": 43.0,
@@ -1442,13 +1442,13 @@
         "listing_price": null
       }
     },
-    "paramount-syntex-bse-sme": {
-      "slug": "paramount-syntex-bse-sme",
+    "paramount-syntex": {
+      "slug": "paramount-syntex",
       "first_seen": "2026-10-31T14:27+05:30",
       "sources": [
         "https://www.ipopremium.in/view/ipo/1398/paramount-syntex-ltd"
       ],
-      "name": "Paramount Syntex Ltd. (BSE SME)",
+      "name": "Paramount Syntex Ltd.",
       "url": "https://www.ipopremium.in/view/ipo/1398/paramount-syntex-ltd",
       "is_sme": true,
       "gmp": 0.0,
