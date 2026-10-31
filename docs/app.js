@@ -22,15 +22,35 @@ const store = {
 let IPOS = {};
 let currentSlug = '';
 let bidMode = 'amount';
-const filt = { st: store.get('qib-filter-st', 'open'), board: store.get('qib-filter-board', 'main') };
+const filt = { st: store.get('qib-filter-st', 'open'), board: store.get('qib-filter-board-v2', 'all') };
 let repoCalib = { haircut: 1, samples: 0 };
 
 // ------------------------------------------------------------------ data
+// Today's date in India (YYYY-MM-DD), whatever the viewer's own time zone
+const todayIST = () => new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10);
+
+/** Status worked out from the dates at page-load time, so it never lags behind the last data update. */
+function liveStatus(r, today = todayIST()) {
+  const d = (x) => (x ? String(x).slice(0, 10) : null);
+  const o = d(r.open_date), c = d(r.close_date), l = d(r.listing_date);
+  if (r.listing_price || r.effective?.listing_price || (l && today >= l)) return 'listed';
+  if (c && today > c) return 'closed';
+  if (o && today >= o) return 'open';
+  if (o) return 'upcoming';
+  return r.status || 'unknown';
+}
+
 async function loadData() {
   try {
     const d = await (await fetch('data/ipos.json', { cache: 'no-store' })).json();
     IPOS = d.ipos || {};
-    $('stamp').textContent = d.updated ? `Data updated ${new Date(d.updated).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}` : '';
+    for (const r of Object.values(IPOS)) r.status = liveStatus(r);
+    const ageH = d.updated ? (Date.now() - new Date(d.updated).getTime()) / 3600e3 : Infinity;
+    const when = d.updated ? new Date(d.updated).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }) : '—';
+    const bad = d.health && d.health.ok === false;
+    $('stamp').innerHTML = `Data updated ${esc(when)}`
+      + (ageH > 26 ? ' · <b class="neg">data is more than a day old: check the GitHub Actions run</b>' : '')
+      + (bad ? ` · <b class="neg" title="${esc((d.health.problems || []).join('\n'))}">${d.health.problems.length} data warning(s)</b>` : '');
   } catch { $('stamp').textContent = 'No scraped data yet. Enter the numbers by hand.'; }
   try { repoCalib = await (await fetch('data/calibration.json', { cache: 'no-store' })).json(); } catch { /* none */ }
   applyCalibration();
@@ -52,8 +72,12 @@ function renderPicker() {
   const all = Object.values(IPOS);
   for (const st of ['open', 'upcoming', 'closed', 'listed']) {
     const n = all.filter((r) => r.status === st && boardOk(r)).length;
+    const nm = all.filter((r) => r.status === st && !r.is_sme).length, ns = all.filter((r) => r.status === st && r.is_sme).length;
     $(`c-${st}`).textContent = n ? ` ${n}` : '';
+    document.querySelector(`.tab[data-st="${st}"]`).title = `${nm} Mainboard · ${ns} SME`;
   }
+  const cur = (b) => all.filter((r) => (filt.st === 'all' || r.status === filt.st) && (b === 'all' || (b === 'sme' ? r.is_sme : !r.is_sme))).length;
+  document.querySelectorAll('.seg button').forEach((btn) => { btn.dataset.n = cur(btn.dataset.board); btn.innerHTML = `${{ main: 'Mainboard', sme: 'SME', all: 'All' }[btn.dataset.board]}<span class="cnt"> ${btn.dataset.n}</span>`; });
   document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('active', b.dataset.st === filt.st));
   document.querySelectorAll('.seg button').forEach((b) => b.classList.toggle('active', b.dataset.board === filt.board));
   const items = all.filter((r) => boardOk(r) && stOk(r));
@@ -483,7 +507,7 @@ document.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () 
   filt.st = b.dataset.st; store.set('qib-filter-st', filt.st); currentSlug = ''; renderPicker();
 }));
 document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
-  filt.board = b.dataset.board; store.set('qib-filter-board', filt.board); currentSlug = ''; renderPicker();
+  filt.board = b.dataset.board; store.set('qib-filter-board-v2', filt.board); currentSlug = ''; renderPicker();
 }));
 $('ipo').onchange = (e) => pickIpo(e.target.value);
 $('amount').addEventListener('input', () => { bidMode = 'amount'; calc(); });

@@ -2,8 +2,10 @@ name: Update IPO data
 
 on:
   schedule:
-    # 10:05, 13:05, 17:05 and 21:05 IST on weekdays (UTC below), plus a daily catch-up run at 07:05 IST
-    - cron: "35 4,7,11,15 * * 1-5"
+    # Hourly 09:05–19:05 IST on weekdays (UTC below) while issues open, close and list,
+    # plus 21:05 IST on weekdays and a daily 07:05 IST run (weekends too)
+    - cron: "35 3-13 * * 1-5"
+    - cron: "35 15 * * 1-5"
     - cron: "35 1 * * *"
   workflow_dispatch:
   push:
