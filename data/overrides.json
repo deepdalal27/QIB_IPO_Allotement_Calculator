@@ -1,0 +1,11 @@
+{
+  "_help": "Hand-checked numbers win over scraped ones. Key = IPO slug as shown in docs/data/ipos.json. Fields: issue_price, lot_size, net_qib_shares (EX-anchor, from RHP / Basis of Allotment), qib_times (final, from registrar's Basis of Allotment), listing_price. To add an IPO the scraper missed, also give name, open_date, close_date, listing_date.",
+  "_example-company": {
+    "name": "Example Company",
+    "issue_price": 105,
+    "lot_size": 142,
+    "net_qib_shares": 4285714,
+    "qib_times": 152.31,
+    "listing_price": 131.5
+  }
+}

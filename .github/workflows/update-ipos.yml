@@ -1,0 +1,40 @@
+name: Update IPO data
+
+on:
+  schedule:
+    # 10:05, 13:05, 17:05 and 21:05 IST on weekdays (UTC below), plus a daily catch-up run at 07:05 IST
+    - cron: "35 4,7,11,15 * * 1-5"
+    - cron: "35 1 * * *"
+  workflow_dispatch:
+  push:
+    paths: ["data/overrides.json", "data/applications.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ipos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Scrape and update
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then python -m scraper.update --offline; else python -m scraper.update; fi
+      - name: Commit changes
+        run: |
+          git config user.name "ipo-bot"
+          git config user.email "ipo-bot@users.noreply.github.com"
+          git add docs/data data/applications.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "data: IPO update $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
+          git push

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QIB Allotment Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>QIB Allotment Calculator</h1>
+  <p class="sub">Expected QIB allotment and listing P&amp;L under the SEBI ICDR proportionate basis (net QIB, 5% MF reserve). <span id="updated"></span></p>
+</header>
+
+<main class="grid">
+  <section class="card" id="inputs">
+    <h2>1 · IPO</h2>
+    <label>Pick an IPO
+      <select id="ipo"><option value="">— Manual entry —</option></select>
+    </label>
+    <div id="ipoInfo" class="info"></div>
+
+    <div class="row">
+      <label>Bid price ₹ <input id="price" type="number" step="0.01" min="0"></label>
+      <label>Lot size <input id="lot" type="number" step="1" min="1"></label>
+    </div>
+    <div class="row">
+      <label>Net QIB shares <small>(ex-anchor)</small><input id="netQib" type="number" step="1" min="0"></label>
+      <label>QIB subscription (×) <small id="subSrc"></small><input id="times" type="number" step="0.01" min="0"></label>
+    </div>
+
+    <h2>2 · Your bid</h2>
+    <label>Amount ₹ <input id="amount" type="number" step="1000" min="0" placeholder="e.g. 5000000"></label>
+    <div class="row">
+      <label>Lots <input id="lots" type="number" step="1" min="0"></label>
+      <label>Shares <input id="shares" type="number" step="1" min="0"></label>
+    </div>
+    <p class="hint" id="bidHint"></p>
+    <div class="row">
+      <label>Current GMP ₹ <input id="gmp" type="number" step="0.5"></label>
+      <label>Actual listing ₹ <input id="listing" type="number" step="0.05"></label>
+    </div>
+
+    <details>
+      <summary>Advanced</summary>
+      <div class="row">
+        <label>MF reserve % <input id="mfPct" type="number" step="0.5" value="5"></label>
+        <label>Rounding
+          <select id="rounding"><option value="share">Down to whole shares</option><option value="lot">Down to whole lots</option></select>
+        </label>
+      </div>
+      <label class="check"><input id="isMf" type="checkbox"> I am bidding as a Mutual Fund</label>
+      <label>Total MF demand (shares) <small>optional</small><input id="mfDemand" type="number" step="1" min="0"></label>
+      <div class="row">
+        <label>Calibration haircut <small id="calibSrc"></small><input id="haircut" type="number" step="0.01" min="0" max="1.5" value="1"></label>
+        <label>Sell charges % <input id="charges" type="number" step="0.01" min="0" value="0"></label>
+      </div>
+      <label>₹ steps <input id="rsSteps" value="-20,-10,-5,-2,0,2,5,10,20"></label>
+      <label>% steps <input id="pctSteps" value="-10,-5,5,10,25,50"></label>
+    </details>
+  </section>
+
+  <section class="card" id="results">
+    <h2>3 · Expected allotment</h2>
+    <div class="kpis">
+      <div class="kpi"><span>Shares allotted</span><b id="kAllot">—</b><em id="kLots"></em></div>
+      <div class="kpi"><span>Allotment ratio</span><b id="kRatio">—</b><em id="kRatioSub"></em></div>
+      <div class="kpi"><span>Amount blocked</span><b id="kBlocked">—</b><em id="kRefund"></em></div>
+    </div>
+    <div id="why" class="why"></div>
+    <ul id="warnings" class="warn"></ul>
+
+    <h2>4 · Profit at listing</h2>
+    <div class="tablewrap"><table id="pnl"><thead><tr>
+      <th>Scenario</th><th>Listing ₹</th><th>₹/share</th><th>Net P&amp;L ₹</th><th>On allotted</th><th>On blocked</th>
+    </tr></thead><tbody></tbody></table></div>
+
+    <h2>5 · If final QIB subscription changes</h2>
+    <div class="tablewrap"><table id="sens"><thead><tr><th>QIB ×</th><th>Shares</th><th>P&amp;L at GMP</th></tr></thead><tbody></tbody></table></div>
+
+    <div class="actions">
+      <button id="save">Save application</button>
+      <button id="export" class="ghost">Export applications.json</button>
+      <label class="ghost file">Import<input id="import" type="file" accept="application/json" hidden></label>
+    </div>
+    <div class="tablewrap"><table id="history"><thead><tr><th>IPO</th><th>Bid</th><th>Predicted</th><th>Actual</th><th></th></tr></thead><tbody></tbody></table></div>
+    <p class="hint">Saved applications are stored only in this browser. Export the file and commit it as <code>data/applications.json</code>, and the scheduled job will add listing P&amp;L and work out your calibration haircut.</p>
+  </section>
+</main>
+<footer>Data: IPO Premium (scraped on a schedule) and your manual overrides. For estimation only; the registrar's Basis of Allotment is final. Not investment advice.</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

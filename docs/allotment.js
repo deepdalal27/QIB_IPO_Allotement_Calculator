@@ -1,0 +1,135 @@
+// QIB allotment engine — SEBI (ICDR) Regulations, 2018, Schedule XIV (basis of allotment, QIB category).
+//
+// How the QIB category works in a book-built IPO:
+//   * Anchor investors take up to 60% of the QIB portion BEFORE the issue opens. The
+//     "QIB" subscription figure the exchanges show (and IPO Premium shows) is for the
+//     NET QIB portion, i.e. EXCLUDING the anchor portion. Use net QIB shares, never the gross figure.
+//   * 5% of the net QIB portion is reserved for Mutual Funds only, and allotted
+//     proportionately among MF bids.
+//   * The other 95% (plus any MF reserve that MFs didn't take up) is allotted
+//     proportionately to ALL QIBs, MFs included, for the demand still unmet.
+//   * So a non-MF QIB's ratio is (0.95 × N) / (D − MF reserve take-up). That is lower
+//     than the naive N / D, which is one reason allotments come in below a simple
+//     proportion. Rounding down adds a little more loss on top.
+//
+// Every function is pure, so the browser UI and the Node tests use the same code.
+
+export const DEFAULT_MF_RESERVE_PCT = 5;
+export const QIB_MIN_APPLICATION = 200000; // QIB / NII bids must exceed ₹2 lakh
+
+/** Lots/shares you can bid for with `amount` at `price`. */
+export function bidFromAmount({ amount, price, lotSize }) {
+  if (!(amount > 0) || !(price > 0) || !(lotSize > 0)) {
+    return { lots: 0, shares: 0, amountUsed: 0, leftover: amount || 0 };
+  }
+  const lots = Math.floor(amount / (price * lotSize));
+  const shares = lots * lotSize;
+  const amountUsed = shares * price;
+  return { lots, shares, amountUsed, leftover: amount - amountUsed };
+}
+
+/**
+ * Expected QIB allotment.
+ * @param {object} p
+ * @param {number} p.bidShares           shares you bid for (multiple of lot size)
+ * @param {number} p.netQibShares        N: shares offered to QIBs EXCLUDING anchor
+ * @param {number} p.subscriptionTimes   QIB (ex-anchor) subscription multiple, e.g. 152.3
+ * @param {number} [p.lotSize]
+ * @param {number} [p.mfReservePct=5]
+ * @param {number|null} [p.mfDemandShares] total MF demand in shares (usually unknown,
+ *        and if so MF demand is assumed to cover the whole 5% reserve, which gives the conservative answer)
+ * @param {boolean} [p.isMutualFund=false]
+ * @param {'share'|'lot'} [p.rounding='share']  round down to whole shares or whole lots
+ * @param {number} [p.haircut=1]          empirical calibration factor (from your past allotments)
+ */
+export function qibAllotment(p) {
+  const {
+    bidShares, netQibShares: N, subscriptionTimes, lotSize = 1,
+    mfReservePct = DEFAULT_MF_RESERVE_PCT, mfDemandShares = null,
+    isMutualFund = false, rounding = 'share', haircut = 1,
+  } = p;
+  const warnings = [];
+  if (!(bidShares > 0) || !(N > 0) || !(subscriptionTimes > 0)) {
+    return { allottedShares: 0, allottedLots: 0, ratio: 0, naiveShares: 0, warnings: ['Missing inputs'] };
+  }
+  if (bidShares > N) warnings.push('A QIB bid cannot be larger than the net QIB portion.');
+
+  const D = subscriptionTimes * N;                       // total valid QIB demand (shares)
+  const M = Math.floor((N * mfReservePct) / 100);        // MF-only reserve
+  const G = N - M;                                       // general QIB pool
+  const Dmf = mfDemandShares == null ? Infinity : Math.max(0, mfDemandShares);
+
+  const mfFromReserve = Math.min(Dmf, M);
+  const poolSupply = G + (M - mfFromReserve);            // unused MF reserve rolls into the pool
+  const poolDemand = Math.max(D - mfFromReserve, 0);
+  const generalRatio = poolDemand > 0 ? Math.min(1, poolSupply / poolDemand) : 1;
+
+  let raw;
+  if (isMutualFund) {
+    if (!Number.isFinite(Dmf) || Dmf <= 0) {
+      warnings.push('For an MF bid, enter total MF demand. Without it the result ignores the 5% reserve.');
+      raw = bidShares * generalRatio;
+    } else {
+      const reserveRatio = Math.min(1, M / Dmf);
+      const fromReserve = bidShares * reserveRatio;
+      raw = fromReserve + (bidShares - fromReserve) * generalRatio;
+    }
+  } else {
+    raw = bidShares * generalRatio;
+  }
+  raw *= haircut;
+
+  const unit = rounding === 'lot' ? lotSize : 1;
+  const allottedShares = Math.min(bidShares, Math.floor(raw / unit + 1e-9) * unit);
+  const naiveShares = Math.floor(bidShares / Math.max(subscriptionTimes, 1));
+
+  return {
+    allottedShares,
+    allottedLots: lotSize > 0 ? allottedShares / lotSize : 0,
+    ratio: bidShares > 0 ? allottedShares / bidShares : 0,
+    generalRatio,
+    rawShares: raw,
+    naiveShares,
+    shortfallVsNaive: naiveShares - allottedShares,
+    breakdown: { N, D, mfReserve: M, generalPool: G, mfFromReserve: Number.isFinite(mfFromReserve) ? mfFromReserve : M, poolSupply, poolDemand },
+    warnings,
+  };
+}
+
+export const DEFAULT_RUPEE_STEPS = [-20, -10, -5, -2, 0, 2, 5, 10, 20];
+export const DEFAULT_PCT_STEPS = [-10, -5, 5, 10, 25, 50];
+
+/** Profit/loss table for listing prices around the issue price. */
+export function profitScenarios({
+  allottedShares, issuePrice, rupeeSteps = DEFAULT_RUPEE_STEPS, pctSteps = DEFAULT_PCT_STEPS,
+  gmp = null, actualListingPrice = null, sellChargesPct = 0, amountBlocked = 0,
+}) {
+  const rows = [];
+  const add = (label, listing, kind) => {
+    if (!(listing > 0)) return;
+    const gross = allottedShares * (listing - issuePrice);
+    const charges = (allottedShares * listing * sellChargesPct) / 100;
+    const net = gross - charges;
+    rows.push({
+      label, kind, listingPrice: listing, perShare: listing - issuePrice, gross, charges, net,
+      returnOnAllotted: allottedShares > 0 ? (net / (allottedShares * issuePrice)) * 100 : 0,
+      returnOnBlocked: amountBlocked > 0 ? (net / amountBlocked) * 100 : 0,
+    });
+  };
+  if (actualListingPrice) add('Actual listing', actualListingPrice, 'actual');
+  if (gmp != null && Number.isFinite(gmp)) add(`Current GMP (₹${gmp})`, issuePrice + gmp, 'gmp');
+  for (const s of rupeeSteps) add(s === 0 ? 'At issue price' : `${s > 0 ? '+' : '−'}₹${Math.abs(s)}`, issuePrice + s, 'rupee');
+  for (const s of pctSteps) add(`${s > 0 ? '+' : '−'}${Math.abs(s)}%`, issuePrice * (1 + s / 100), 'pct');
+  return rows;
+}
+
+/** Median of realised / predicted ratios from your past applications (the calibration haircut). */
+export function calibrationFromHistory(apps) {
+  const r = apps
+    .filter((a) => a.actual_allotted_shares != null && a.predicted_allotted_shares > 0)
+    .map((a) => a.actual_allotted_shares / a.predicted_allotted_shares)
+    .sort((a, b) => a - b);
+  if (!r.length) return { haircut: 1, samples: 0 };
+  const mid = Math.floor(r.length / 2);
+  return { haircut: r.length % 2 ? r[mid] : (r[mid - 1] + r[mid]) / 2, samples: r.length };
+}
