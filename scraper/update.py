@@ -57,6 +57,10 @@ def to_date(text):
     if isinstance(text, dt.date):
         return text
     try:
+        return dt.date.fromisoformat(str(text)[:10])
+    except ValueError:
+        pass
+    try:
         return dparser.parse(str(text), dayfirst=True, fuzzy=True, default=dt.datetime(now_ist().year, 1, 1)).date()
     except (ValueError, OverflowError):
         return None
@@ -85,6 +89,10 @@ def status_of(rec, today):
         return "open"
     if o:
         return "upcoming"
+    site = (rec.get("site_status") or "").lower()
+    for st in ("listed", "closed", "open", "upcoming"):
+        if st in site:
+            return st
     return rec.get("status") or "unknown"
 
 
@@ -112,6 +120,7 @@ def apply_status_and_freeze(rec, today, stamp):
     if rec["status"] in ("closed", "listed") and sub.get("qib") and not rec.get("final_locked"):
         rec["final_subscription"] = sub
         rec["final_net_qib_shares"] = rec.get("qib_shares_offered")
+        rec["final_qib_split_cr"] = rec.get("qib_split_cr")
         rec["final_captured_at"] = stamp
         if rec["status"] == "listed" and rec.get("listing_price"):
             rec["final_locked"] = True
@@ -128,8 +137,13 @@ def apply_status_and_freeze(rec, today, stamp):
 def effective(rec):
     """Numbers used for calculations: override > final > live."""
     sub = rec.get("final_subscription") or rec.get("subscription") or {}
+    price = rec.get("override_issue_price") or rec.get("issue_price") or rec.get("price_band_high")
+    split = rec.get("final_qib_split_cr") or rec.get("qib_split_cr") or {}
+    mf_cr = split.get("mf")
     return {
-        "issue_price": rec.get("override_issue_price") or rec.get("issue_price") or rec.get("price_band_high"),
+        "issue_price": price,
+        # MF demand in shares, from the ₹-crore QIB split (₹1 cr = 1e7)
+        "mf_demand_shares": rec.get("override_mf_demand_shares") or (round(mf_cr * 1e7 / price) if mf_cr and price else None),
         "lot_size": rec.get("override_lot_size") or rec.get("lot_size"),
         "net_qib_shares": rec.get("override_net_qib_shares") or rec.get("final_net_qib_shares") or rec.get("qib_shares_offered"),
         "qib_times": rec.get("override_qib_times") or (sub.get("qib") or {}).get("times"),
@@ -151,7 +165,7 @@ def scrape(db, today, stamp):
         if not slug:
             continue
         rec = db.setdefault(slug, {"slug": slug, "first_seen": stamp, "sources": []})
-        rec = merge(rec, {"name": row["name"], "url": row["url"], "is_sme": row["is_sme"], "gmp": row["gmp"]})
+        rec = merge(rec, row)
         lst = to_date(rec.get("listing_date"))
         stale = rec.get("final_locked") and lst and (today - lst).days > REFRESH_LISTED_DAYS
         if not stale:
@@ -171,7 +185,7 @@ def apply_overrides(db):
             continue
         rec = db.setdefault(slug, {"slug": slug, "name": ov.get("name", slug), "sources": ["manual"]})
         for k, v in ov.items():
-            if k in ("issue_price", "lot_size", "net_qib_shares", "qib_times", "listing_price"):
+            if k in ("issue_price", "lot_size", "net_qib_shares", "qib_times", "listing_price", "mf_demand_shares"):
                 rec[f"override_{k}"] = v
             else:
                 rec[k] = v
@@ -192,7 +206,7 @@ def enrich_applications(db):
         if bid and e["net_qib_shares"] and e["qib_times"]:
             r = qib_allotment(bid, e["net_qib_shares"], e["qib_times"], lot_size=lot,
                               is_mutual_fund=a.get("is_mutual_fund", False),
-                              mf_demand_shares=a.get("mf_demand_shares"),
+                              mf_demand_shares=a.get("mf_demand_shares") or e["mf_demand_shares"],
                               rounding=a.get("rounding", "share"))
             a["predicted_allotted_shares"] = r["allotted_shares"]
             a["naive_allotted_shares"] = r["naive_shares"]
@@ -211,6 +225,17 @@ def enrich_applications(db):
     save(CALIB, calib)
 
 
+def migrate_slugs(db):
+    """Re-key records whose name still carries an exchange tag, e.g. '(MAINBOARD)'."""
+    out = {}
+    for slug, rec in db.items():
+        name = ipopremium.clean_name(rec.get("name", slug))
+        new = ipopremium.slugify(name) or slug
+        rec = {**rec, "name": name, "slug": new}
+        out[new] = merge(out[new], rec) if new in out else rec
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline", action="store_true")
@@ -219,7 +244,7 @@ def main(argv=None):
     stamp, today = now.isoformat(timespec="minutes"), now.date()
 
     store = load(IPOS, {"ipos": {}})
-    db = store.get("ipos", {})
+    db = migrate_slugs(store.get("ipos", {}))
     if not args.offline:
         scrape(db, today, stamp)
     apply_overrides(db)

@@ -16,7 +16,8 @@ subscription figures once an IPO lists, and adds the listing results to your sav
 | **Rounding down** to whole shares or lots | A few shares lost per IPO | Rounds down; lot rounding available |
 | Live subscription ≠ final valid demand (rejected bids, bids below the final price) | A small extra shortfall | **Calibration haircut**: the median of your actual ÷ predicted allotments, learned automatically |
 
-Example: N = 42,85,714, 152.31× subscribed, bid 47,570 shares. A simple proportion gives 312 shares; SEBI's method gives **296**.
+Real example (BLS Polymers, Oct 2026): net QIB 34,00,000 shares, 200.25× subscribed, ₹5 cr bid at ₹150 = 3,33,300 shares.
+A simple proportion gives 1,664 shares; SEBI's method gives **1,581**, about 5% fewer.
 
 ## Setup
 
@@ -60,9 +61,16 @@ Example: N = 42,85,714, 152.31× subscribed, bid 47,570 shares. A simple proport
 - **SEBI does not publish subscription data.** Its site has the DRHP/RHP, which gives the net QIB share count to
   check against. The final, authoritative QIB subscription is in the registrar's **Basis of Allotment**,
   so enter that in `data/overrides.json` when it differs.
-- The parser recognises tables by header and row labels rather than fixed CSS selectors. It was built without access to the live site and has
-  only been tested on the synthetic fixtures in `tests/fixtures/`. **Check the first scheduled run.** If a field comes back empty, adjust
-  `scraper/ipopremium.py` (`DETAIL_LINK_RE`, `SUB_ROWS`, `_kv` patterns) or use overrides.
+- The parser targets IPO Premium's real page layout (checked on 2026-10-31). The IPO list comes from the
+  home page's static table, which has full dates, price bands, GMP and the SME/Mainboard type. Details
+  come from the IPO page: price band, lot size, the Open/Close/Allotment/Listing timeline, the subscription
+  table in shares (its "QIBs" row is **net of anchor**), the anchor reservation, and the QIB demand split
+  in ₹ crore (FII / DII / **Mutual funds** / Others).
+- **MF demand is used exactly:** the "Mutual funds" ₹-crore figure ÷ issue price gives MF demand in
+  shares, which decides how the 5% MF reserve is shared out (see `effective.mf_demand_shares`).
+- **Listing price:** I haven't yet seen how the page shows it after listing. The parser looks for labels like
+  "Listing Price" or "Listed at", so check the first IPO that lists and use `data/overrides.json` if the field stays empty.
+- If the site changes its layout, the tests in `tests/test_ipopremium_real.py` (which use excerpts of real pages) show what broke.
 
 ## Rules implemented (SEBI ICDR 2018, Schedule XIV: QIB category)
 
