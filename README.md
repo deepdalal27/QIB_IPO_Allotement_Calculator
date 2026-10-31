@@ -68,8 +68,9 @@ A simple proportion gives 1,664 shares; SEBI's method gives **1,581**, about 5% 
   in ₹ crore (FII / DII / **Mutual funds** / Others).
 - **MF demand is used exactly:** the "Mutual funds" ₹-crore figure ÷ issue price gives MF demand in
   shares, which decides how the 5% MF reserve is shared out (see `effective.mf_demand_shares`).
-- **Listing price:** I haven't yet seen how the page shows it after listing. The parser looks for labels like
-  "Listing Price" or "Listed at", so check the first IPO that lists and use `data/overrides.json` if the field stays empty.
+- **Listing price:** read from the page's "Listing Price" table (NSE and BSE rows). NSE is used for P&L and
+  both prices are stored. The final issue price is worked out as "Listed at − Gain". Once an IPO lists, its
+  final subscription figures and listing data are locked.
 - If the site changes its layout, the tests in `tests/test_ipopremium_real.py` (which use excerpts of real pages) show what broke.
 
 ## Rules implemented (SEBI ICDR 2018, Schedule XIV: QIB category)

@@ -44,3 +44,14 @@ def test_end_to_end_effective_and_allotment():
     r = qib_allotment(333_300, e["net_qib_shares"], e["qib_times"], lot_size=100,
                       mf_demand_shares=e["mf_demand_shares"])
     assert r["naive_shares"] == 1664 and r["allotted_shares"] == 1581
+
+
+def test_listed_excerpt_listing_price_and_lock():
+    import datetime as dt
+    d = ipopremium.parse_detail((F / "ipopremium_listed_excerpt.html").read_text())
+    assert d["listing_price"] == 1160 and d["listing_prices"] == {"nse": 1160, "bse": 1162}
+    assert d["issue_price"] == 700                      # listed at 1,160 − gain 460
+    assert d["listing_date"] == "2026-10-23" and d["site_status"] == "listed"
+    assert d["subscription"]["qib"]["times"] == 293.56 and d["anchor_shares"] == 3_648_013
+    rec = update.apply_status_and_freeze(d, dt.date(2026, 10, 31), "t")
+    assert rec["status"] == "listed" and rec["final_locked"] and rec["listing_gain_pct"] == 65.71
