@@ -159,32 +159,97 @@ def effective(rec):
     }
 
 
-def scrape(db, today, stamp):
-    import requests
-    s = requests.Session()
-    html = fetch(ipopremium.BASE_URL, s)
-    if not html:
-        print("Could not load IPO Premium list page; keeping existing data.", file=sys.stderr)
-        return
-    rows = ipopremium.parse_list(html)
-    print(f"list page: {len(rows)} IPO links")
+# Pages that list IPOs with links to their detail pages. The home page's static table is a ROLLING
+# list of the ~30 most recent IPOs, so the subscription and calendar pages are read too, so that nothing
+# open or upcoming is missed in a busy week. Missing or blocked pages are skipped.
+LIST_URLS = [
+    ipopremium.BASE_URL,
+    ipopremium.BASE_URL + "view/subscription",
+    ipopremium.BASE_URL + "calendar",
+]
+
+
+def needs_refresh(rec, today):
+    """Re-read a detail page until the IPO has listed and been locked for REFRESH_LISTED_DAYS."""
+    lst = to_date(rec.get("listing_date"))
+    return not (rec.get("final_locked") and lst and (today - lst).days > REFRESH_LISTED_DAYS)
+
+
+def scrape(db, today, stamp, get=None):
+    """Update db in place. Returns a stats dict for the health check. `get(url)` is injectable for tests."""
+    if get is None:
+        import requests
+        session = requests.Session()
+        get = lambda url: fetch(url, session)  # noqa: E731
+    stats = {"list_pages_ok": 0, "list_rows": 0, "details_ok": 0, "details_failed": [], "refreshed_off_list": 0}
+
+    rows, seen_urls = [], set()
+    for url in LIST_URLS:
+        html = get(url)
+        if not html:
+            print(f"  list page unavailable: {url}", file=sys.stderr)
+            continue
+        page_rows = ipopremium.parse_list(html)
+        stats["list_pages_ok"] += 1
+        print(f"list page {url}: {len(page_rows)} IPO links")
+        for row in page_rows:
+            if row["url"] not in seen_urls:
+                seen_urls.add(row["url"])
+                rows.append(row)
+    stats["list_rows"] = len(rows)
+
+    def refresh(rec, url):
+        time.sleep(1.5)  # be polite
+        detail = get(url)
+        if not detail:
+            stats["details_failed"].append(rec.get("name") or url)
+            return rec
+        stats["details_ok"] += 1
+        rec = merge(rec, ipopremium.parse_detail(detail))
+        if url not in rec.setdefault("sources", []):
+            rec["sources"].append(url)
+        return rec
+
+    touched = set()
     for row in rows:
         slug = ipopremium.slugify(row["name"])
         if not slug:
             continue
         rec = db.setdefault(slug, {"slug": slug, "first_seen": stamp, "sources": []})
         rec = merge(rec, row)
-        lst = to_date(rec.get("listing_date"))
-        stale = rec.get("final_locked") and lst and (today - lst).days > REFRESH_LISTED_DAYS
-        if not stale:
-            time.sleep(1.5)  # be polite
-            detail = fetch(row["url"], s)
-            if detail:
-                rec = merge(rec, ipopremium.parse_detail(detail))
-                if row["url"] not in rec["sources"]:
-                    rec["sources"].append(row["url"])
+        if needs_refresh(rec, today):
+            rec = refresh(rec, row["url"])
         rec["last_seen"] = stamp
         db[slug] = rec
+        touched.add(slug)
+
+    # IPOs that have dropped off every list but are not final yet: refresh them from their own page,
+    # so their status, subscription and listing price keep updating.
+    for slug, rec in list(db.items()):
+        if slug in touched or not rec.get("url") or not needs_refresh(rec, today):
+            continue
+        db[slug] = refresh(rec, rec["url"])
+        stats["refreshed_off_list"] += 1
+    return stats
+
+
+def health_check(db, stats, today):
+    """Problems that mean the data can't be trusted. The job fails on these, so GitHub emails the owner."""
+    problems = []
+    if stats is not None and stats["list_rows"] == 0:
+        problems.append("No IPOs found on any IPO Premium list page (site down, blocked, or layout changed).")
+    for rec in db.values():
+        if rec.get("status") not in ("open", "upcoming") or rec.get("is_sme") is None:
+            continue
+        e = rec.get("effective") or {}
+        missing = [k for k in ("issue_price", "lot_size") if not e.get(k)]
+        if rec.get("status") == "open" and not e.get("qib_times") and not rec.get("is_sme"):
+            missing.append("qib_times")
+        if missing:
+            problems.append(f"{rec.get('name')}: {rec['status']} but missing {', '.join(missing)}")
+    if stats and stats["details_failed"]:
+        problems.append(f"Detail pages failed: {', '.join(stats['details_failed'][:10])}")
+    return problems
 
 
 def apply_overrides(db):
@@ -255,8 +320,7 @@ def main(argv=None):
 
     store = load(IPOS, {"ipos": {}})
     db = migrate_slugs(store.get("ipos", {}))
-    if not args.offline:
-        scrape(db, today, stamp)
+    stats = None if args.offline else scrape(db, today, stamp)
     apply_overrides(db)
     for slug, rec in db.items():
         db[slug] = apply_status_and_freeze(rec, today, stamp)
@@ -265,9 +329,21 @@ def main(argv=None):
     order = {"open": 0, "upcoming": 1, "closed": 2, "listed": 3, "unknown": 4}
     db = dict(sorted(db.items(), key=lambda kv: (order.get(kv[1].get("status"), 9),
                                                   -(to_date(kv[1].get("open_date")) or dt.date.min).toordinal())))
-    save(IPOS, {"updated": stamp, "source": "IPO Premium (www.ipopremium.in) + data/overrides.json", "ipos": db})
+    problems = health_check(db, stats, today)
+    counts = {}
+    for r in db.values():
+        key = f"{r.get('status')}_{'sme' if r.get('is_sme') else 'main'}"
+        counts[key] = counts.get(key, 0) + 1
+    health = {"checked": stamp, "ok": not problems, "problems": problems, "counts": counts, **(stats or {})}
+    save(IPOS, {"updated": stamp if stats is not None else store.get("updated", stamp),
+                "source": "IPO Premium (www.ipopremium.in) + data/overrides.json", "health": health, "ipos": db})
     enrich_applications(db)
-    print(f"saved {len(db)} IPOs")
+    print(f"saved {len(db)} IPOs · counts {counts}")
+    for p in problems:
+        print(f"::warning::{p}")
+    # Fail the run (GitHub then emails the repo owner) if the scrape found nothing at all.
+    if stats is not None and stats["list_rows"] == 0:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

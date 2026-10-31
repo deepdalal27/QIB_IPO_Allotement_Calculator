@@ -71,3 +71,44 @@ def test_stored_issue_price_outside_band_is_corrected():
     rec = update.apply_status_and_freeze(rec, dt.date(2026, 10, 31), "t")
     assert rec["issue_price"] is None and update.effective(rec)["issue_price"] == 93
     assert rec["listing_gain_pct"] is None   # unverified issue price: no gain published
+
+
+def _row_html(n, name, status_date):
+    return (f'<tr><td><a href="https://www.ipopremium.in/view/ipo/{n}/{name.lower()}">{name} Ltd (MAINBOARD)</a></td>'
+            f'<td>Mainboard</td><td>5</td><td>{status_date}</td><td>{status_date}</td><td>100–105</td><td></td></tr>')
+
+
+def test_scrape_reads_all_list_pages_and_refreshes_ipos_that_dropped_off(monkeypatch):
+    import datetime as dt
+    head = "<table><tr><th>Company Name</th><th>Type</th><th>GMP (₹)</th><th>Open</th><th>Close</th><th>Price Band (₹)</th><th>Listing Date</th></tr>"
+    home = head + _row_html(1, "Alpha", "Oct 30, 2026") + "</table>"
+    subs = head + _row_html(1, "Alpha", "Oct 30, 2026") + _row_html(2, "Beta", "Oct 30, 2026") + "</table>"
+    detail = (F / "ipopremium_detail_excerpt.html").read_text()
+    calls = []
+
+    def get(url):
+        calls.append(url)
+        if url == update.ipopremium.BASE_URL:
+            return home
+        if url.endswith("view/subscription"):
+            return subs
+        if url.endswith("calendar"):
+            return None                      # a missing page is skipped
+        return detail
+
+    monkeypatch.setattr(update.time, "sleep", lambda s: None)
+    db = {"gamma": {"slug": "gamma", "name": "Gamma Ltd", "url": "https://www.ipopremium.in/view/ipo/3/gamma", "sources": []}}
+    stats = update.scrape(db, dt.date(2026, 10, 31), "t", get=get)
+    assert {"alpha", "beta", "gamma"} <= set(db)            # Beta only appears on the subscription page
+    assert stats["list_rows"] == 2 and stats["list_pages_ok"] == 2
+    assert stats["refreshed_off_list"] == 1                 # Gamma is not on any list but was refreshed
+    assert "https://www.ipopremium.in/view/ipo/3/gamma" in calls
+    assert db["gamma"]["lot_size"] == 100                   # filled from its detail page
+
+
+def test_health_check_flags_empty_scrape_and_missing_fields():
+    import datetime as dt
+    assert update.health_check({}, {"list_rows": 0, "details_failed": []}, dt.date(2026, 10, 31))
+    db = {"x": {"name": "X", "status": "open", "is_sme": False, "effective": {"issue_price": 100}}}
+    probs = update.health_check(db, {"list_rows": 5, "details_failed": []}, dt.date(2026, 10, 31))
+    assert any("missing lot_size, qib_times" in p for p in probs)

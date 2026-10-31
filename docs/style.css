@@ -237,3 +237,5 @@ table.ft tr.ref td{color:var(--muted);font-style:italic}
 .rp-foot b{color:var(--ink)}
 .rp-foot .pg{margin-left:auto;white-space:nowrap}
 .rp-work tr.final td:last-child{font-family:inherit}
+.seg button .cnt{font-size:.68rem;opacity:.75;margin-left:2px}
+#stamp b.neg{color:var(--red)}
