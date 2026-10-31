@@ -45,14 +45,14 @@ Live exchange demand still includes bids that are rejected during reconciliation
   and the calibration factor fixes the rest. Large, erratic gaps point to wrong inputs for that IPO.
 
 
-## PDF report
+## Profit ladder and PDF report
 
-The **⬇ PDF report** button in the toolbar opens the print dialog with a 2-page A4 report; choose **Save as PDF**.
-- **Page 1, at a glance:** amount applied (lots × lot size = shares), expected allotment (shares, lots, ratio), profit at current GMP
-  (or at the actual listing once listed), allotted value and refund, IPO snapshot, profit at listing, and how the allotment changes with the final QIB ×.
-- **Page 2, method and working:** the rules applied and the 12-step calculation with your numbers.
-
-The file is named `FinDeependence_QIB_Report_<IPO>_<date>.pdf` and is built in the browser from the page's current inputs.
+- **Profit / loss ladder from the current GMP:** with GMP ₹67 on a ₹150 issue, the base listing price is ₹217. "GMP +₹5" means ₹222, and
+  "GMP −₹10" means ₹207. The steps (default ±₹2, 5, 10, 20) can be changed under *Advanced*, % steps are optional, and a reference row
+  shows the issue price (GMP ₹0). Each ₹1 of GMP is worth (allotted shares) rupees.
+- **⬇ PDF report:** a **single full A4 page**, opened through the print dialog (choose *Save as PDF*). It has four headline tiles
+  (applied, expected allotment, profit at current GMP or actual listing, funds and refund), an IPO snapshot, the GMP ladder with bars,
+  a QIB × sensitivity table, the full calculation working, and the method. The file is named `FinDeependence_QIB_Report_<IPO>_<date>.pdf`.
 
 ## Setup
 

@@ -208,9 +208,9 @@ function calc() {
     allottedShares: res.allottedShares || 0, issuePrice: price, rupeeSteps: steps('rsSteps'), pctSteps: steps('pctSteps'),
     gmp, actualListingPrice: v('listing'), sellChargesPct: v('charges') || 0, amountBlocked: blocked,
   });
-  $('pnlNote').textContent = has ? `on ${inr(res.allottedShares)} shares` : '';
-  $('pnl').querySelector('tbody').innerHTML = rows.map((r) => `<tr class="${r.kind === 'actual' ? 'hl-actual' : r.kind === 'gmp' ? 'hl' : ''}">
-    <td>${esc(r.label)}</td><td>${inr(r.listingPrice, 2)}</td><td class="${sign(r.perShare)}">${inr(r.perShare, 2)}</td>
+  $('pnlNote').textContent = has ? `on ${inr(res.allottedShares)} shares · each ₹1 of GMP = ₹${inr(res.allottedShares)}` : '';
+  $('pnl').querySelector('tbody').innerHTML = rows.map((r) => `<tr class="${r.kind === 'actual' ? 'hl-actual' : r.kind === 'gmp' ? 'hl' : r.kind === 'ref' ? 'ref' : ''}">
+    <td>${esc(r.label)}</td><td class="${sign(r.gmpEquivalent)}">${r.gmpEquivalent > 0 ? '+' : ''}${inr(r.gmpEquivalent, 2)}</td><td>${inr(r.listingPrice, 2)}</td>
     <td class="${sign(r.net)}">${inr(r.net)}</td><td class="${sign(r.net)}">${inr(r.returnOnAllotted, 2)}%</td>
     <td class="${sign(r.net)}">${inr(r.returnOnBlocked, 3)}%</td></tr>`).join('');
 
@@ -227,6 +227,8 @@ function calc() {
 // ------------------------------------------------------------------ method & working
 const ROUND_TXT = { share: 'round DOWN to whole shares', lot: 'round DOWN to whole lots', nearest: 'round to the NEAREST share', 'nearest-lot': 'round to the NEAREST lot' };
 
+let lastWork = null;
+
 function renderWorking(res, { shares, lots, lot, price, blocked, hc }) {
   const seg = $('segment').value;
   const rules = SEGMENT_RULES[seg];
@@ -239,7 +241,7 @@ function renderWorking(res, { shares, lots, lot, price, blocked, hc }) {
     The rest is allotted proportionately to <b>all</b> QIBs, including MFs for their unmet demand. Then: <b>${ROUND_TXT[rnd]}</b>. ${esc(rules.roundingNote)}`;
   const tb = $('working').querySelector('tbody');
   const b = res.breakdown;
-  if (!shares || !b) { tb.innerHTML = '<tr><td colspan="4" class="small">Enter a bid and the IPO figures to see the working.</td></tr>'; $('checks').innerHTML = ''; return; }
+  if (!shares || !b) { lastWork = null; tb.innerHTML = '<tr><td colspan="4" class="small">Enter a bid and the IPO figures to see the working.</td></tr>'; $('checks').innerHTML = ''; return; }
   const mfDemand = v('mfDemand');
   const isMf = $('isMf').checked;
   const r = res.generalRatio;
@@ -262,6 +264,7 @@ function renderWorking(res, { shares, lots, lot, price, blocked, hc }) {
   if (!res.exact && Math.abs((hc || 1) - 1) > 1e-9) rows.push(['Calibration', 'unrounded × factor (from your history)', `${preHc.toFixed(4)} × ${(hc).toFixed(4)}`, `${res.rawShares.toFixed(4)} sh`]);
   else rows.push(['Calibration', res.exact ? 'not applied in exact mode' : 'none (factor = 1)', '—', '—']);
   rows.push(['Rounding', ROUND_TXT[rnd], rnd.includes('lot') ? `${rnd.startsWith('nearest') ? 'round' : 'floor'}(${res.rawShares.toFixed(2)} ÷ ${inr(lot)}) × ${inr(lot)}` : `${rnd.startsWith('nearest') ? 'round' : 'floor'}(${res.rawShares.toFixed(4)})`, `${inr(res.allottedShares)} sh`]);
+  lastWork = { rows, final: [res.exact ? 'Exact · final valid demand from the Basis of Allotment' : Math.abs((hc || 1) - 1) > 1e-9 ? 'Calibrated estimate · live demand × your factor' : 'Estimate · live demand', `${inr(res.allottedShares)} sh`] };
   tb.innerHTML = rows.map((x, i) => `<tr class="${x[0] === 'Calibration' && x[3] === '—' ? 'muted' : ''}"><td>${i + 1}</td><td>${esc(x[0])}</td><td>${esc(x[1])}<br><span style="color:var(--muted)">${esc(x[2])}</span></td><td>${esc(x[3])}</td></tr>`).join('')
     + `<tr class="final"><td></td><td>Shares allotted</td><td>${res.exact ? 'Exact: final valid demand from the Basis of Allotment' : Math.abs((hc || 1) - 1) > 1e-9 ? 'Calibrated estimate (live demand × your factor)' : 'Estimate from live demand'}</td><td>${inr(res.allottedShares)} sh</td></tr>`;
   const checks = [
@@ -288,21 +291,31 @@ function buildReport() {
   const gRow = rows.find((x) => x.kind === 'gmp');
   const aRow = rows.find((x) => x.kind === 'actual');
   const head = aRow || gRow;
-  const tileCls = !head ? '' : head.net >= 0 ? 'profit' : 'loss';
   const now = new Date();
-  const profitTile = head ? `<div class="rp-tile ${tileCls}"><div class="k">${aRow ? 'Profit at actual listing' : 'Profit at current GMP'}</div>
-      <div class="v">${head.net >= 0 ? '' : '−'}₹${inr(Math.abs(head.net))}</div>
-      <div class="s">${aRow ? `Listed <b>₹${inr(aRow.listingPrice, 2)}</b>` : `GMP <b>₹${inr(gmp, 2)}</b> → listing <b>₹${inr(gRow.listingPrice, 2)}</b>`}
-        · <b>${head.returnOnAllotted >= 0 ? '+' : ''}${inr(head.returnOnAllotted, 2)}%</b> on allotted<br>${inr(head.returnOnBlocked, 3)}% on amount blocked</div></div>`
-    : '<div class="rp-tile"><div class="k">Profit at current GMP</div><div class="v">—</div><div class="s">Enter a GMP to see this.</div></div>';
-  const pick = rows.filter((x) => x.kind !== 'pct');
   const sub = r ? (r.final_subscription || r.subscription || {}) : {};
   const fact = (k, val) => `<div class="f"><div class="k">${k}</div><div class="v">${val}</div></div>`;
-  $('report').innerHTML = `<div class="rp">
+  const money = (n) => `${n < 0 ? '−' : ''}₹${inr(Math.abs(n))}`;
+  const pctTxt = (n, d = 2) => `${n > 0 ? '+' : ''}${inr(n, d)}%`;
+  const step = (n) => rows.find((x) => x.kind === 'rupee' && x.step === n);
+  const plus5 = step(5), minus5 = step(-5);
+
+  const profitTile = head ? `<div class="rp-tile ${head.net >= 0 ? 'profit' : 'loss'}">
+      <div class="k">${aRow ? 'Profit at actual listing' : 'Profit at current GMP'}</div>
+      <div class="v">${money(head.net)}</div>
+      <div class="s">${aRow ? `Listed <b>₹${inr(aRow.listingPrice, 2)}</b>` : `GMP <b>₹${inr(gmp, 2)}</b> → listing <b>₹${inr(gRow.listingPrice, 2)}</b>`} · <b>${pctTxt(head.returnOnAllotted)}</b><br>
+        Each ₹1 of GMP = <b>₹${inr(allotted)}</b>${plus5 && minus5 && !aRow ? ` · ±₹5 → <b>${money(minus5.net)}</b> to <b>${money(plus5.net)}</b>` : ''}</div></div>`
+    : '<div class="rp-tile"><div class="k">Profit at current GMP</div><div class="v">—</div><div class="s">Enter a GMP to see the profit.</div></div>';
+
+  const ladder = rows.filter((x) => x.kind !== 'pct' || true);
+  const maxAbs = Math.max(...ladder.map((x) => Math.abs(x.net)), 1);
+  const bar = (n) => `<span class="rp-bar ${n < 0 ? 'neg' : ''}"><i style="width:${Math.max(1, (Math.abs(n) / maxAbs) * 100)}%"></i></span>`;
+  const work = lastWork?.rows || [];
+
+  $('report').innerHTML = `<div class="rp rp-page">
     <div class="rp-head">
       <img src="logo.png" alt="">
       <div><div class="t1">FinDeependence · QIB Allotment Report</div><div class="t2">${esc(name)}</div>
-        <div class="t3">${seg === 'sme' ? 'SME' : 'Mainboard'}${r ? ` · ${esc(r.status)} · ${esc(r.exchange || r.exchange_tag || '')}` : ''}</div></div>
+        <div class="t3">${seg === 'sme' ? 'SME' : 'Mainboard'}${r ? ` · ${esc(r.status)} · ${esc(r.exchange || r.exchange_tag || '')}` : ''}${r?.listing_date ? ` · Listing ${fmtDate(r.listing_date)}` : ''}</div></div>
       <div class="rt">Generated <b>${now.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</b><br>
         <span class="rp-mode ${mode[1]}">${esc(mode[0])}</span></div>
     </div>
@@ -310,8 +323,8 @@ function buildReport() {
     <div class="rp-hero">
       <div class="rp-tile"><div class="k">You applied</div><div class="v">${cr(blocked)}</div>
         <div class="s"><b>${inr(lots)}</b> lots × ${inr(lot)} = <b>${inr(shares)}</b> shares<br>at ₹${inr(price, 2)} per share</div></div>
-      <div class="rp-tile allot"><div class="k">Expected allotment</div><div class="v">${has ? inr(allotted) : '—'} <span style="font-size:9pt">shares</span></div>
-        <div class="s"><b>${has ? inr(res.allottedLots, 2) : '—'}</b> lots · ratio <b>${has ? inr(res.ratio * 100, 4) : '—'}%</b><br>≈ 1 share per ${has && res.ratio ? inr(1 / res.ratio, 1) : '—'} bid</div></div>
+      <div class="rp-tile allot"><div class="k">Expected allotment</div><div class="v">${has ? inr(allotted) : '—'}<span class="u">shares</span></div>
+        <div class="s"><b>${has ? inr(res.allottedLots, 2) : '—'}</b> lots · ratio <b>${has ? inr(res.ratio * 100, 4) : '—'}%</b><br>≈ 1 share for every ${has && res.ratio ? inr(1 / res.ratio, 1) : '—'} bid</div></div>
       ${profitTile}
       <div class="rp-tile"><div class="k">Funds</div><div class="v">${cr(allottedVal)}</div>
         <div class="s">invested in allotted shares<br>Refund <b>${cr(blocked - allottedVal)}</b></div></div>
@@ -322,41 +335,44 @@ function buildReport() {
         ${fact('Price band', r.price_band_low ? `₹${inr(r.price_band_low)}–${inr(r.price_band_high)}` : '—')}
         ${fact('Issue price', e.issue_price ? `₹${inr(e.issue_price, 2)}` : '—')}
         ${fact('Lot size', `${inr(e.lot_size)} sh`)}
-        ${fact('GMP', r.gmp != null ? `₹${inr(r.gmp, 2)}` : '—')}
-        ${fact('QIB ×', e.qib_times != null ? `${e.qib_times}×` : '—')}
-        ${fact('Total ×', sub.total?.times != null ? `${sub.total.times}×` : '—')}
-        ${fact('Net QIB (ex-anchor)', inr(e.net_qib_shares))}
+        ${fact('GMP', r.gmp != null ? `₹${inr(r.gmp, 2)}${e.issue_price ? ` <small>(${inr((r.gmp / e.issue_price) * 100, 1)}%)</small>` : ''}` : '—')}
+        ${fact('QIB × (ex-anchor)', e.qib_times != null ? `${e.qib_times}×` : '—')}
+        ${fact('Overall ×', sub.total?.times != null ? `${sub.total.times}×` : '—')}
+        ${fact('Net QIB shares', inr(e.net_qib_shares))}
         ${fact('Anchor (excluded)', inr(r.anchor_shares))}
         ${fact('MF demand', `${inr(e.mf_demand_shares)} sh`)}
-        ${fact('Open → Close', `${fmtDate(r.open_date).replace(/ \d{4}$/, '')} → ${fmtDate(r.close_date)}`)}
+        ${fact('Open → Close', `${fmtDate(r.open_date).replace(/ \d{4}$/, '')} → ${fmtDate(r.close_date).replace(/ \d{4}$/, '')}`)}
         ${fact('Allotment', fmtDate(r.allotment_date))}
         ${fact('Listing', fmtDate(r.listing_date))}
       </div></div>` : ''}
 
     <div class="rp-sec rp-cols">
-      <div><h3><span>Profit at listing</span><span>on ${inr(allotted)} shares</span></h3>
-        <table><thead><tr><th>Scenario</th><th>Listing ₹</th><th>₹/share</th><th>Net P&amp;L ₹</th><th>Return</th></tr></thead><tbody>
-        ${pick.map((x) => `<tr class="${x.kind === 'actual' ? 'hl-actual' : x.kind === 'gmp' ? 'hl' : ''}"><td>${esc(x.label)}</td><td>${inr(x.listingPrice, 2)}</td>
-          <td class="${sign(x.perShare)}">${inr(x.perShare, 2)}</td><td class="${sign(x.net)}">${inr(x.net)}</td><td class="${sign(x.net)}">${inr(x.returnOnAllotted, 2)}%</td></tr>`).join('')}
+      <div><h3><span>Profit / loss ladder · from current GMP</span><span>${inr(allotted)} shares</span></h3>
+        <table class="rp-ladder"><thead><tr><th>Scenario</th><th>GMP ₹</th><th>Listing ₹</th><th>Net P&amp;L ₹</th><th>Return</th><th></th></tr></thead><tbody>
+        ${ladder.map((x) => `<tr class="${x.kind === 'actual' ? 'hl-actual' : x.kind === 'gmp' ? 'hl' : x.kind === 'ref' ? 'ref' : ''}"><td>${esc(x.label)}</td>
+          <td class="${sign(x.gmpEquivalent)}">${x.gmpEquivalent > 0 ? '+' : ''}${inr(x.gmpEquivalent, 2)}</td><td>${inr(x.listingPrice, 2)}</td>
+          <td class="${sign(x.net)}">${inr(x.net)}</td><td class="${sign(x.net)}">${pctTxt(x.returnOnAllotted)}</td><td class="b">${bar(x.net)}</td></tr>`).join('')}
         </tbody></table></div>
-      <div><h3><span>If final QIB × changes</span></h3>
-        <table><thead><tr><th>QIB ×</th><th>Shares</th><th>Ratio</th><th>P&amp;L at GMP ₹</th></tr></thead><tbody>${$('sens').querySelector('tbody').innerHTML}</tbody></table>
-        <p class="rp-note" style="margin-top:6px">${res.exact ? 'Exact mode: based on the registrar\'s final valid QIB demand.' : 'Estimate: live demand includes bids that are rejected later, so the final allotment is usually slightly higher.'}</p>
+      <div><h3><span>If final QIB × changes</span><span>P&amp;L at GMP</span></h3>
+        <table><thead><tr><th>QIB ×</th><th>Shares</th><th>Ratio</th><th>P&amp;L ₹</th></tr></thead><tbody>${[...$('sens').querySelector('tbody').rows].slice(1, 7).map((tr) => tr.outerHTML).join('')}</tbody></table>
+        <div class="rp-callout ${mode[1]}"><b>${res.exact ? 'Exact result.' : 'Estimate.'}</b> ${res.exact
+          ? 'Uses the registrar\'s final valid QIB demand from the Basis of Allotment.'
+          : 'Uses live exchange demand, which still includes bids rejected later. The final allotment is usually slightly higher. For an exact figure, enter the Basis of Allotment demand.'}</div>
       </div>
     </div>
 
-    <div class="rp-p2"><div class="rp-mini"><img src="logo.png" alt=""><span><b>FinDeependence</b> · QIB Allotment Report · <b>${esc(name)}</b></span>
-      <span class="r">Expected allotment <b>${has ? inr(allotted) : '—'} shares</b>${head ? ` · ${aRow ? 'Listing' : 'GMP'} P&amp;L <b class="${sign(head.net)}">₹${inr(head.net)}</b>` : ''}</span></div>
-    <div class="rp-sec"><h3><span>Calculation working · method</span><span>${seg === 'sme' ? 'SME rules' : 'Mainboard rules'}</span></h3>
-      <p class="rp-note" style="margin-bottom:5px">${$('methodText').innerHTML}</p>
-      <table class="rp-work"><thead><tr><th>#</th><th>Step</th><th style="text-align:left">Formula</th><th>Value</th></tr></thead>
-        <tbody>${$('working').querySelector('tbody').innerHTML}</tbody></table>
-    </div></div>
+    <div class="rp-sec"><h3><span>Calculation working</span><span>${seg === 'sme' ? 'SME' : 'Mainboard'} rules · ${esc(SEGMENT_RULES[seg].regs.replace('SEBI ICDR Regulations, 2018: ', 'ICDR 2018 · '))}</span></h3>
+      <table class="rp-work"><thead><tr><th>#</th><th>Step</th><th>Formula</th><th>Calculation</th><th>Value</th></tr></thead><tbody>
+        ${work.filter((x) => x[3] !== '—').map((x, i) => `<tr><td>${i + 1}</td><td>${esc(x[0])}</td><td>${esc(x[1])}</td><td>${esc(x[2])}</td><td>${esc(x[3])}</td></tr>`).join('')}
+        ${lastWork ? `<tr class="final"><td></td><td>Shares allotted</td><td colspan="2">${esc(lastWork.final[0])}</td><td>${esc(lastWork.final[1])}</td></tr>` : ''}
+      </tbody></table>
+      <p class="rp-note"><b>Method.</b> QIB shares are allotted proportionately. The anchor portion is excluded (the QIB × is on the net portion). ${v('mfPct') ?? 5}% of the net QIB portion is reserved for Mutual Funds, and anything they don't take up joins the general pool, which is shared proportionately among all QIBs. ${esc(SEGMENT_RULES[seg].roundingNote)}</p>
+    </div>
 
-    <div class="rp-foot"><img src="logo.png" alt="" style="width:26px;height:26px;border-radius:50%">
-      <div><b>FinDeependence</b> · Freedom with Finance · Created by <b>CA Deep Dalal</b> · Data: IPO Premium${r?.sources?.[0] ? ` (${esc(r.sources[0])})` : ''} and manual overrides.
-        Allotment per SEBI ICDR Schedule XIV for QIBs. Estimates are indicative; the registrar's Basis of Allotment is final. GMP is unofficial grey-market data.
-        <b>Education only. Not investment advice.</b></div></div>
+    <div class="rp-foot"><img src="logo.png" alt="">
+      <div><b>FinDeependence</b> · Freedom with Finance · Created by <b>CA Deep Dalal</b> · Data: IPO Premium${r?.sources?.[0] ? ` (${esc(r.sources[0].replace(/^https?:\/\//, ''))})` : ''} and manual overrides.
+        Estimates are indicative; the registrar's Basis of Allotment is final. GMP is unofficial grey-market data. <b>Education only. Not investment advice.</b></div>
+      <div class="pg">${now.toLocaleDateString('en-IN')}</div></div>
   </div>`;
 }
 

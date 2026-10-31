@@ -92,8 +92,8 @@
           <div><label for="charges">Sell charges %</label><input id="charges" type="number" step="0.01" min="0" value="0"></div>
           <div class="chk"><label><input id="isMf" type="checkbox"> Bidding as a Mutual Fund</label></div>
         </div>
-        <label for="rsSteps">₹ steps</label><input id="rsSteps" value="-20,-10,-5,-2,0,2,5,10,20">
-        <label for="pctSteps">% steps</label><input id="pctSteps" value="-10,-5,5,10,25,50">
+        <label for="rsSteps">₹ steps from current GMP</label><input id="rsSteps" value="-20,-10,-5,-2,2,5,10,20">
+        <label for="pctSteps">% steps from GMP listing price <small>optional</small></label><input id="pctSteps" value="" placeholder="e.g. -10,10">
       </details>
     </section>
 
@@ -124,9 +124,9 @@
       </section>
 
       <section class="sect">
-        <h3>Profit at listing <span class="rt" id="pnlNote"></span></h3>
+        <h3>Profit / loss ladder · from current GMP <span class="rt" id="pnlNote"></span></h3>
         <div class="tablewrap"><table class="ft" id="pnl"><thead><tr>
-          <th>Scenario</th><th>Listing ₹</th><th>₹ / share</th><th>Net P&amp;L ₹</th><th>On allotted</th><th>On blocked</th>
+          <th>Scenario</th><th>GMP ₹</th><th>Listing ₹</th><th>Net P&amp;L ₹</th><th>On allotted</th><th>On blocked</th>
         </tr></thead><tbody></tbody></table></div>
       </section>
 
