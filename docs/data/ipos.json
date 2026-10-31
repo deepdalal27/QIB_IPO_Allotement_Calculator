@@ -1,29 +1,7 @@
 {
-  "updated": "2026-10-31T14:38+05:30",
+  "updated": "2026-10-31T14:40+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "ipos": {
-    "vedant-poly-fabs": {
-      "slug": "vedant-poly-fabs",
-      "first_seen": "2026-10-31T14:27+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd"
-      ],
-      "name": "Vedant Poly Fabs Ltd.",
-      "url": "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd",
-      "is_sme": true,
-      "gmp": 4.25,
-      "exchange": "NSE SME",
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
-      "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
-        "net_qib_shares": null,
-        "qib_times": null,
-        "listing_price": null
-      }
-    },
     "hgs-india": {
       "slug": "hgs-india",
       "first_seen": "2026-10-31T14:27+05:30",
@@ -37,41 +15,78 @@
       "exchange": "NSE SME (Emerge)",
       "qib_shares_offered": 547200.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 813600.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 4.41,
           "shares_offered": 547200.0,
-          "shares_bid": null,
+          "shares_bid": 2413200.0,
           "label": "QIB"
         },
         "nii": {
-          "times": null,
+          "times": 0.9,
           "shares_offered": 414000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 373200.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.3,
+          "shares_offered": 273600.0,
+          "shares_bid": 355200.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.13,
+          "shares_offered": 140400.0,
+          "shares_bid": 18000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 2880000.0,
-          "shares_bid": null,
+          "times": 1.58,
+          "shares_offered": 1921200.0,
+          "shares_bid": 3036000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 120.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1200.0,
         "net_qib_shares": 547200.0,
-        "qib_times": null,
+        "qib_times": 4.41,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 114.0,
+      "price_band_high": 120.0,
+      "open_date": "2026-10-30",
+      "close_date": "2026-11-03",
+      "listing_date": "2026-11-06",
+      "lot_size": 1200.0,
+      "allotment_date": "2026-11-04",
+      "site_status": "open",
+      "qib_split_cr": {
+        "fii": 0.0
+      },
+      "anchor_shares": 813600.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 4.41,
+            "nii": 0.9,
+            "bnii": 1.3,
+            "snii": 0.13,
+            "total": 1.58
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 30.0
+        }
+      ]
     },
     "maxwell-engineering": {
       "slug": "maxwell-engineering",
@@ -86,41 +101,78 @@
       "exchange": "NSE SME (Emerge)",
       "qib_shares_offered": 683200.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1024000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 0.0,
           "shares_offered": 683200.0,
-          "shares_bid": null,
+          "shares_bid": 0.0,
           "label": "QIB"
         },
         "nii": {
-          "times": null,
+          "times": 4.38,
           "shares_offered": 518400.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 2268800.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 3.59,
+          "shares_offered": 345600.0,
+          "shares_bid": 1242400.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 5.94,
+          "shares_offered": 172800.0,
+          "shares_bid": 1026400.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 3648000.0,
-          "shares_bid": null,
+          "times": 4.77,
+          "shares_offered": 2401600.0,
+          "shares_bid": 11460800.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 158.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 800.0,
         "net_qib_shares": 683200.0,
-        "qib_times": null,
+        "qib_times": 0.0,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 150.0,
+      "price_band_high": 158.0,
+      "open_date": "2026-10-30",
+      "close_date": "2026-11-03",
+      "listing_date": "2026-11-06",
+      "lot_size": 800.0,
+      "allotment_date": "2026-11-04",
+      "site_status": "open",
+      "qib_split_cr": {
+        "fii": 0.0
+      },
+      "anchor_shares": 1024000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 0.0,
+            "nii": 4.38,
+            "bnii": 3.59,
+            "snii": 5.94,
+            "total": 4.77
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 70.0
+        }
+      ]
     },
     "johnsoncab-electricals": {
       "slug": "johnsoncab-electricals",
@@ -135,41 +187,75 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 531000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 795000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 0.0,
           "shares_offered": 531000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 0.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 1.92,
           "shares_offered": 400200.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 766800.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 2.3,
+          "shares_offered": 266800.0,
+          "shares_bid": 612600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 1.16,
+          "shares_offered": 133400.0,
+          "shares_bid": 154200.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 2800800.0,
-          "shares_bid": null,
+          "times": 1.06,
+          "shares_offered": 1864200.0,
+          "shares_bid": 1984800.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 200.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 600.0,
         "net_qib_shares": 531000.0,
-        "qib_times": null,
+        "qib_times": 0.0,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 190.0,
+      "price_band_high": 200.0,
+      "open_date": "2026-10-30",
+      "close_date": "2026-11-03",
+      "listing_date": "2026-11-06",
+      "lot_size": 600.0,
+      "allotment_date": "2026-11-04",
+      "site_status": "open",
+      "anchor_shares": 795000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 0.0,
+            "nii": 1.92,
+            "bnii": 2.3,
+            "snii": 1.16,
+            "total": 1.06
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 5.0
+        }
+      ]
     },
     "vectras-enprocon": {
       "slug": "vectras-enprocon",
@@ -184,41 +270,75 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 960000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1438800.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 1.42,
           "shares_offered": 960000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 1358400.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 1.3,
           "shares_offered": 720000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 936000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.44,
+          "shares_offered": 480000.0,
+          "shares_bid": 691200.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 1.02,
+          "shares_offered": 240000.0,
+          "shares_bid": 244800.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 5052000.0,
-          "shares_bid": null,
+          "times": 1.2,
+          "shares_offered": 3360000.0,
+          "shares_bid": 4022400.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 105.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1200.0,
         "net_qib_shares": 960000.0,
-        "qib_times": null,
+        "qib_times": 1.42,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 99.0,
+      "price_band_high": 105.0,
+      "open_date": "2026-10-30",
+      "close_date": "2026-11-03",
+      "listing_date": "2026-11-06",
+      "lot_size": 1200.0,
+      "allotment_date": "2026-11-04",
+      "site_status": "open",
+      "anchor_shares": 1438800.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 1.42,
+            "nii": 1.3,
+            "bnii": 1.44,
+            "snii": 1.02,
+            "total": 1.2
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 0.0
+        }
+      ]
     },
     "antala-industries": {
       "slug": "antala-industries",
@@ -234,34 +354,73 @@
       "qib_shares_offered": 36000.0,
       "subscription": {
         "qib": {
-          "times": null,
+          "times": 66.72,
           "shares_offered": 36000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 2402000.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 0.02,
           "shares_offered": 510000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 12000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.0,
+          "shares_offered": 342000.0,
+          "shares_bid": 0.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.07,
+          "shares_offered": 168000.0,
+          "shares_bid": 12000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 3482000.0,
-          "shares_bid": null,
+          "times": 0.81,
+          "shares_offered": 3306000.0,
+          "shares_bid": 2690000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 67.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 2000.0,
         "net_qib_shares": 36000.0,
-        "qib_times": null,
+        "qib_times": 66.72,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 63.0,
+      "price_band_high": 67.0,
+      "open_date": "2026-10-29",
+      "close_date": "2026-11-02",
+      "listing_date": "2026-11-05",
+      "lot_size": 2000.0,
+      "allotment_date": "2026-11-03",
+      "site_status": "open",
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 66.72,
+            "nii": 0.02,
+            "bnii": 0.0,
+            "snii": 0.07,
+            "total": 0.81
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 0.0
+        }
+      ]
     },
     "bombay-coated-special-steels": {
       "slug": "bombay-coated-special-steels",
@@ -277,40 +436,123 @@
       "qib_shares_offered": 11162012.0,
       "subscription": {
         "qib": {
-          "times": null,
+          "times": 2.82,
           "shares_offered": 11162012.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 31455424.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 1.91,
           "shares_offered": 3348604.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 6383104.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.3,
+          "shares_offered": 2232402.0,
+          "shares_bid": 2895984.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 3.12,
+          "shares_offered": 1116201.0,
+          "shares_bid": 3487120.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 3.23,
           "shares_offered": 7813409.0,
-          "shares_bid": null,
+          "shares_bid": 25215736.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
+          "times": 2.82,
           "shares_offered": 22324025.0,
-          "shares_bid": null,
+          "shares_bid": 63054264.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "open",
       "effective": {
-        "issue_price": null,
+        "issue_price": 82.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 182.0,
         "net_qib_shares": 11162012.0,
+        "qib_times": 2.82,
+        "listing_price": null
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 78.0,
+      "price_band_high": 82.0,
+      "open_date": "2026-10-29",
+      "close_date": "2026-11-02",
+      "listing_date": "2026-11-05",
+      "lot_size": 182.0,
+      "allotment_date": "2026-11-03",
+      "site_status": "open",
+      "qib_split_cr": {
+        "fii": 0.0,
+        "dii": 0.0,
+        "mf": 0.0,
+        "others": 257.93
+      },
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 2.82,
+            "nii": 1.91,
+            "bnii": 1.3,
+            "snii": 3.12,
+            "retail": 3.23,
+            "total": 2.82
+          }
+        }
+      ],
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 10.0
+        }
+      ]
+    },
+    "vedant-poly-fabs": {
+      "slug": "vedant-poly-fabs",
+      "first_seen": "2026-10-31T14:27+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd"
+      ],
+      "name": "Vedant Poly Fabs Ltd.",
+      "url": "https://www.ipopremium.in/view/ipo/1432/vedant-poly-fabs-ltd",
+      "is_sme": true,
+      "gmp": 4.25,
+      "exchange": "NSE SME",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "upcoming",
+      "effective": {
+        "issue_price": 94.0,
+        "mf_demand_shares": null,
+        "lot_size": 1200.0,
+        "net_qib_shares": null,
         "qib_times": null,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 88.0,
+      "price_band_high": 94.0,
+      "open_date": "2026-11-02",
+      "close_date": "2026-11-04",
+      "listing_date": "2026-11-09",
+      "lot_size": 1200.0,
+      "allotment_date": "2026-11-05",
+      "site_status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 4.25
+        }
+      ]
     },
     "ajwa-projects": {
       "slug": "ajwa-projects",
@@ -323,16 +565,31 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "BSE SME",
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 203.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 600.0,
         "net_qib_shares": null,
         "qib_times": null,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 203.0,
+      "price_band_high": 203.0,
+      "open_date": "2026-10-28",
+      "close_date": "2026-10-30",
+      "listing_date": "2026-11-04",
+      "lot_size": 600.0,
+      "allotment_date": "2026-11-02",
+      "site_status": "closed",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 1.0
+        }
+      ]
     },
     "carver-roboweld": {
       "slug": "carver-roboweld",
@@ -347,41 +604,110 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 668800.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 996800.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 26.33,
           "shares_offered": 668800.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 17609600.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 40.39,
           "shares_offered": 512000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 20681600.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 47.38,
+          "shares_offered": 340800.0,
+          "shares_bid": 16145600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 26.5,
+          "shares_offered": 171200.0,
+          "shares_bid": 4536000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 3536000.0,
-          "shares_bid": null,
+          "times": 25.8,
+          "shares_offered": 2361600.0,
+          "shares_bid": 60928000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 80.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1600.0,
         "net_qib_shares": 668800.0,
-        "qib_times": null,
+        "qib_times": 26.33,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 76.0,
+      "price_band_high": 80.0,
+      "open_date": "2026-10-28",
+      "close_date": "2026-10-30",
+      "listing_date": "2026-11-04",
+      "lot_size": 1600.0,
+      "allotment_date": "2026-11-02",
+      "site_status": "closed",
+      "anchor_shares": 996800.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 26.33,
+            "nii": 40.39,
+            "bnii": 47.38,
+            "snii": 26.5,
+            "total": 25.8
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 26.33,
+          "shares_offered": 668800.0,
+          "shares_bid": 17609600.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 40.39,
+          "shares_offered": 512000.0,
+          "shares_bid": 20681600.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 47.38,
+          "shares_offered": 340800.0,
+          "shares_bid": 16145600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 26.5,
+          "shares_offered": 171200.0,
+          "shares_bid": 4536000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 25.8,
+          "shares_offered": 2361600.0,
+          "shares_bid": 60928000.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 668800.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 5.0
+        }
+      ]
     },
     "m-k-sons-fine-jewels": {
       "slug": "m-k-sons-fine-jewels",
@@ -392,51 +718,138 @@
       "name": "M.K.Sons Fine Jewels Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1422/mksons-fine-jewels-ltd",
       "is_sme": false,
-      "gmp": 5.0,
+      "gmp": 5.5,
       "exchange": "NSE,BSE",
       "qib_shares_offered": 3400000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 5100000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 1.84,
           "shares_offered": 3400000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 6264349.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 14.12,
           "shares_offered": 2550000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 36011976.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 15.33,
+          "shares_offered": 1700000.0,
+          "shares_bid": 26062400.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 11.71,
+          "shares_offered": 850000.0,
+          "shares_bid": 9949576.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 3.08,
           "shares_offered": 5950000.0,
-          "shares_bid": null,
+          "shares_bid": 18350241.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 17000000.0,
-          "shares_bid": null,
+          "times": 5.09,
+          "shares_offered": 11900000.0,
+          "shares_bid": 60626566.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 162.0,
+        "mf_demand_shares": 1235,
+        "lot_size": 91.0,
         "net_qib_shares": 3400000.0,
-        "qib_times": null,
+        "qib_times": 1.84,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 153.0,
+      "price_band_high": 162.0,
+      "open_date": "2026-10-28",
+      "close_date": "2026-10-30",
+      "listing_date": "2026-11-04",
+      "lot_size": 91.0,
+      "allotment_date": "2026-11-02",
+      "site_status": "closed",
+      "qib_split_cr": {
+        "fii": 46.07,
+        "dii": 0.0,
+        "mf": 0.02,
+        "others": 55.4
+      },
+      "anchor_shares": 5100000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 1.84,
+            "nii": 14.12,
+            "bnii": 15.33,
+            "snii": 11.71,
+            "retail": 3.08,
+            "total": 5.09
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 1.84,
+          "shares_offered": 3400000.0,
+          "shares_bid": 6264349.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 14.12,
+          "shares_offered": 2550000.0,
+          "shares_bid": 36011976.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 15.33,
+          "shares_offered": 1700000.0,
+          "shares_bid": 26062400.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 11.71,
+          "shares_offered": 850000.0,
+          "shares_bid": 9949576.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 3.08,
+          "shares_offered": 5950000.0,
+          "shares_bid": 18350241.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 5.09,
+          "shares_offered": 11900000.0,
+          "shares_bid": 60626566.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 3400000.0,
+      "final_qib_split_cr": {
+        "fii": 46.07,
+        "dii": 0.0,
+        "mf": 0.02,
+        "others": 55.4
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 5.5
+        }
+      ]
     },
     "sfc-environmental-technologies": {
       "slug": "sfc-environmental-technologies",
@@ -451,47 +864,134 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 4045642.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 6068460.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 18.81,
           "shares_offered": 4045642.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 76107240.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 12.81,
           "shares_offered": 3034231.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 38859120.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 14.49,
+          "shares_offered": 2022820.0,
+          "shares_bid": 29315070.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 9.44,
+          "shares_offered": 1011410.0,
+          "shares_bid": 9544050.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 2.71,
           "shares_offered": 7079871.0,
-          "shares_bid": null,
+          "shares_bid": 19166895.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 20228204.0,
-          "shares_bid": null,
+          "times": 9.47,
+          "shares_offered": 14159744.0,
+          "shares_bid": 134133255.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 330.0,
+        "mf_demand_shares": 24424242,
+        "lot_size": 45.0,
         "net_qib_shares": 4045642.0,
-        "qib_times": null,
+        "qib_times": 18.81,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 313.0,
+      "price_band_high": 330.0,
+      "open_date": "2026-10-27",
+      "close_date": "2026-10-29",
+      "listing_date": "2026-11-03",
+      "lot_size": 45.0,
+      "allotment_date": "2026-10-30",
+      "site_status": "closed",
+      "qib_split_cr": {
+        "fii": 470.04,
+        "dii": 275.39,
+        "mf": 806.0,
+        "others": 960.11
+      },
+      "anchor_shares": 6068460.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 18.81,
+            "nii": 12.81,
+            "bnii": 14.49,
+            "snii": 9.44,
+            "retail": 2.71,
+            "total": 9.47
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 18.81,
+          "shares_offered": 4045642.0,
+          "shares_bid": 76107240.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 12.81,
+          "shares_offered": 3034231.0,
+          "shares_bid": 38859120.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 14.49,
+          "shares_offered": 2022820.0,
+          "shares_bid": 29315070.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 9.44,
+          "shares_offered": 1011410.0,
+          "shares_bid": 9544050.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 2.71,
+          "shares_offered": 7079871.0,
+          "shares_bid": 19166895.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 9.47,
+          "shares_offered": 14159744.0,
+          "shares_bid": 134133255.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 4045642.0,
+      "final_qib_split_cr": {
+        "fii": 470.04,
+        "dii": 275.39,
+        "mf": 806.0,
+        "others": 960.11
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 25.5
+        }
+      ]
     },
     "bls-polymers": {
       "slug": "bls-polymers",
@@ -502,51 +1002,138 @@
       "name": "BLS Polymers Ltd",
       "url": "https://www.ipopremium.in/view/ipo/1414/bls-polymers-ltd",
       "is_sme": false,
-      "gmp": 66.0,
+      "gmp": 67.0,
       "exchange": "NSE,BSE",
       "qib_shares_offered": 3400000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 5100000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 200.25,
           "shares_offered": 3400000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 680857700.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 559.2,
           "shares_offered": 2550000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 1425969900.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 592.83,
+          "shares_offered": 1700000.0,
+          "shares_bid": 1007815300.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 491.95,
+          "shares_offered": 850000.0,
+          "shares_bid": 418154600.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 128.36,
           "shares_offered": 5950000.0,
-          "shares_bid": null,
+          "shares_bid": 763731100.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 17000000.0,
-          "shares_bid": null,
+          "times": 241.22,
+          "shares_offered": 11900000.0,
+          "shares_bid": 2870558700.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 150.0,
+        "mf_demand_shares": 4036000,
+        "lot_size": 100.0,
         "net_qib_shares": 3400000.0,
-        "qib_times": null,
+        "qib_times": 200.25,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 142.0,
+      "price_band_high": 150.0,
+      "open_date": "2026-10-27",
+      "close_date": "2026-10-29",
+      "listing_date": "2026-11-03",
+      "lot_size": 100.0,
+      "allotment_date": "2026-10-30",
+      "site_status": "closed",
+      "qib_split_cr": {
+        "fii": 1366.36,
+        "dii": 4542.43,
+        "mf": 60.54,
+        "others": 4243.54
+      },
+      "anchor_shares": 5100000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 200.25,
+            "nii": 559.2,
+            "bnii": 592.83,
+            "snii": 491.95,
+            "retail": 128.36,
+            "total": 241.22
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 200.25,
+          "shares_offered": 3400000.0,
+          "shares_bid": 680857700.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 559.2,
+          "shares_offered": 2550000.0,
+          "shares_bid": 1425969900.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 592.83,
+          "shares_offered": 1700000.0,
+          "shares_bid": 1007815300.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 491.95,
+          "shares_offered": 850000.0,
+          "shares_bid": 418154600.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 128.36,
+          "shares_offered": 5950000.0,
+          "shares_bid": 763731100.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 241.22,
+          "shares_offered": 11900000.0,
+          "shares_bid": 2870558700.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 3400000.0,
+      "final_qib_split_cr": {
+        "fii": 1366.36,
+        "dii": 4542.43,
+        "mf": 60.54,
+        "others": 4243.54
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 67.0
+        }
+      ]
     },
     "wiscon-industries": {
       "slug": "wiscon-industries",
@@ -561,41 +1148,110 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 1225800.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1225800.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 2.24,
           "shares_offered": 1225800.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 2745600.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 0.62,
           "shares_offered": 772200.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 481200.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.68,
+          "shares_offered": 514800.0,
+          "shares_bid": 349800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.51,
+          "shares_offered": 257400.0,
+          "shares_bid": 131400.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 5392200.0,
-          "shares_bid": null,
+          "times": 1.17,
+          "shares_offered": 3776400.0,
+          "shares_bid": 4407600.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 204.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 600.0,
         "net_qib_shares": 1225800.0,
-        "qib_times": null,
+        "qib_times": 2.24,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 194.0,
+      "price_band_high": 204.0,
+      "open_date": "2026-10-27",
+      "close_date": "2026-10-29",
+      "listing_date": "2026-11-03",
+      "lot_size": 600.0,
+      "allotment_date": "2026-10-30",
+      "site_status": "closed",
+      "anchor_shares": 1225800.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 2.24,
+            "nii": 0.62,
+            "bnii": 0.68,
+            "snii": 0.51,
+            "total": 1.17
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 2.24,
+          "shares_offered": 1225800.0,
+          "shares_bid": 2745600.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 0.62,
+          "shares_offered": 772200.0,
+          "shares_bid": 481200.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.68,
+          "shares_offered": 514800.0,
+          "shares_bid": 349800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.51,
+          "shares_offered": 257400.0,
+          "shares_bid": 131400.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 1.17,
+          "shares_offered": 3776400.0,
+          "shares_bid": 4407600.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1225800.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 0.0
+        }
+      ]
     },
     "eaaa-india-alternatives": {
       "slug": "eaaa-india-alternatives",
@@ -610,47 +1266,134 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 1441443.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 2162161.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 13.8,
           "shares_offered": 1441443.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 19888587.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 4.81,
           "shares_offered": 1081081.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 5195952.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 6.21,
+          "shares_offered": 720721.0,
+          "shares_bid": 4475484.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 2.0,
+          "shares_offered": 360360.0,
+          "shares_bid": 720468.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 1.08,
           "shares_offered": 2522523.0,
-          "shares_bid": null,
+          "shares_bid": 2735001.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 7207208.0,
-          "shares_bid": null,
+          "times": 5.51,
+          "shares_offered": 5045047.0,
+          "shares_bid": 27819540.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "closed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 1665.0,
+        "mf_demand_shares": 13615616,
+        "lot_size": 9.0,
         "net_qib_shares": 1441443.0,
-        "qib_times": null,
+        "qib_times": 13.8,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 1585.0,
+      "price_band_high": 1665.0,
+      "open_date": "2026-10-26",
+      "close_date": "2026-10-28",
+      "listing_date": "2026-11-02",
+      "lot_size": 9.0,
+      "allotment_date": "2026-10-29",
+      "site_status": "closed",
+      "qib_split_cr": {
+        "fii": 825.98,
+        "dii": 0.02,
+        "mf": 2267.0,
+        "others": 218.45
+      },
+      "anchor_shares": 2162161.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 13.8,
+            "nii": 4.81,
+            "bnii": 6.21,
+            "snii": 2.0,
+            "retail": 1.08,
+            "total": 5.51
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 13.8,
+          "shares_offered": 1441443.0,
+          "shares_bid": 19888587.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 4.81,
+          "shares_offered": 1081081.0,
+          "shares_bid": 5195952.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 6.21,
+          "shares_offered": 720721.0,
+          "shares_bid": 4475484.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 2.0,
+          "shares_offered": 360360.0,
+          "shares_bid": 720468.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 1.08,
+          "shares_offered": 2522523.0,
+          "shares_bid": 2735001.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 5.51,
+          "shares_offered": 5045047.0,
+          "shares_bid": 27819540.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1441443.0,
+      "final_qib_split_cr": {
+        "fii": 825.98,
+        "dii": 0.02,
+        "mf": 2267.0,
+        "others": 218.45
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30",
+      "gmp_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "gmp": 53.0
+        }
+      ]
     },
     "core4-engineers": {
       "slug": "core4-engineers",
@@ -665,41 +1408,104 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 1040400.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1544400.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 5.06,
           "shares_offered": 1040400.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 5264400.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 12.26,
           "shares_offered": 777600.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 9530400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 16.12,
+          "shares_offered": 518400.0,
+          "shares_bid": 8358000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.52,
+          "shares_offered": 259200.0,
+          "shares_bid": 1172400.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 5894400.0,
-          "shares_bid": null,
+          "times": 5.44,
+          "shares_offered": 3630000.0,
+          "shares_bid": 19731600.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 93.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1200.0,
         "net_qib_shares": 1040400.0,
-        "qib_times": null,
+        "qib_times": 5.06,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 88.0,
+      "price_band_high": 93.0,
+      "open_date": "2026-10-23",
+      "close_date": "2026-10-27",
+      "listing_date": "2026-10-30",
+      "lot_size": 1200.0,
+      "allotment_date": "2026-10-28",
+      "site_status": "listed",
+      "anchor_shares": 1544400.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 5.06,
+            "nii": 12.26,
+            "bnii": 16.12,
+            "snii": 4.52,
+            "total": 5.44
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 5.06,
+          "shares_offered": 1040400.0,
+          "shares_bid": 5264400.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 12.26,
+          "shares_offered": 777600.0,
+          "shares_bid": 9530400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 16.12,
+          "shares_offered": 518400.0,
+          "shares_bid": 8358000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.52,
+          "shares_offered": 259200.0,
+          "shares_bid": 1172400.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 5.44,
+          "shares_offered": 3630000.0,
+          "shares_bid": 19731600.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1040400.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "jio-platforms": {
       "slug": "jio-platforms",
@@ -714,59 +1520,154 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 49007828.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 72474066.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 70.55,
           "shares_offered": 49007828.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 3457557456.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 14.0,
           "shares_offered": 36444568.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 510355128.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 15.89,
+          "shares_offered": 24296379.0,
+          "shares_bid": 386167752.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 10.22,
+          "shares_offered": 12148189.0,
+          "shares_bid": 124187376.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 2.72,
           "shares_offered": 85037326.0,
-          "shares_bid": null,
+          "shares_bid": 231162888.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 2.93,
           "shares_offered": 4694836.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 13743348.0,
+          "label": "Employees"
         },
         "shareholder": {
-          "times": null,
+          "times": 7.6,
           "shares_offered": 22341376.0,
-          "shares_bid": null,
-          "label": "Shareholder"
+          "shares_bid": 169796748.0,
+          "label": "Shareholders"
         },
         "total": {
-          "times": null,
-          "shares_offered": 270000000.0,
-          "shares_bid": null,
+          "times": 22.19,
+          "shares_offered": 197525934.0,
+          "shares_bid": 4382615568.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 1119.0,
+        "mf_demand_shares": 357074620,
+        "lot_size": 12.0,
         "net_qib_shares": 49007828.0,
-        "qib_times": null,
+        "qib_times": 70.55,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "Mainboard",
+      "price_band_low": 1065.0,
+      "price_band_high": 1119.0,
+      "open_date": "2026-10-21",
+      "close_date": "2026-10-23",
+      "listing_date": "2026-10-28",
+      "lot_size": 12.0,
+      "allotment_date": "2026-10-26",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 138674.43,
+        "dii": 170644.74,
+        "mf": 39956.65,
+        "others": 37624.86
+      },
+      "anchor_shares": 72474066.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 70.55,
+            "nii": 14.0,
+            "bnii": 15.89,
+            "snii": 10.22,
+            "retail": 2.72,
+            "employee": 2.93,
+            "shareholder": 7.6,
+            "total": 22.19
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 70.55,
+          "shares_offered": 49007828.0,
+          "shares_bid": 3457557456.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 14.0,
+          "shares_offered": 36444568.0,
+          "shares_bid": 510355128.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 15.89,
+          "shares_offered": 24296379.0,
+          "shares_bid": 386167752.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 10.22,
+          "shares_offered": 12148189.0,
+          "shares_bid": 124187376.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 2.72,
+          "shares_offered": 85037326.0,
+          "shares_bid": 231162888.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 2.93,
+          "shares_offered": 4694836.0,
+          "shares_bid": 13743348.0,
+          "label": "Employees"
+        },
+        "shareholder": {
+          "times": 7.6,
+          "shares_offered": 22341376.0,
+          "shares_bid": 169796748.0,
+          "label": "Shareholders"
+        },
+        "total": {
+          "times": 22.19,
+          "shares_offered": 197525934.0,
+          "shares_bid": 4382615568.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 49007828.0,
+      "final_qib_split_cr": {
+        "fii": 138674.43,
+        "dii": 170644.74,
+        "mf": 39956.65,
+        "others": 37624.86
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "paras-healthcare": {
       "slug": "paras-healthcare",
@@ -781,47 +1682,128 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 6277056.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 9415584.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 3.25,
           "shares_offered": 6277056.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 20381592.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 0.69,
           "shares_offered": 3138528.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 2166507.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.62,
+          "shares_offered": 2092352.0,
+          "shares_bid": 1289883.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 0.84,
+          "shares_offered": 1046176.0,
+          "shares_bid": 876624.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 2.1,
           "shares_offered": 2092352.0,
-          "shares_bid": null,
+          "shares_bid": 4395678.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 20923520.0,
-          "shares_bid": null,
+          "times": 2.34,
+          "shares_offered": 11507936.0,
+          "shares_bid": 26943777.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 693.0,
+        "mf_demand_shares": 10389610,
+        "lot_size": 21.0,
         "net_qib_shares": 6277056.0,
-        "qib_times": null,
+        "qib_times": 3.25,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 660.0,
+      "price_band_high": 693.0,
+      "open_date": "2026-10-21",
+      "close_date": "2026-10-23",
+      "listing_date": "2026-10-28",
+      "lot_size": 21.0,
+      "allotment_date": "2026-10-26",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 494.13,
+        "dii": 47.75,
+        "mf": 720.0,
+        "others": 150.58
+      },
+      "anchor_shares": 9415584.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 3.25,
+            "nii": 0.69,
+            "bnii": 0.62,
+            "snii": 0.84,
+            "retail": 2.1,
+            "total": 2.34
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 3.25,
+          "shares_offered": 6277056.0,
+          "shares_bid": 20381592.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 0.69,
+          "shares_offered": 3138528.0,
+          "shares_bid": 2166507.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.62,
+          "shares_offered": 2092352.0,
+          "shares_bid": 1289883.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 0.84,
+          "shares_offered": 1046176.0,
+          "shares_bid": 876624.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 2.1,
+          "shares_offered": 2092352.0,
+          "shares_bid": 4395678.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 2.34,
+          "shares_offered": 11507936.0,
+          "shares_bid": 26943777.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 6277056.0,
+      "final_qib_split_cr": {
+        "fii": 494.13,
+        "dii": 47.75,
+        "mf": 720.0,
+        "others": 150.58
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "shellz-india": {
       "slug": "shellz-india",
@@ -836,41 +1818,104 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 604800.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 904800.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 41.92,
           "shares_offered": 604800.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 25352000.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 86.41,
           "shares_offered": 453600.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 39197600.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 98.42,
+          "shares_offered": 302400.0,
+          "shares_bid": 29761600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 62.41,
+          "shares_offered": 151200.0,
+          "shares_bid": 9436000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 3350400.0,
-          "shares_bid": null,
+          "times": 58.54,
+          "shares_offered": 2116000.0,
+          "shares_bid": 123872800.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 179.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 800.0,
         "net_qib_shares": 604800.0,
-        "qib_times": null,
+        "qib_times": 41.92,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 170.0,
+      "price_band_high": 179.0,
+      "open_date": "2026-10-15",
+      "close_date": "2026-10-19",
+      "listing_date": "2026-10-23",
+      "lot_size": 800.0,
+      "allotment_date": "2026-10-21",
+      "site_status": "listed",
+      "anchor_shares": 904800.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 41.92,
+            "nii": 86.41,
+            "bnii": 98.42,
+            "snii": 62.41,
+            "total": 58.54
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 41.92,
+          "shares_offered": 604800.0,
+          "shares_bid": 25352000.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 86.41,
+          "shares_offered": 453600.0,
+          "shares_bid": 39197600.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 98.42,
+          "shares_offered": 302400.0,
+          "shares_bid": 29761600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 62.41,
+          "shares_offered": 151200.0,
+          "shares_bid": 9436000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 58.54,
+          "shares_offered": 2116000.0,
+          "shares_bid": 123872800.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 604800.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "zetwerk-manufacturing": {
       "slug": "zetwerk-manufacturing",
@@ -885,53 +1930,141 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 99392146.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 149088220.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 4.71,
           "shares_offered": 99392146.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 468202185.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 1.45,
           "shares_offered": 49696073.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 71897067.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.74,
+          "shares_offered": 33130716.0,
+          "shares_bid": 57549987.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 0.87,
+          "shares_offered": 16565358.0,
+          "shares_bid": 14347080.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 0.76,
           "shares_offered": 33130716.0,
-          "shares_bid": null,
+          "shares_bid": 25201638.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 1.6,
           "shares_offered": 700000.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 1121472.0,
+          "label": "Employees"
         },
         "total": {
-          "times": null,
-          "shares_offered": 332007155.0,
-          "shares_bid": null,
+          "times": 3.1,
+          "shares_offered": 182918935.0,
+          "shares_bid": 566422362.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 151.0,
+        "mf_demand_shares": 135659603,
+        "lot_size": 99.0,
         "net_qib_shares": 99392146.0,
-        "qib_times": null,
+        "qib_times": 4.71,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "Mainboard",
+      "price_band_low": 143.0,
+      "price_band_high": 151.0,
+      "open_date": "2026-10-15",
+      "close_date": "2026-10-19",
+      "listing_date": "2026-10-23",
+      "lot_size": 99.0,
+      "allotment_date": "2026-10-21",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 4188.94,
+        "dii": 647.52,
+        "mf": 2048.46,
+        "others": 184.93
+      },
+      "anchor_shares": 149088220.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 4.71,
+            "nii": 1.45,
+            "bnii": 1.74,
+            "snii": 0.87,
+            "retail": 0.76,
+            "employee": 1.6,
+            "total": 3.1
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 4.71,
+          "shares_offered": 99392146.0,
+          "shares_bid": 468202185.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 1.45,
+          "shares_offered": 49696073.0,
+          "shares_bid": 71897067.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.74,
+          "shares_offered": 33130716.0,
+          "shares_bid": 57549987.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 0.87,
+          "shares_offered": 16565358.0,
+          "shares_bid": 14347080.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 0.76,
+          "shares_offered": 33130716.0,
+          "shares_bid": 25201638.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 1.6,
+          "shares_offered": 700000.0,
+          "shares_bid": 1121472.0,
+          "label": "Employees"
+        },
+        "total": {
+          "times": 3.1,
+          "shares_offered": 182918935.0,
+          "shares_bid": 566422362.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 99392146.0,
+      "final_qib_split_cr": {
+        "fii": 4188.94,
+        "dii": 647.52,
+        "mf": 2048.46,
+        "others": 184.93
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "tonbo-imaging-india": {
       "slug": "tonbo-imaging-india",
@@ -946,53 +2079,141 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 2432010.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 3648013.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 293.56,
           "shares_offered": 2432010.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 713933115.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 170.95,
           "shares_offered": 1824007.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 311805858.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 184.73,
+          "shares_offered": 1216005.0,
+          "shares_bid": 224627487.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 143.39,
+          "shares_offered": 608002.0,
+          "shares_bid": 87178371.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 31.07,
           "shares_offered": 4256016.0,
-          "shares_bid": null,
+          "shares_bid": 132240780.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 54.35,
           "shares_offered": 14000.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 760851.0,
+          "label": "Employees"
         },
         "total": {
-          "times": null,
-          "shares_offered": 12174046.0,
-          "shares_bid": null,
+          "times": 135.91,
+          "shares_offered": 8526033.0,
+          "shares_bid": 1158740604.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 700.0,
+        "mf_demand_shares": 38859429,
+        "lot_size": 21.0,
         "net_qib_shares": 2432010.0,
-        "qib_times": null,
+        "qib_times": 293.56,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 665.0,
+      "price_band_high": 700.0,
+      "open_date": "2026-10-15",
+      "close_date": "2026-10-19",
+      "listing_date": "2026-10-23",
+      "lot_size": 21.0,
+      "allotment_date": "2026-10-21",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 12404.38,
+        "dii": 19694.49,
+        "mf": 2720.16,
+        "others": 15156.29
+      },
+      "anchor_shares": 3648013.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 293.56,
+            "nii": 170.95,
+            "bnii": 184.73,
+            "snii": 143.39,
+            "retail": 31.07,
+            "employee": 54.35,
+            "total": 135.91
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 293.56,
+          "shares_offered": 2432010.0,
+          "shares_bid": 713933115.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 170.95,
+          "shares_offered": 1824007.0,
+          "shares_bid": 311805858.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 184.73,
+          "shares_offered": 1216005.0,
+          "shares_bid": 224627487.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 143.39,
+          "shares_offered": 608002.0,
+          "shares_bid": 87178371.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 31.07,
+          "shares_offered": 4256016.0,
+          "shares_bid": 132240780.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 54.35,
+          "shares_offered": 14000.0,
+          "shares_bid": 760851.0,
+          "label": "Employees"
+        },
+        "total": {
+          "times": 135.91,
+          "shares_offered": 8526033.0,
+          "shares_bid": 1158740604.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 2432010.0,
+      "final_qib_split_cr": {
+        "fii": 12404.38,
+        "dii": 19694.49,
+        "mf": 2720.16,
+        "others": 15156.29
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "sahajanand-medical-technologies": {
       "slug": "sahajanand-medical-technologies",
@@ -1007,53 +2228,141 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 2714424.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 4071634.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 34.7,
           "shares_offered": 2714424.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 94179804.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 14.64,
           "shares_offered": 2035817.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 29812072.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 16.37,
+          "shares_offered": 1357212.0,
+          "shares_bid": 22212725.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 11.2,
+          "shares_offered": 678606.0,
+          "shares_bid": 7599347.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 3.04,
           "shares_offered": 4750241.0,
-          "shares_bid": null,
+          "shares_bid": 14431531.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 0.37,
           "shares_offered": 250000.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 92880.0,
+          "label": "Employees"
         },
         "total": {
-          "times": null,
-          "shares_offered": 13822116.0,
-          "shares_bid": null,
+          "times": 14.21,
+          "shares_offered": 9750482.0,
+          "shares_bid": 138516287.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 344.0,
+        "mf_demand_shares": 17203488,
+        "lot_size": 43.0,
         "net_qib_shares": 2714424.0,
-        "qib_times": null,
+        "qib_times": 34.7,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 327.0,
+      "price_band_high": 344.0,
+      "open_date": "2026-10-15",
+      "close_date": "2026-10-19",
+      "listing_date": "2026-10-23",
+      "lot_size": 43.0,
+      "allotment_date": "2026-10-21",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 1113.85,
+        "dii": 1001.94,
+        "mf": 591.8,
+        "others": 532.2
+      },
+      "anchor_shares": 4071634.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 34.7,
+            "nii": 14.64,
+            "bnii": 16.37,
+            "snii": 11.2,
+            "retail": 3.04,
+            "employee": 0.37,
+            "total": 14.21
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 34.7,
+          "shares_offered": 2714424.0,
+          "shares_bid": 94179804.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 14.64,
+          "shares_offered": 2035817.0,
+          "shares_bid": 29812072.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 16.37,
+          "shares_offered": 1357212.0,
+          "shares_bid": 22212725.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 11.2,
+          "shares_offered": 678606.0,
+          "shares_bid": 7599347.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 3.04,
+          "shares_offered": 4750241.0,
+          "shares_bid": 14431531.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 0.37,
+          "shares_offered": 250000.0,
+          "shares_bid": 92880.0,
+          "label": "Employees"
+        },
+        "total": {
+          "times": 14.21,
+          "shares_offered": 9750482.0,
+          "shares_bid": 138516287.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 2714424.0,
+      "final_qib_split_cr": {
+        "fii": 1113.85,
+        "dii": 1001.94,
+        "mf": 591.8,
+        "others": 532.2
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "bonfiglioli-transmissions": {
       "slug": "bonfiglioli-transmissions",
@@ -1068,53 +2377,141 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 8637809.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 12956712.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 120.78,
           "shares_offered": 8637809.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 1043308675.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 40.4,
           "shares_offered": 6478356.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 261705075.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 46.44,
+          "shares_offered": 4318904.0,
+          "shares_bid": 200562075.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 28.31,
+          "shares_offered": 2159452.0,
+          "shares_bid": 61143000.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 5.91,
           "shares_offered": 15116165.0,
-          "shares_bid": null,
+          "shares_bid": 89271650.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 7.43,
           "shares_offered": 50000.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 371425.0,
+          "label": "Employees"
         },
         "total": {
-          "times": null,
-          "shares_offered": 43239042.0,
-          "shares_bid": null,
+          "times": 46.06,
+          "shares_offered": 30282330.0,
+          "shares_bid": 1394656825.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 586.0,
+        "mf_demand_shares": 93563993,
+        "lot_size": 25.0,
         "net_qib_shares": 8637809.0,
-        "qib_times": null,
+        "qib_times": 120.78,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 558.0,
+      "price_band_high": 586.0,
+      "open_date": "2026-10-15",
+      "close_date": "2026-10-19",
+      "listing_date": "2026-10-23",
+      "lot_size": 25.0,
+      "allotment_date": "2026-10-21",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 20615.8,
+        "dii": 26884.92,
+        "mf": 5482.85,
+        "others": 8154.32
+      },
+      "anchor_shares": 12956712.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 120.78,
+            "nii": 40.4,
+            "bnii": 46.44,
+            "snii": 28.31,
+            "retail": 5.91,
+            "employee": 7.43,
+            "total": 46.06
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 120.78,
+          "shares_offered": 8637809.0,
+          "shares_bid": 1043308675.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 40.4,
+          "shares_offered": 6478356.0,
+          "shares_bid": 261705075.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 46.44,
+          "shares_offered": 4318904.0,
+          "shares_bid": 200562075.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 28.31,
+          "shares_offered": 2159452.0,
+          "shares_bid": 61143000.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 5.91,
+          "shares_offered": 15116165.0,
+          "shares_bid": 89271650.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 7.43,
+          "shares_offered": 50000.0,
+          "shares_bid": 371425.0,
+          "label": "Employees"
+        },
+        "total": {
+          "times": 46.06,
+          "shares_offered": 30282330.0,
+          "shares_bid": 1394656825.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 8637809.0,
+      "final_qib_split_cr": {
+        "fii": 20615.8,
+        "dii": 26884.92,
+        "mf": 5482.85,
+        "others": 8154.32
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "fusion-cx": {
       "slug": "fusion-cx",
@@ -1129,47 +2526,128 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 7287197.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 10930795.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 4.21,
           "shares_offered": 7287197.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 30688026.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 4.73,
           "shares_offered": 3643598.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 17235501.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 4.72,
+          "shares_offered": 2429066.0,
+          "shares_bid": 11462913.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 4.75,
+          "shares_offered": 1214533.0,
+          "shares_bid": 5772588.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 5.99,
           "shares_offered": 2429066.0,
-          "shares_bid": null,
+          "shares_bid": 14541936.0,
           "label": "Retail"
         },
         "total": {
-          "times": null,
-          "shares_offered": 24290656.0,
-          "shares_bid": null,
+          "times": 4.68,
+          "shares_offered": 13359861.0,
+          "shares_bid": 62465463.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 289.0,
+        "mf_demand_shares": 11893426,
+        "lot_size": 51.0,
         "net_qib_shares": 7287197.0,
-        "qib_times": null,
+        "qib_times": 4.21,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 275.0,
+      "price_band_high": 289.0,
+      "open_date": "2026-10-14",
+      "close_date": "2026-10-16",
+      "listing_date": "2026-10-22",
+      "lot_size": 51.0,
+      "allotment_date": "2026-10-19",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 509.02,
+        "dii": 25.12,
+        "mf": 343.72,
+        "others": 9.02
+      },
+      "anchor_shares": 10930795.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 4.21,
+            "nii": 4.73,
+            "bnii": 4.72,
+            "snii": 4.75,
+            "retail": 5.99,
+            "total": 4.68
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 4.21,
+          "shares_offered": 7287197.0,
+          "shares_bid": 30688026.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 4.73,
+          "shares_offered": 3643598.0,
+          "shares_bid": 17235501.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 4.72,
+          "shares_offered": 2429066.0,
+          "shares_bid": 11462913.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 4.75,
+          "shares_offered": 1214533.0,
+          "shares_bid": 5772588.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 5.99,
+          "shares_offered": 2429066.0,
+          "shares_bid": 14541936.0,
+          "label": "Retail"
+        },
+        "total": {
+          "times": 4.68,
+          "shares_offered": 13359861.0,
+          "shares_bid": 62465463.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 7287197.0,
+      "final_qib_split_cr": {
+        "fii": 509.02,
+        "dii": 25.12,
+        "mf": 343.72,
+        "others": 9.02
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "ravita-engineering-services": {
       "slug": "ravita-engineering-services",
@@ -1184,41 +2662,109 @@
       "exchange": "NSE SME",
       "qib_shares_offered": 1969200.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 2948400.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 13.21,
           "shares_offered": 1969200.0,
-          "shares_bid": null,
+          "shares_bid": 26012400.0,
           "label": "QIB"
         },
         "nii": {
-          "times": null,
+          "times": 5.74,
           "shares_offered": 1998000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 11473200.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 9.64,
+          "shares_offered": 982800.0,
+          "shares_bid": 9472800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.06,
+          "shares_offered": 493200.0,
+          "shares_bid": 2000400.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 10362000.0,
-          "shares_bid": null,
+          "times": 6.68,
+          "shares_offered": 7413600.0,
+          "shares_bid": 49538400.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 112.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1200.0,
         "net_qib_shares": 1969200.0,
-        "qib_times": null,
+        "qib_times": 13.21,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 105.0,
+      "price_band_high": 112.0,
+      "open_date": "2026-10-14",
+      "close_date": "2026-10-16",
+      "listing_date": "2026-10-22",
+      "lot_size": 1200.0,
+      "allotment_date": "2026-10-19",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 15.35
+      },
+      "anchor_shares": 2948400.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 13.21,
+            "nii": 5.74,
+            "bnii": 9.64,
+            "snii": 4.06,
+            "total": 6.68
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 13.21,
+          "shares_offered": 1969200.0,
+          "shares_bid": 26012400.0,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": 5.74,
+          "shares_offered": 1998000.0,
+          "shares_bid": 11473200.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 9.64,
+          "shares_offered": 982800.0,
+          "shares_bid": 9472800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.06,
+          "shares_offered": 493200.0,
+          "shares_bid": 2000400.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 6.68,
+          "shares_offered": 7413600.0,
+          "shares_bid": 49538400.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1969200.0,
+      "final_qib_split_cr": {
+        "fii": 15.35
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "vaibhav-vyapaar": {
       "slug": "vaibhav-vyapaar",
@@ -1233,41 +2779,109 @@
       "exchange": "NSE SME (Emerge)",
       "qib_shares_offered": 1494000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 2200000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 1.61,
           "shares_offered": 1494000.0,
-          "shares_bid": null,
+          "shares_bid": 2398000.0,
           "label": "QIB"
         },
         "nii": {
-          "times": null,
+          "times": 6.65,
           "shares_offered": 1116000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 7420000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 7.87,
+          "shares_offered": 744000.0,
+          "shares_bid": 5858000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.2,
+          "shares_offered": 372000.0,
+          "shares_bid": 1562000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 7796000.0,
-          "shares_bid": null,
+          "times": 3.23,
+          "shares_offered": 5206000.0,
+          "shares_bid": 16822000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 54.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 2000.0,
         "net_qib_shares": 1494000.0,
-        "qib_times": null,
+        "qib_times": 1.61,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 51.0,
+      "price_band_high": 54.0,
+      "open_date": "2026-10-13",
+      "close_date": "2026-10-15",
+      "listing_date": "2026-10-21",
+      "lot_size": 2000.0,
+      "allotment_date": "2026-10-16",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 2.0
+      },
+      "anchor_shares": 2200000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 1.61,
+            "nii": 6.65,
+            "bnii": 7.87,
+            "snii": 4.2,
+            "total": 3.23
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 1.61,
+          "shares_offered": 1494000.0,
+          "shares_bid": 2398000.0,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": 6.65,
+          "shares_offered": 1116000.0,
+          "shares_bid": 7420000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 7.87,
+          "shares_offered": 744000.0,
+          "shares_bid": 5858000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 4.2,
+          "shares_offered": 372000.0,
+          "shares_bid": 1562000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 3.23,
+          "shares_offered": 5206000.0,
+          "shares_bid": 16822000.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1494000.0,
+      "final_qib_split_cr": {
+        "fii": 2.0
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "hd-fire-protect": {
       "slug": "hd-fire-protect",
@@ -1282,53 +2896,141 @@
       "exchange": "NSE,BSE",
       "qib_shares_offered": 5242673.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 7864008.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 256.65,
           "shares_offered": 5242673.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 1345542605.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 203.21,
           "shares_offered": 3932004.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 799003480.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 236.17,
+          "shares_offered": 2621336.0,
+          "shares_bid": 619076590.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 137.28,
+          "shares_offered": 1310668.0,
+          "shares_bid": 179926890.0,
+          "label": "HNIs 2+"
         },
         "retail": {
-          "times": null,
+          "times": 30.49,
           "shares_offered": 9174677.0,
-          "shares_bid": null,
+          "shares_bid": 279771855.0,
           "label": "Retail"
         },
         "employee": {
-          "times": null,
+          "times": 23.61,
           "shares_offered": 71138.0,
-          "shares_bid": null,
-          "label": "Employee"
+          "shares_bid": 1679755.0,
+          "label": "Employees"
         },
         "total": {
-          "times": null,
-          "shares_offered": 26284500.0,
-          "shares_bid": null,
+          "times": 131.7,
+          "shares_offered": 18420492.0,
+          "shares_bid": 2425997695.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
-        "mf_demand_shares": null,
-        "lot_size": null,
+        "issue_price": 271.0,
+        "mf_demand_shares": 69829151,
+        "lot_size": 55.0,
         "net_qib_shares": 5242673.0,
-        "qib_times": null,
+        "qib_times": 256.65,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "MAINBOARD",
+      "price_band_low": 258.0,
+      "price_band_high": 271.0,
+      "open_date": "2026-10-13",
+      "close_date": "2026-10-15",
+      "listing_date": "2026-10-21",
+      "lot_size": 55.0,
+      "allotment_date": "2026-10-16",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 6601.17,
+        "dii": 17284.25,
+        "mf": 1892.37,
+        "others": 10686.42
+      },
+      "anchor_shares": 7864008.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 256.65,
+            "nii": 203.21,
+            "bnii": 236.17,
+            "snii": 137.28,
+            "retail": 30.49,
+            "employee": 23.61,
+            "total": 131.7
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 256.65,
+          "shares_offered": 5242673.0,
+          "shares_bid": 1345542605.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 203.21,
+          "shares_offered": 3932004.0,
+          "shares_bid": 799003480.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 236.17,
+          "shares_offered": 2621336.0,
+          "shares_bid": 619076590.0,
+          "label": "HNIs 10+"
+        },
+        "snii": {
+          "times": 137.28,
+          "shares_offered": 1310668.0,
+          "shares_bid": 179926890.0,
+          "label": "HNIs 2+"
+        },
+        "retail": {
+          "times": 30.49,
+          "shares_offered": 9174677.0,
+          "shares_bid": 279771855.0,
+          "label": "Retail"
+        },
+        "employee": {
+          "times": 23.61,
+          "shares_offered": 71138.0,
+          "shares_bid": 1679755.0,
+          "label": "Employees"
+        },
+        "total": {
+          "times": 131.7,
+          "shares_offered": 18420492.0,
+          "shares_bid": 2425997695.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 5242673.0,
+      "final_qib_split_cr": {
+        "fii": 6601.17,
+        "dii": 17284.25,
+        "mf": 1892.37,
+        "others": 10686.42
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "r-k-fashion-accessories": {
       "slug": "r-k-fashion-accessories",
@@ -1344,34 +3046,107 @@
       "qib_shares_offered": 43200.0,
       "subscription": {
         "qib": {
-          "times": null,
+          "times": 14.11,
           "shares_offered": 43200.0,
-          "shares_bid": null,
+          "shares_bid": 609600.0,
           "label": "QIB"
         },
         "nii": {
-          "times": null,
+          "times": 1.91,
           "shares_offered": 1606400.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 3062400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.97,
+          "shares_offered": 1070400.0,
+          "shares_bid": 2105600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 1.79,
+          "shares_offered": 536000.0,
+          "shares_bid": 956800.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 4267200.0,
-          "shares_bid": null,
+          "times": 2.75,
+          "shares_offered": 4052800.0,
+          "shares_bid": 11150400.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 82.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1600.0,
         "net_qib_shares": 43200.0,
-        "qib_times": null,
+        "qib_times": 14.11,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "NSE SME",
+      "price_band_low": 77.0,
+      "price_band_high": 82.0,
+      "open_date": "2026-10-05",
+      "close_date": "2026-10-07",
+      "listing_date": "2026-10-12",
+      "lot_size": 1600.0,
+      "allotment_date": "2026-10-08",
+      "site_status": "listed",
+      "qib_split_cr": {
+        "fii": 0.0
+      },
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 14.11,
+            "nii": 1.91,
+            "bnii": 1.97,
+            "snii": 1.79,
+            "total": 2.75
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 14.11,
+          "shares_offered": 43200.0,
+          "shares_bid": 609600.0,
+          "label": "QIB"
+        },
+        "nii": {
+          "times": 1.91,
+          "shares_offered": 1606400.0,
+          "shares_bid": 3062400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 1.97,
+          "shares_offered": 1070400.0,
+          "shares_bid": 2105600.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 1.79,
+          "shares_offered": 536000.0,
+          "shares_bid": 956800.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 2.75,
+          "shares_offered": 4052800.0,
+          "shares_bid": 11150400.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 43200.0,
+      "final_qib_split_cr": {
+        "fii": 0.0
+      },
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "tna-solutions": {
       "slug": "tna-solutions",
@@ -1386,41 +3161,104 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 1026000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1536000.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 35.64,
           "shares_offered": 1026000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 36566000.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 102.14,
           "shares_offered": 774000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 79056000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 114.91,
+          "shares_offered": 516000.0,
+          "shares_bid": 59296000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 76.59,
+          "shares_offered": 258000.0,
+          "shares_bid": 19760000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 5408000.0,
-          "shares_bid": null,
+          "times": 55.2,
+          "shares_offered": 3600000.0,
+          "shares_bid": 198722000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 70.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 2000.0,
         "net_qib_shares": 1026000.0,
-        "qib_times": null,
+        "qib_times": 35.64,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 66.0,
+      "price_band_high": 70.0,
+      "open_date": "2026-09-30",
+      "close_date": "2026-10-06",
+      "listing_date": "2026-10-09",
+      "lot_size": 2000.0,
+      "allotment_date": "2026-10-07",
+      "site_status": "listed",
+      "anchor_shares": 1536000.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 35.64,
+            "nii": 102.14,
+            "bnii": 114.91,
+            "snii": 76.59,
+            "total": 55.2
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 35.64,
+          "shares_offered": 1026000.0,
+          "shares_bid": 36566000.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 102.14,
+          "shares_offered": 774000.0,
+          "shares_bid": 79056000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 114.91,
+          "shares_offered": 516000.0,
+          "shares_bid": 59296000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 76.59,
+          "shares_offered": 258000.0,
+          "shares_bid": 19760000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 55.2,
+          "shares_offered": 3600000.0,
+          "shares_bid": 198722000.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1026000.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "acme-india-industries": {
       "slug": "acme-india-industries",
@@ -1435,41 +3273,104 @@
       "exchange": "BSE SME",
       "qib_shares_offered": 1179000.0,
       "subscription": {
-        "anchor": {
-          "times": null,
-          "shares_offered": 1765800.0,
-          "shares_bid": null,
-          "label": "Anchor"
-        },
         "qib": {
-          "times": null,
+          "times": 137.93,
           "shares_offered": 1179000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 162623400.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 196.27,
           "shares_offered": 885600.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 173816400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 240.93,
+          "shares_offered": 590400.0,
+          "shares_bid": 142246800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 106.94,
+          "shares_offered": 295200.0,
+          "shares_bid": 31569600.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 6208800.0,
-          "shares_bid": null,
+          "times": 124.23,
+          "shares_offered": 4128600.0,
+          "shares_bid": 512911800.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 196.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 600.0,
         "net_qib_shares": 1179000.0,
-        "qib_times": null,
+        "qib_times": 137.93,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 186.0,
+      "price_band_high": 196.0,
+      "open_date": "2026-09-30",
+      "close_date": "2026-10-06",
+      "listing_date": "2026-10-09",
+      "lot_size": 600.0,
+      "allotment_date": "2026-10-07",
+      "site_status": "listed",
+      "anchor_shares": 1765800.0,
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 137.93,
+            "nii": 196.27,
+            "bnii": 240.93,
+            "snii": 106.94,
+            "total": 124.23
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 137.93,
+          "shares_offered": 1179000.0,
+          "shares_bid": 162623400.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 196.27,
+          "shares_offered": 885600.0,
+          "shares_bid": 173816400.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 240.93,
+          "shares_offered": 590400.0,
+          "shares_bid": 142246800.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 106.94,
+          "shares_offered": 295200.0,
+          "shares_bid": 31569600.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 124.23,
+          "shares_offered": 4128600.0,
+          "shares_bid": 512911800.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 1179000.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30"
     },
     "paramount-syntex": {
       "slug": "paramount-syntex",
@@ -1485,34 +3386,102 @@
       "qib_shares_offered": 66000.0,
       "subscription": {
         "qib": {
-          "times": null,
+          "times": 119.29,
           "shares_offered": 66000.0,
-          "shares_bid": null,
-          "label": "QIB"
+          "shares_bid": 7873000.0,
+          "label": "QIBs"
         },
         "nii": {
-          "times": null,
+          "times": 0.09,
           "shares_offered": 3015000.0,
-          "shares_bid": null,
-          "label": "HNI"
+          "shares_bid": 274000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.03,
+          "shares_offered": 2010000.0,
+          "shares_bid": 59000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.21,
+          "shares_offered": 1005000.0,
+          "shares_bid": 215000.0,
+          "label": "sHNI"
         },
         "total": {
-          "times": null,
-          "shares_offered": 6440000.0,
-          "shares_bid": null,
+          "times": 1.88,
+          "shares_offered": 6117000.0,
+          "shares_bid": 11491000.0,
           "label": "Total"
         }
       },
-      "last_seen": "2026-10-31T14:27+05:30",
-      "status": "unknown",
+      "last_seen": "2026-10-31T14:40+05:30",
+      "status": "listed",
       "effective": {
-        "issue_price": null,
+        "issue_price": 127.0,
         "mf_demand_shares": null,
-        "lot_size": null,
+        "lot_size": 1000.0,
         "net_qib_shares": 66000.0,
-        "qib_times": null,
+        "qib_times": 119.29,
         "listing_price": null
-      }
+      },
+      "exchange_tag": "BSE SME",
+      "price_band_low": 119.0,
+      "price_band_high": 127.0,
+      "open_date": "2026-09-30",
+      "close_date": "2026-10-06",
+      "listing_date": "2026-10-09",
+      "lot_size": 1000.0,
+      "allotment_date": "2026-10-07",
+      "site_status": "listed",
+      "subscription_history": [
+        {
+          "at": "2026-10-31T14:40+05:30",
+          "times": {
+            "qib": 119.29,
+            "nii": 0.09,
+            "bnii": 0.03,
+            "snii": 0.21,
+            "total": 1.88
+          }
+        }
+      ],
+      "final_subscription": {
+        "qib": {
+          "times": 119.29,
+          "shares_offered": 66000.0,
+          "shares_bid": 7873000.0,
+          "label": "QIBs"
+        },
+        "nii": {
+          "times": 0.09,
+          "shares_offered": 3015000.0,
+          "shares_bid": 274000.0,
+          "label": "HNIs"
+        },
+        "bnii": {
+          "times": 0.03,
+          "shares_offered": 2010000.0,
+          "shares_bid": 59000.0,
+          "label": "bHNI"
+        },
+        "snii": {
+          "times": 0.21,
+          "shares_offered": 1005000.0,
+          "shares_bid": 215000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 1.88,
+          "shares_offered": 6117000.0,
+          "shares_bid": 11491000.0,
+          "label": "Total"
+        }
+      },
+      "final_net_qib_shares": 66000.0,
+      "final_qib_split_cr": null,
+      "final_captured_at": "2026-10-31T14:40+05:30"
     }
   }
 }
