@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T14:54+05:30",
+  "updated": "2026-10-31T15:06+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "ipos": {
     "hgs-india": {
@@ -54,7 +54,8 @@
         "lot_size": 1200.0,
         "net_qib_shares": 547200.0,
         "qib_times": 4.41,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 114.0,
@@ -140,7 +141,8 @@
         "lot_size": 800.0,
         "net_qib_shares": 683200.0,
         "qib_times": 0.0,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 150.0,
@@ -226,7 +228,8 @@
         "lot_size": 600.0,
         "net_qib_shares": 531000.0,
         "qib_times": 0.0,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 190.0,
@@ -309,7 +312,8 @@
         "lot_size": 1200.0,
         "net_qib_shares": 960000.0,
         "qib_times": 1.42,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 99.0,
@@ -392,7 +396,8 @@
         "lot_size": 2000.0,
         "net_qib_shares": 36000.0,
         "qib_times": 66.72,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 63.0,
@@ -480,7 +485,8 @@
         "lot_size": 182.0,
         "net_qib_shares": 11162012.0,
         "qib_times": 2.82,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 78.0,
@@ -536,7 +542,8 @@
         "lot_size": 1200.0,
         "net_qib_shares": null,
         "qib_times": null,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 88.0,
@@ -573,7 +580,8 @@
         "lot_size": 600.0,
         "net_qib_shares": null,
         "qib_times": null,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 203.0,
@@ -643,7 +651,8 @@
         "lot_size": 1600.0,
         "net_qib_shares": 668800.0,
         "qib_times": 26.33,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 76.0,
@@ -701,7 +710,7 @@
       },
       "final_net_qib_shares": 668800.0,
       "final_qib_split_cr": null,
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -767,7 +776,8 @@
         "lot_size": 91.0,
         "net_qib_shares": 3400000.0,
         "qib_times": 1.84,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 153.0,
@@ -843,7 +853,7 @@
         "mf": 0.02,
         "others": 55.4
       },
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -909,7 +919,8 @@
         "lot_size": 45.0,
         "net_qib_shares": 4045642.0,
         "qib_times": 18.81,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 313.0,
@@ -985,7 +996,7 @@
         "mf": 806.0,
         "others": 960.11
       },
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -1051,7 +1062,8 @@
         "lot_size": 100.0,
         "net_qib_shares": 3400000.0,
         "qib_times": 200.25,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 142.0,
@@ -1127,7 +1139,7 @@
         "mf": 60.54,
         "others": 4243.54
       },
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -1187,7 +1199,8 @@
         "lot_size": 600.0,
         "net_qib_shares": 1225800.0,
         "qib_times": 2.24,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 194.0,
@@ -1245,7 +1258,7 @@
       },
       "final_net_qib_shares": 1225800.0,
       "final_qib_split_cr": null,
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -1311,7 +1324,8 @@
         "lot_size": 9.0,
         "net_qib_shares": 1441443.0,
         "qib_times": 13.8,
-        "listing_price": null
+        "listing_price": null,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 1585.0,
@@ -1387,7 +1401,7 @@
         "mf": 2267.0,
         "others": 218.45
       },
-      "final_captured_at": "2026-10-31T14:54+05:30",
+      "final_captured_at": "2026-10-31T15:06+05:30",
       "gmp_history": [
         {
           "at": "2026-10-31T14:40+05:30",
@@ -1447,7 +1461,8 @@
         "lot_size": 1200.0,
         "net_qib_shares": 1040400.0,
         "qib_times": 5.06,
-        "listing_price": 74.4
+        "listing_price": 74.4,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 88.0,
@@ -1585,7 +1600,8 @@
         "lot_size": 12.0,
         "net_qib_shares": 49007828.0,
         "qib_times": 70.55,
-        "listing_price": 1358.0
+        "listing_price": 1358.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "Mainboard",
       "price_band_low": 1065.0,
@@ -1743,7 +1759,8 @@
         "lot_size": 21.0,
         "net_qib_shares": 6277056.0,
         "qib_times": 3.25,
-        "listing_price": 720.0
+        "listing_price": 720.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 660.0,
@@ -1881,7 +1898,8 @@
         "lot_size": 800.0,
         "net_qib_shares": 604800.0,
         "qib_times": 41.92,
-        "listing_price": 179.0
+        "listing_price": 179.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 170.0,
@@ -2012,7 +2030,8 @@
         "lot_size": 99.0,
         "net_qib_shares": 99392146.0,
         "qib_times": 4.71,
-        "listing_price": 159.25
+        "listing_price": 159.25,
+        "valid_demand_shares": null
       },
       "exchange_tag": "Mainboard",
       "price_band_low": 143.0,
@@ -2169,7 +2188,8 @@
         "lot_size": 21.0,
         "net_qib_shares": 2432010.0,
         "qib_times": 293.56,
-        "listing_price": 1160.0
+        "listing_price": 1160.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 665.0,
@@ -2326,7 +2346,8 @@
         "lot_size": 43.0,
         "net_qib_shares": 2714424.0,
         "qib_times": 34.7,
-        "listing_price": 371.15
+        "listing_price": 371.15,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 327.0,
@@ -2483,7 +2504,8 @@
         "lot_size": 25.0,
         "net_qib_shares": 8637809.0,
         "qib_times": 120.78,
-        "listing_price": 586.0
+        "listing_price": 586.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 558.0,
@@ -2634,7 +2656,8 @@
         "lot_size": 51.0,
         "net_qib_shares": 7287197.0,
         "qib_times": 4.21,
-        "listing_price": 305.0
+        "listing_price": 305.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 275.0,
@@ -2772,7 +2795,8 @@
         "lot_size": 1200.0,
         "net_qib_shares": 1969200.0,
         "qib_times": 13.21,
-        "listing_price": 112.0
+        "listing_price": 112.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 105.0,
@@ -2896,7 +2920,8 @@
         "lot_size": 2000.0,
         "net_qib_shares": 1494000.0,
         "qib_times": 1.61,
-        "listing_price": 52.9
+        "listing_price": 52.9,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 51.0,
@@ -3032,7 +3057,8 @@
         "lot_size": 55.0,
         "net_qib_shares": 5242673.0,
         "qib_times": 256.65,
-        "listing_price": 335.0
+        "listing_price": 335.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "MAINBOARD",
       "price_band_low": 258.0,
@@ -3177,7 +3203,8 @@
         "lot_size": 1600.0,
         "net_qib_shares": 43200.0,
         "qib_times": 14.11,
-        "listing_price": 80.0
+        "listing_price": 80.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "NSE SME",
       "price_band_low": 77.0,
@@ -3300,7 +3327,8 @@
         "lot_size": 2000.0,
         "net_qib_shares": 1026000.0,
         "qib_times": 35.64,
-        "listing_price": 56.0
+        "listing_price": 56.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 66.0,
@@ -3420,7 +3448,8 @@
         "lot_size": 600.0,
         "net_qib_shares": 1179000.0,
         "qib_times": 137.93,
-        "listing_price": 221.0
+        "listing_price": 221.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 186.0,
@@ -3539,7 +3568,8 @@
         "lot_size": 1000.0,
         "net_qib_shares": 66000.0,
         "qib_times": 119.29,
-        "listing_price": 115.0
+        "listing_price": 115.0,
+        "valid_demand_shares": null
       },
       "exchange_tag": "BSE SME",
       "price_band_low": 119.0,

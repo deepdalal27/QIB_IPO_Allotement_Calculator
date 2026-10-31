@@ -41,20 +41,24 @@ export function bidFromAmount({ amount, price, lotSize }) {
  * @param {boolean} [p.isMutualFund=false]
  * @param {'share'|'lot'} [p.rounding='share']  round down to whole shares or whole lots
  * @param {number} [p.haircut=1]          empirical calibration factor (from your past allotments)
+ * @param {number|null} [p.validDemandShares] EXACT MODE: final valid QIB demand in shares from the
+ *        registrar's Basis of Allotment. Live exchange figures include bids later rejected during
+ *        reconciliation, so this is usually slightly lower than times × N (BLS Polymers: about 0.5% lower).
  */
 export function qibAllotment(p) {
   const {
     bidShares, netQibShares: N, subscriptionTimes, lotSize = 1,
     mfReservePct = DEFAULT_MF_RESERVE_PCT, mfDemandShares = null,
-    isMutualFund = false, rounding = 'share', haircut = 1,
+    isMutualFund = false, rounding = 'share', haircut = 1, validDemandShares = null,
   } = p;
   const warnings = [];
-  if (!(bidShares > 0) || !(N > 0) || !(subscriptionTimes > 0)) {
+  const exact = validDemandShares > 0;
+  if (!(bidShares > 0) || !(N > 0) || !(subscriptionTimes > 0 || exact)) {
     return { allottedShares: 0, allottedLots: 0, ratio: 0, naiveShares: 0, warnings: ['Missing inputs'] };
   }
   if (bidShares > N) warnings.push('A QIB bid cannot be larger than the net QIB portion.');
 
-  const D = subscriptionTimes * N;                       // total valid QIB demand (shares)
+  const D = exact ? validDemandShares : subscriptionTimes * N;   // total valid QIB demand (shares)
   const M = Math.floor((N * mfReservePct) / 100);        // MF-only reserve
   const G = N - M;                                       // general QIB pool
   const Dmf = mfDemandShares == null ? Infinity : Math.max(0, mfDemandShares);
@@ -77,11 +81,11 @@ export function qibAllotment(p) {
   } else {
     raw = bidShares * generalRatio;
   }
-  raw *= haircut;
+  if (!exact) raw *= haircut;                            // calibration only when demand is estimated
 
   const unit = rounding === 'lot' ? lotSize : 1;
   const allottedShares = Math.min(bidShares, Math.floor(raw / unit + 1e-9) * unit);
-  const naiveShares = Math.floor(bidShares / Math.max(subscriptionTimes, 1));
+  const naiveShares = Math.floor(bidShares / Math.max(exact ? D / N : subscriptionTimes, 1));
 
   return {
     allottedShares,
@@ -91,6 +95,7 @@ export function qibAllotment(p) {
     rawShares: raw,
     naiveShares,
     shortfallVsNaive: naiveShares - allottedShares,
+    exact,
     breakdown: { N, D, mfReserve: M, generalPool: G, mfFromReserve: Number.isFinite(mfFromReserve) ? mfFromReserve : M, poolSupply, poolDemand },
     warnings,
   };

@@ -154,6 +154,8 @@ def effective(rec):
         "net_qib_shares": rec.get("override_net_qib_shares") or rec.get("final_net_qib_shares") or rec.get("qib_shares_offered"),
         "qib_times": rec.get("override_qib_times") or (sub.get("qib") or {}).get("times"),
         "listing_price": rec.get("override_listing_price") or rec.get("listing_price"),
+        # final valid QIB demand (shares) from the registrar's Basis of Allotment -> exact allotment
+        "valid_demand_shares": rec.get("override_valid_demand_shares"),
     }
 
 
@@ -191,7 +193,8 @@ def apply_overrides(db):
             continue
         rec = db.setdefault(slug, {"slug": slug, "name": ov.get("name", slug), "sources": ["manual"]})
         for k, v in ov.items():
-            if k in ("issue_price", "lot_size", "net_qib_shares", "qib_times", "listing_price", "mf_demand_shares"):
+            if k in ("issue_price", "lot_size", "net_qib_shares", "qib_times", "listing_price", "mf_demand_shares",
+                     "valid_demand_shares"):
                 rec[f"override_{k}"] = v
             else:
                 rec[k] = v
@@ -213,7 +216,8 @@ def enrich_applications(db):
             r = qib_allotment(bid, e["net_qib_shares"], e["qib_times"], lot_size=lot,
                               is_mutual_fund=a.get("is_mutual_fund", False),
                               mf_demand_shares=a.get("mf_demand_shares") or e["mf_demand_shares"],
-                              rounding=a.get("rounding", "share"))
+                              rounding=a.get("rounding", "share"),
+                              valid_demand_shares=e["valid_demand_shares"])
             a["predicted_allotted_shares"] = r["allotted_shares"]
             a["naive_allotted_shares"] = r["naive_shares"]
             a["used_qib_times"] = e["qib_times"]

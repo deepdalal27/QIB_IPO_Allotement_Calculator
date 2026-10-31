@@ -12,11 +12,13 @@ DEFAULT_MF_RESERVE_PCT = 5
 
 def qib_allotment(bid_shares, net_qib_shares, subscription_times, lot_size=1,
                   mf_reserve_pct=DEFAULT_MF_RESERVE_PCT, mf_demand_shares=None,
-                  is_mutual_fund=False, rounding="share", haircut=1.0):
+                  is_mutual_fund=False, rounding="share", haircut=1.0, valid_demand_shares=None):
+    """valid_demand_shares: EXACT MODE. Final valid QIB demand (shares) from the Basis of Allotment."""
     N = net_qib_shares
-    if not bid_shares or not N or not subscription_times or bid_shares <= 0 or N <= 0 or subscription_times <= 0:
+    exact = bool(valid_demand_shares and valid_demand_shares > 0)
+    if not bid_shares or not N or bid_shares <= 0 or N <= 0 or not (exact or (subscription_times or 0) > 0):
         return {"allotted_shares": 0, "ratio": 0.0, "naive_shares": 0}
-    D = subscription_times * N
+    D = valid_demand_shares if exact else subscription_times * N
     M = math.floor(N * mf_reserve_pct / 100)
     G = N - M
     Dmf = math.inf if mf_demand_shares is None else max(0, mf_demand_shares)
@@ -30,7 +32,8 @@ def qib_allotment(bid_shares, net_qib_shares, subscription_times, lot_size=1,
         raw = from_reserve + (bid_shares - from_reserve) * general_ratio
     else:
         raw = bid_shares * general_ratio
-    raw *= haircut
+    if not exact:
+        raw *= haircut
 
     unit = lot_size if rounding == "lot" else 1
     allotted = min(bid_shares, math.floor(raw / unit + 1e-9) * unit)
@@ -38,7 +41,8 @@ def qib_allotment(bid_shares, net_qib_shares, subscription_times, lot_size=1,
         "allotted_shares": int(allotted),
         "ratio": allotted / bid_shares,
         "general_ratio": general_ratio,
-        "naive_shares": math.floor(bid_shares / max(subscription_times, 1)),
+        "naive_shares": math.floor(bid_shares / max(D / N if exact else subscription_times, 1)),
+        "exact": exact,
     }
 
 
