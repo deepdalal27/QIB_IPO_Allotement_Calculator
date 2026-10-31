@@ -41,6 +41,7 @@
   </div>
   <select id="ipo" aria-label="Pick an IPO"><option value="">— Manual entry —</option></select>
   <span id="stamp"></span>
+  <button class="btn btn-pdf" id="pdfBtn" title="Open the print dialog. Choose “Save as PDF”.">⬇ PDF report</button>
 </div>
 
 <main>
@@ -160,6 +161,9 @@
     </div>
   </div>
 </main>
+
+<!-- Printable A4 report, filled in by buildReport(). Hidden on screen, shown only when printing. -->
+<div id="report" aria-hidden="true"></div>
 
 <footer>
   <div class="fwrap">
