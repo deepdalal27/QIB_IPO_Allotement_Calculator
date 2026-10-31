@@ -21,7 +21,11 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # Check out the latest main when the job starts, not the commit that triggered it. Runs are
+      # queued (concurrency group), so a queued run otherwise works on a stale commit and its push is rejected.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -38,4 +42,4 @@ jobs:
           git add docs/data data/applications.json
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "data: IPO update $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
-          git push
+          git push || { git pull --rebase origin main && git push; }
