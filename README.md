@@ -45,6 +45,15 @@ Live exchange demand still includes bids that are rejected during reconciliation
   and the calibration factor fixes the rest. Large, erratic gaps point to wrong inputs for that IPO.
 
 
+## PDF report
+
+The **⬇ PDF report** button in the toolbar opens the print dialog with a 2-page A4 report; choose **Save as PDF**.
+- **Page 1, at a glance:** amount applied (lots × lot size = shares), expected allotment (shares, lots, ratio), profit at current GMP
+  (or at the actual listing once listed), allotted value and refund, IPO snapshot, profit at listing, and how the allotment changes with the final QIB ×.
+- **Page 2, method and working:** the rules applied and the 12-step calculation with your numbers.
+
+The file is named `FinDeependence_QIB_Report_<IPO>_<date>.pdf` and is built in the browser from the page's current inputs.
+
 ## Setup
 
 1. Create a new **private** GitHub repo (your applications are personal) and push this folder:

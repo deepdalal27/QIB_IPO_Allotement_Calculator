@@ -221,7 +221,7 @@ function calc() {
       <td class="${sign(gmp)}">${gmp != null ? inr(x.allottedShares * gmp) : '—'}</td></tr>`;
   }).join('') : '';
   renderWorking(res, { shares, lots, lot, price, blocked, hc });
-  return { res, shares, price, lot };
+  return { res, shares, lots, price, lot, blocked, rows, gmp, hc };
 }
 
 // ------------------------------------------------------------------ method & working
@@ -273,6 +273,105 @@ function renderWorking(res, { shares, lots, lot, price, blocked, hc }) {
     + `<li class="info">${res.exact ? 'Exact mode: the result follows directly from the registrar\'s final figures.'
       : 'Estimate: live exchange demand includes bids that are later rejected, so the final valid demand is usually a little lower and your allotment a little higher. Use exact mode after the Basis of Allotment, or let the calibration factor learn the gap.'}</li>`;
 }
+
+// ------------------------------------------------------------------ printable PDF report
+function buildReport() {
+  const { res, shares, lots, price, lot, blocked, rows, gmp, hc } = calc();
+  const r = IPOS[currentSlug] || null;
+  const e = r?.effective || {};
+  const name = r?.name || 'Manual entry';
+  const seg = $('segment').value;
+  const has = shares && res.breakdown;
+  const allotted = has ? res.allottedShares : 0;
+  const allottedVal = allotted * price;
+  const mode = res.exact ? ['Exact · Basis of Allotment', 'exact'] : Math.abs((hc || 1) - 1) > 1e-9 ? [`Calibrated ×${hc.toFixed(4)}`, 'cal'] : ['Estimate · live data', 'model'];
+  const gRow = rows.find((x) => x.kind === 'gmp');
+  const aRow = rows.find((x) => x.kind === 'actual');
+  const head = aRow || gRow;
+  const tileCls = !head ? '' : head.net >= 0 ? 'profit' : 'loss';
+  const now = new Date();
+  const profitTile = head ? `<div class="rp-tile ${tileCls}"><div class="k">${aRow ? 'Profit at actual listing' : 'Profit at current GMP'}</div>
+      <div class="v">${head.net >= 0 ? '' : '−'}₹${inr(Math.abs(head.net))}</div>
+      <div class="s">${aRow ? `Listed <b>₹${inr(aRow.listingPrice, 2)}</b>` : `GMP <b>₹${inr(gmp, 2)}</b> → listing <b>₹${inr(gRow.listingPrice, 2)}</b>`}
+        · <b>${head.returnOnAllotted >= 0 ? '+' : ''}${inr(head.returnOnAllotted, 2)}%</b> on allotted<br>${inr(head.returnOnBlocked, 3)}% on amount blocked</div></div>`
+    : '<div class="rp-tile"><div class="k">Profit at current GMP</div><div class="v">—</div><div class="s">Enter a GMP to see this.</div></div>';
+  const pick = rows.filter((x) => x.kind !== 'pct');
+  const sub = r ? (r.final_subscription || r.subscription || {}) : {};
+  const fact = (k, val) => `<div class="f"><div class="k">${k}</div><div class="v">${val}</div></div>`;
+  $('report').innerHTML = `<div class="rp">
+    <div class="rp-head">
+      <img src="logo.png" alt="">
+      <div><div class="t1">FinDeependence · QIB Allotment Report</div><div class="t2">${esc(name)}</div>
+        <div class="t3">${seg === 'sme' ? 'SME' : 'Mainboard'}${r ? ` · ${esc(r.status)} · ${esc(r.exchange || r.exchange_tag || '')}` : ''}</div></div>
+      <div class="rt">Generated <b>${now.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</b><br>
+        <span class="rp-mode ${mode[1]}">${esc(mode[0])}</span></div>
+    </div>
+
+    <div class="rp-hero">
+      <div class="rp-tile"><div class="k">You applied</div><div class="v">${cr(blocked)}</div>
+        <div class="s"><b>${inr(lots)}</b> lots × ${inr(lot)} = <b>${inr(shares)}</b> shares<br>at ₹${inr(price, 2)} per share</div></div>
+      <div class="rp-tile allot"><div class="k">Expected allotment</div><div class="v">${has ? inr(allotted) : '—'} <span style="font-size:9pt">shares</span></div>
+        <div class="s"><b>${has ? inr(res.allottedLots, 2) : '—'}</b> lots · ratio <b>${has ? inr(res.ratio * 100, 4) : '—'}%</b><br>≈ 1 share per ${has && res.ratio ? inr(1 / res.ratio, 1) : '—'} bid</div></div>
+      ${profitTile}
+      <div class="rp-tile"><div class="k">Funds</div><div class="v">${cr(allottedVal)}</div>
+        <div class="s">invested in allotted shares<br>Refund <b>${cr(blocked - allottedVal)}</b></div></div>
+    </div>
+
+    ${r ? `<div class="rp-sec"><h3><span>IPO snapshot</span><span>${r.final_locked ? 'Final · locked' : r.final_subscription ? 'Final subscription' : 'Live subscription'}</span></h3>
+      <div class="rp-facts">
+        ${fact('Price band', r.price_band_low ? `₹${inr(r.price_band_low)}–${inr(r.price_band_high)}` : '—')}
+        ${fact('Issue price', e.issue_price ? `₹${inr(e.issue_price, 2)}` : '—')}
+        ${fact('Lot size', `${inr(e.lot_size)} sh`)}
+        ${fact('GMP', r.gmp != null ? `₹${inr(r.gmp, 2)}` : '—')}
+        ${fact('QIB ×', e.qib_times != null ? `${e.qib_times}×` : '—')}
+        ${fact('Total ×', sub.total?.times != null ? `${sub.total.times}×` : '—')}
+        ${fact('Net QIB (ex-anchor)', inr(e.net_qib_shares))}
+        ${fact('Anchor (excluded)', inr(r.anchor_shares))}
+        ${fact('MF demand', `${inr(e.mf_demand_shares)} sh`)}
+        ${fact('Open → Close', `${fmtDate(r.open_date).replace(/ \d{4}$/, '')} → ${fmtDate(r.close_date)}`)}
+        ${fact('Allotment', fmtDate(r.allotment_date))}
+        ${fact('Listing', fmtDate(r.listing_date))}
+      </div></div>` : ''}
+
+    <div class="rp-sec rp-cols">
+      <div><h3><span>Profit at listing</span><span>on ${inr(allotted)} shares</span></h3>
+        <table><thead><tr><th>Scenario</th><th>Listing ₹</th><th>₹/share</th><th>Net P&amp;L ₹</th><th>Return</th></tr></thead><tbody>
+        ${pick.map((x) => `<tr class="${x.kind === 'actual' ? 'hl-actual' : x.kind === 'gmp' ? 'hl' : ''}"><td>${esc(x.label)}</td><td>${inr(x.listingPrice, 2)}</td>
+          <td class="${sign(x.perShare)}">${inr(x.perShare, 2)}</td><td class="${sign(x.net)}">${inr(x.net)}</td><td class="${sign(x.net)}">${inr(x.returnOnAllotted, 2)}%</td></tr>`).join('')}
+        </tbody></table></div>
+      <div><h3><span>If final QIB × changes</span></h3>
+        <table><thead><tr><th>QIB ×</th><th>Shares</th><th>Ratio</th><th>P&amp;L at GMP ₹</th></tr></thead><tbody>${$('sens').querySelector('tbody').innerHTML}</tbody></table>
+        <p class="rp-note" style="margin-top:6px">${res.exact ? 'Exact mode: based on the registrar\'s final valid QIB demand.' : 'Estimate: live demand includes bids that are rejected later, so the final allotment is usually slightly higher.'}</p>
+      </div>
+    </div>
+
+    <div class="rp-p2"><div class="rp-mini"><img src="logo.png" alt=""><span><b>FinDeependence</b> · QIB Allotment Report · <b>${esc(name)}</b></span>
+      <span class="r">Expected allotment <b>${has ? inr(allotted) : '—'} shares</b>${head ? ` · ${aRow ? 'Listing' : 'GMP'} P&amp;L <b class="${sign(head.net)}">₹${inr(head.net)}</b>` : ''}</span></div>
+    <div class="rp-sec"><h3><span>Calculation working · method</span><span>${seg === 'sme' ? 'SME rules' : 'Mainboard rules'}</span></h3>
+      <p class="rp-note" style="margin-bottom:5px">${$('methodText').innerHTML}</p>
+      <table class="rp-work"><thead><tr><th>#</th><th>Step</th><th style="text-align:left">Formula</th><th>Value</th></tr></thead>
+        <tbody>${$('working').querySelector('tbody').innerHTML}</tbody></table>
+    </div></div>
+
+    <div class="rp-foot"><img src="logo.png" alt="" style="width:26px;height:26px;border-radius:50%">
+      <div><b>FinDeependence</b> · Freedom with Finance · Created by <b>CA Deep Dalal</b> · Data: IPO Premium${r?.sources?.[0] ? ` (${esc(r.sources[0])})` : ''} and manual overrides.
+        Allotment per SEBI ICDR Schedule XIV for QIBs. Estimates are indicative; the registrar's Basis of Allotment is final. GMP is unofficial grey-market data.
+        <b>Education only. Not investment advice.</b></div></div>
+  </div>`;
+}
+
+function printReport() {
+  buildReport();
+  const prev = document.title;
+  const name = (IPOS[currentSlug]?.name || 'Manual').replace(/[^A-Za-z0-9]+/g, '_').replace(/^_|_$/g, '');
+  document.title = `FinDeependence_QIB_Report_${name}_${new Date().toISOString().slice(0, 10)}`;
+  const restore = () => { document.title = prev; window.removeEventListener('afterprint', restore); };
+  window.addEventListener('afterprint', restore);
+  // wait for the logo images in the report to load before opening the print dialog
+  const imgs = [...$('report').querySelectorAll('img')];
+  Promise.all(imgs.map((i) => (i.complete ? 0 : new Promise((ok) => { i.onload = i.onerror = ok; })))).then(() => window.print());
+}
+$('pdfBtn').onclick = printReport;
 
 // ------------------------------------------------------------------ verify vs past allotments
 function renderVerify() {
