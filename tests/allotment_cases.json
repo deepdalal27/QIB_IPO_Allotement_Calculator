@@ -1,20 +1,99 @@
 [
-  {"name": "oversubscribed, non-MF, MF demand unknown",
-   "in": {"bid_shares": 100000, "net_qib_shares": 1000000, "subscription_times": 100},
-   "out": {"allotted_shares": 950}},
-  {"name": "MF demand below reserve: unused reserve rolls into pool",
-   "in": {"bid_shares": 100000, "net_qib_shares": 1000000, "subscription_times": 100, "mf_demand_shares": 20000},
-   "out": {"allotted_shares": 980}},
-  {"name": "undersubscribed gets full allotment",
-   "in": {"bid_shares": 5000, "net_qib_shares": 1000000, "subscription_times": 0.8},
-   "out": {"allotted_shares": 5000}},
-  {"name": "mutual fund bidder gets reserve share plus pool share",
-   "in": {"bid_shares": 100000, "net_qib_shares": 1000000, "subscription_times": 100, "mf_demand_shares": 10000000, "is_mutual_fund": true},
-   "out": {"allotted_shares": 1445}},
-  {"name": "round down to lots",
-   "in": {"bid_shares": 100000, "net_qib_shares": 1000000, "subscription_times": 100, "lot_size": 140, "rounding": "lot"},
-   "out": {"allotted_shares": 840}},
-  {"name": "calibration haircut",
-   "in": {"bid_shares": 100000, "net_qib_shares": 1000000, "subscription_times": 100, "haircut": 0.9},
-   "out": {"allotted_shares": 855}}
+ {
+  "name": "oversubscribed, non-MF, MF demand unknown",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100
+  },
+  "out": {
+   "allotted_shares": 950
+  }
+ },
+ {
+  "name": "MF demand below reserve: unused reserve rolls into pool",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "mf_demand_shares": 20000
+  },
+  "out": {
+   "allotted_shares": 980
+  }
+ },
+ {
+  "name": "undersubscribed gets full allotment",
+  "in": {
+   "bid_shares": 5000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 0.8
+  },
+  "out": {
+   "allotted_shares": 5000
+  }
+ },
+ {
+  "name": "mutual fund bidder gets reserve share plus pool share",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "mf_demand_shares": 10000000,
+   "is_mutual_fund": true
+  },
+  "out": {
+   "allotted_shares": 1445
+  }
+ },
+ {
+  "name": "round down to lots",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "lot_size": 140,
+   "rounding": "lot"
+  },
+  "out": {
+   "allotted_shares": 840
+  }
+ },
+ {
+  "name": "calibration haircut",
+  "in": {
+   "bid_shares": 100000,
+   "net_qib_shares": 1000000,
+   "subscription_times": 100,
+   "haircut": 0.9
+  },
+  "out": {
+   "allotted_shares": 855
+  }
+ },
+ {
+  "name": "REAL: BLS Polymers, live demand (model before BoA)",
+  "in": {
+   "bid_shares": 2503100,
+   "net_qib_shares": 3400000,
+   "subscription_times": 200.25,
+   "mf_demand_shares": 4036000
+  },
+  "out": {
+   "allotted_shares": 11877
+  }
+ },
+ {
+  "name": "REAL: BLS Polymers, exact mode with final valid demand = actual allotment 11,934",
+  "in": {
+   "bid_shares": 2503100,
+   "net_qib_shares": 3400000,
+   "subscription_times": 200.25,
+   "mf_demand_shares": 4036000,
+   "valid_demand_shares": 677620000
+  },
+  "out": {
+   "allotted_shares": 11934
+  }
+ }
 ]

@@ -1,4 +1,6 @@
-# IPO QIB Allotment Calculator
+# FinDeependence QIB Allotment Desk
+
+*Freedom with Finance · Created by CA Deep Dalal*
 
 Enter an amount and see your bid in lots and shares, the **expected QIB allotment under SEBI's
 proportionate basis**, and **listing P&L** at the issue price, ±₹2/5/10/20, ±% steps, the current GMP
@@ -18,6 +20,18 @@ subscription figures once an IPO lists, and adds the listing results to your sav
 
 Real example (BLS Polymers, Oct 2026): net QIB 34,00,000 shares, 200.25× subscribed, ₹5 cr bid at ₹150 = 3,33,300 shares.
 A simple proportion gives 1,664 shares; SEBI's method gives **1,581**, about 5% fewer.
+
+## Three accuracy levels
+
+| Mode | When | Inputs | BLS Polymers (₹37.55 cr bid, actual **11,934**) |
+|---|---|---|---|
+| **Model · live data** | While the issue is open or just closed | Live QIB ×, net QIB, MF demand | 11,877 |
+| **Calibrated** | Once you've recorded at least one actual allotment | Model × median(actual ÷ predicted) | 11,934 (×1.0048) |
+| **Exact · Basis of Allotment** | After the registrar publishes the BoA | Final valid QIB demand (shares) | **11,934** |
+
+Live exchange demand still includes bids that are rejected during reconciliation. For BLS Polymers the final valid demand was about 0.5% lower
+(≈67.76 cr vs 68.09 cr shares), which is why the model came in 57 shares short. Enter the final figure in the page's *Exact mode* box, or as
+`valid_demand_shares` in `data/overrides.json`.
 
 ## Setup
 
