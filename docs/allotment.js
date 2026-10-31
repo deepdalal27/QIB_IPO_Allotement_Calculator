@@ -105,30 +105,48 @@ export function qibAllotment(p) {
 }
 
 export const DEFAULT_RUPEE_STEPS = [-20, -10, -5, -2, 0, 2, 5, 10, 20];
-export const DEFAULT_PCT_STEPS = [-10, -5, 5, 10, 25, 50];
+export const DEFAULT_PCT_STEPS = [];
 
-/** Profit/loss table for listing prices around the issue price. */
+/**
+ * Profit/loss ladder. Steps are measured from the CURRENT GMP: with GMP ₹67 on a ₹150 issue the base
+ * listing price is ₹217, and "+₹5" means GMP ₹72 → listing ₹222. With no GMP, the base is the issue price.
+ * Rows come back highest listing price first, followed by a reference row at the issue price (GMP ₹0).
+ */
 export function profitScenarios({
   allottedShares, issuePrice, rupeeSteps = DEFAULT_RUPEE_STEPS, pctSteps = DEFAULT_PCT_STEPS,
   gmp = null, actualListingPrice = null, sellChargesPct = 0, amountBlocked = 0,
 }) {
-  const rows = [];
-  const add = (label, listing, kind) => {
-    if (!(listing > 0)) return;
+  const hasGmp = gmp != null && Number.isFinite(gmp);
+  const base = issuePrice + (hasGmp ? gmp : 0);
+  const make = (label, listing, kind, step = null) => {
+    if (!(listing > 0)) return null;
     const gross = allottedShares * (listing - issuePrice);
     const charges = (allottedShares * listing * sellChargesPct) / 100;
     const net = gross - charges;
-    rows.push({
-      label, kind, listingPrice: listing, perShare: listing - issuePrice, gross, charges, net,
+    return {
+      label, kind, step, listingPrice: listing, perShare: listing - issuePrice, gmpEquivalent: listing - issuePrice,
+      gross, charges, net,
       returnOnAllotted: allottedShares > 0 ? (net / (allottedShares * issuePrice)) * 100 : 0,
       returnOnBlocked: amountBlocked > 0 ? (net / amountBlocked) * 100 : 0,
-    });
+    };
   };
-  if (actualListingPrice) add('Actual listing', actualListingPrice, 'actual');
-  if (gmp != null && Number.isFinite(gmp)) add(`Current GMP (₹${gmp})`, issuePrice + gmp, 'gmp');
-  for (const s of rupeeSteps) add(s === 0 ? 'At issue price' : `${s > 0 ? '+' : '−'}₹${Math.abs(s)}`, issuePrice + s, 'rupee');
-  for (const s of pctSteps) add(`${s > 0 ? '+' : '−'}${Math.abs(s)}%`, issuePrice * (1 + s / 100), 'pct');
-  return rows;
+  const fmt = (n) => (Number.isInteger(n) ? String(n) : n.toFixed(2));
+  const ladder = [];
+  const steps = [...new Set([0, ...rupeeSteps])];
+  for (const st of steps) {
+    if (st === 0) ladder.push(make(hasGmp ? `Current GMP (₹${fmt(gmp)})` : 'At issue price', base, hasGmp ? 'gmp' : 'issue', 0));
+    else ladder.push(make(`${hasGmp ? 'GMP' : 'Issue'} ${st > 0 ? '+' : '−'}₹${fmt(Math.abs(st))}`, base + st, 'rupee', st));
+  }
+  for (const pc of pctSteps) {
+    ladder.push(make(`${hasGmp ? 'GMP listing' : 'Issue'} ${pc > 0 ? '+' : '−'}${Math.abs(pc)}%`, base * (1 + pc / 100), 'pct', pc));
+  }
+  const rows = ladder.filter(Boolean).sort((a, b) => b.listingPrice - a.listingPrice);
+  if (hasGmp && gmp !== 0 && !rows.some((r) => Math.abs(r.listingPrice - issuePrice) < 1e-9)) {
+    const ref = make('At issue price (GMP ₹0)', issuePrice, 'ref');
+    if (ref) rows.push(ref);
+  }
+  if (actualListingPrice) rows.unshift(make('Actual listing', actualListingPrice, 'actual'));
+  return rows.filter(Boolean);
 }
 
 /** Median of realised / predicted ratios from your past applications (the calibration haircut). */
