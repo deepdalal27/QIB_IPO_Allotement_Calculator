@@ -99,6 +99,7 @@ export function qibAllotment(p) {
     naiveShares,
     shortfallVsNaive: naiveShares - allottedShares,
     exact,
+    belowOneLot: unit > 1 && raw > 0 && raw < unit,       // SME: proportionate < 1 lot -> draw of lots
     breakdown: { N, D, mfReserve: M, generalPool: G, mfFromReserve: Number.isFinite(mfFromReserve) ? mfFromReserve : M, poolSupply, poolDemand },
     warnings,
   };
@@ -193,7 +194,7 @@ export const SEGMENT_RULES = {
   sme: {
     label: 'SME',
     regs: 'SEBI ICDR Regulations, 2018: Chapter IX, Reg. 253 (allocation in the net offer) and Schedule XIV (basis of allotment)',
-    rounding: 'lot',
-    roundingNote: 'SME shares trade and are allotted in market lots, so the allotment is rounded down to whole lots. Check this against one of your SME allotments.',
+    rounding: 'nearest-lot',
+    roundingNote: 'SME allotments are in market lots. Under Schedule XIV, a leftover of 50% of a lot or more rounds UP to the next lot and less than 50% rounds down. Where the proportionate allotment is below one lot, allotment is by draw of lots. Check this against one of your SME allotments.',
   },
 };

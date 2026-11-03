@@ -241,7 +241,7 @@ function calc() {
   const t = res.exact && res.breakdown ? res.breakdown.D / res.breakdown.N : v('times');
   $('sens').querySelector('tbody').innerHTML = t && shares ? [0.5, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 2].map((f) => {
     const x = qibAllotment({ ...params(shares, lot, t * f), validDemandShares: null, haircut: res.exact ? 1 : (v('haircut') ?? 1) });
-    return `<tr class="${f === 1 ? 'hl' : ''}"><td>${inr(t * f, 2)}×</td><td>${inr(x.allottedShares)}</td><td>${inr(x.ratio * 100, 4)}%</td>
+    return `<tr class="${f === 1 ? 'hl' : ''}"><td>${inr(t * f, 2)}×</td><td>${inr(x.allottedShares)}${x.belowOneLot ? ' <small title="Proportionate allotment below one lot: draw of lots">*draw</small>' : ''}</td><td>${inr(x.ratio * 100, 4)}%</td>
       <td class="${sign(gmp)}">${gmp != null ? inr(x.allottedShares * gmp) : '—'}</td></tr>`;
   }).join('') : '';
   renderWorking(res, { shares, lots, lot, price, blocked, hc });
@@ -335,11 +335,22 @@ function buildReport() {
   const bar = (n) => `<span class="rp-bar ${n < 0 ? 'neg' : ''}"><i style="width:${Math.max(1, (Math.abs(n) / maxAbs) * 100)}%"></i></span>`;
   const work = lastWork?.rows || [];
 
+  // The QIB subscription actually USED in this report (what you entered, or the final valid figure in exact mode)
+  const enteredTimes = v('times');
+  const usedTimes = res.exact && res.breakdown ? res.breakdown.D / res.breakdown.N : enteredTimes;
+  const siteTimes = e.qib_times;
+  const sameAsSite = siteTimes != null && enteredTimes != null && Math.abs(enteredTimes - siteTimes) < 1e-9;
+  const qibSrc = res.exact ? 'Final valid · Basis of Allotment'
+    : sameAsSite ? (r?.final_subscription ? 'Final · IPO Premium' : 'Live · IPO Premium') : 'Entered by you';
+  const qibNote = !res.exact && !sameAsSite && siteTimes != null ? `IPO Premium shows ${siteTimes}×` : 'Net of anchor portion';
+
   $('report').innerHTML = `<div class="rp rp-page">
     <div class="rp-head">
       <img src="logo.png" alt="">
       <div><div class="t1">FinDeependence · QIB Allotment Report</div><div class="t2">${esc(name)}</div>
         <div class="t3">${seg === 'sme' ? 'SME' : 'Mainboard'}${r ? ` · ${esc(r.status)} · ${esc(r.exchange || r.exchange_tag || '')}` : ''}${r?.listing_date ? ` · Listing ${fmtDate(r.listing_date)}` : ''}</div></div>
+      <div class="rp-qib"><div class="k">QIB subscription</div><div class="v">${usedTimes != null ? `${inr(usedTimes, 2)}×` : '—'}</div>
+        <div class="s">${esc(qibSrc)}<br>${esc(qibNote)}</div></div>
       <div class="rt">Generated <b>${now.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</b><br>
         <span class="rp-mode ${mode[1]}">${esc(mode[0])}</span></div>
     </div>
@@ -348,7 +359,7 @@ function buildReport() {
       <div class="rp-tile"><div class="k">You applied</div><div class="v">${cr(blocked)}</div>
         <div class="s"><b>${inr(lots)}</b> lots × ${inr(lot)} = <b>${inr(shares)}</b> shares<br>at ₹${inr(price, 2)} per share</div></div>
       <div class="rp-tile allot"><div class="k">Expected allotment</div><div class="v">${has ? inr(allotted) : '—'}<span class="u">shares</span></div>
-        <div class="s"><b>${has ? inr(res.allottedLots, 2) : '—'}</b> lots · ratio <b>${has ? inr(res.ratio * 100, 4) : '—'}%</b><br>≈ 1 share for every ${has && res.ratio ? inr(1 / res.ratio, 1) : '—'} bid</div></div>
+        <div class="s"><b>${has ? inr(res.allottedLots, 2) : '—'}</b> lots · ratio <b>${has ? inr(res.ratio * 100, 4) : '—'}%</b><br>≈ 1 share for every ${has && res.ratio ? inr(1 / res.ratio, 1) : '—'} bid · at <b>QIB ${usedTimes != null ? inr(usedTimes, 2) : '—'}×</b></div></div>
       ${profitTile}
       <div class="rp-tile"><div class="k">Funds</div><div class="v">${cr(allottedVal)}</div>
         <div class="s">invested in allotted shares<br>Refund <b>${cr(blocked - allottedVal)}</b></div></div>
@@ -360,7 +371,7 @@ function buildReport() {
         ${fact('Issue price', e.issue_price ? `₹${inr(e.issue_price, 2)}` : '—')}
         ${fact('Lot size', `${inr(e.lot_size)} sh`)}
         ${fact('GMP', r.gmp != null ? `₹${inr(r.gmp, 2)}${e.issue_price ? ` <small>(${inr((r.gmp / e.issue_price) * 100, 1)}%)</small>` : ''}` : '—')}
-        ${fact('QIB × (ex-anchor)', e.qib_times != null ? `${e.qib_times}×` : '—')}
+        ${fact('QIB × used (ex-anchor)', usedTimes != null ? `${inr(usedTimes, 2)}×${!sameAsSite && siteTimes != null && !res.exact ? ` <small>(site ${siteTimes}×)</small>` : ''}` : '—')}
         ${fact('Overall ×', sub.total?.times != null ? `${sub.total.times}×` : '—')}
         ${fact('Net QIB shares', inr(e.net_qib_shares))}
         ${fact('Anchor (excluded)', inr(r.anchor_shares))}

@@ -239,3 +239,11 @@ table.ft tr.ref td{color:var(--muted);font-style:italic}
 .rp-work tr.final td:last-child{font-family:inherit}
 .seg button .cnt{font-size:.68rem;opacity:.75;margin-left:2px}
 #stamp b.neg{color:var(--red)}
+.rp-head .rp-qib{margin-left:auto;background:linear-gradient(135deg,var(--green),#0e9fb4);border-radius:2.5mm;padding:2mm 4mm;text-align:center;position:relative;z-index:1;min-width:38mm}
+.rp-head .rp-qib .k{font-size:6.4pt;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#e6fffb}
+.rp-head .rp-qib .v{font-size:19pt;font-weight:800;line-height:1.1;color:#fff}
+.rp-head .rp-qib .s{font-size:6.3pt;color:#e6fffb;line-height:1.35}
+.rp-head .rp-qib + .rt{margin-left:4mm}
+.rp-head>div:nth-child(2){flex:1;min-width:0}
+.rp-head .t1{white-space:nowrap}
+.rp-head .t2{font-size:16pt}
