@@ -120,5 +120,31 @@
   "out": {
    "allotted_shares": 980
   }
+ },
+ {
+  "name": "SME nearest lot: 1.445 lots -> 1 lot",
+  "in": {
+   "bid_shares": 316000,
+   "net_qib_shares": 683200,
+   "subscription_times": 259.65,
+   "lot_size": 800,
+   "rounding": "nearest-lot"
+  },
+  "out": {
+   "allotted_shares": 800
+  }
+ },
+ {
+  "name": "SME nearest lot: 0.96 lot rounds up to 1 lot (not 0)",
+  "in": {
+   "bid_shares": 316000,
+   "net_qib_shares": 683200,
+   "subscription_times": 389.47,
+   "lot_size": 800,
+   "rounding": "nearest-lot"
+  },
+  "out": {
+   "allotted_shares": 800
+  }
  }
 ]
