@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-16T14:01+05:30",
+  "updated": "2026-11-16T17:28+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "health": {
-    "checked": "2026-11-16T14:01+05:30",
+    "checked": "2026-11-16T17:28+05:30",
     "ok": true,
     "problems": [],
     "counts": {
@@ -28,7 +28,7 @@
       "url": "https://www.ipopremium.in/view/ipo/1439/watrana-rentals-ltd",
       "is_sme": true,
       "exchange_tag": "NSE SME",
-      "gmp": 22.0,
+      "gmp": 25.0,
       "price_band_low": 232.0,
       "price_band_high": 245.0,
       "open_date": "2026-11-19",
@@ -40,7 +40,7 @@
       "site_status": "upcoming",
       "anchor_shares": 1386000.0,
       "qib_shares_offered": 936000.0,
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -58,6 +58,10 @@
         {
           "at": "2026-11-15T13:53+05:30",
           "gmp": 22.0
+        },
+        {
+          "at": "2026-11-16T17:28+05:30",
+          "gmp": 25.0
         }
       ],
       "effective": {
@@ -80,7 +84,7 @@
       "url": "https://www.ipopremium.in/view/ipo/1434/mahanadi-coalfields",
       "is_sme": false,
       "exchange_tag": "Mainboard",
-      "gmp": 5.5,
+      "gmp": 4.3,
       "price_band_low": 129.0,
       "price_band_high": 136.0,
       "open_date": "2026-11-19",
@@ -89,7 +93,7 @@
       "allotment_date": "2026-11-25",
       "exchange": "NSE,BSE",
       "site_status": "upcoming",
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -107,6 +111,10 @@
         {
           "at": "2026-11-16T14:01+05:30",
           "gmp": 5.5
+        },
+        {
+          "at": "2026-11-16T17:28+05:30",
+          "gmp": 4.3
         }
       ],
       "effective": {
@@ -260,7 +268,7 @@
       "exchange": "NSE,BSE",
       "site_status": "upcoming",
       "qib_shares_offered": 8331181.0,
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -305,7 +313,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "NSE SME (Emerge)",
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 94.0,
@@ -558,7 +566,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 120.0,
@@ -769,7 +777,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 158.0,
@@ -980,7 +988,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 200.0,
@@ -1172,7 +1180,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 105.0,
@@ -1348,7 +1356,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 66.0,
@@ -1569,7 +1577,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 82.0,
@@ -1731,7 +1739,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "BSE SME",
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 203.0,
@@ -1808,7 +1816,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 80.0,
@@ -1944,7 +1952,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 162.0,
@@ -2107,7 +2115,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 330.0,
@@ -2274,7 +2282,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 150.0,
@@ -2427,7 +2435,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 204.0,
@@ -2559,7 +2567,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1665.0,
@@ -2708,7 +2716,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 93.0,
@@ -2847,7 +2855,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1119.0,
@@ -3006,7 +3014,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 693.0,
@@ -3145,7 +3153,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 179.0,
@@ -3277,7 +3285,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 151.0,
@@ -3435,7 +3443,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 700.0,
@@ -3593,7 +3601,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 344.0,
@@ -3751,7 +3759,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 586.0,
@@ -3903,7 +3911,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 289.0,
@@ -4042,7 +4050,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 112.0,
@@ -4167,7 +4175,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 51.8,
@@ -4304,7 +4312,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 271.0,
@@ -4450,7 +4458,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-16T14:01+05:30",
+      "last_seen": "2026-11-16T17:28+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 78.0,
