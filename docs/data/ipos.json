@@ -1,12 +1,17 @@
 {
-  "updated": "2026-11-17T17:52+05:30",
+  "updated": "2026-11-18T02:46+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "health": {
-    "checked": "2026-11-17T17:52+05:30",
-    "ok": true,
-    "problems": [],
+    "checked": "2026-11-18T02:46+05:30",
+    "ok": false,
+    "problems": [
+      "Crystal Crop Protection Ltd (Tentative date): open but missing qib_times",
+      "Crystal Crop Protection Ltd (Tentative date, price ,lot): open but missing qib_times",
+      "Crystal Crop Protection Ltd: open but missing qib_times"
+    ],
     "counts": {
-      "upcoming_main": 5,
+      "open_main": 3,
+      "upcoming_main": 2,
       "upcoming_sme": 1,
       "listed_sme": 17,
       "listed_main": 13
@@ -18,6 +23,206 @@
     "refreshed_off_list": 2
   },
   "ipos": {
+    "crystal-crop-protection-tentative-date": {
+      "slug": "crystal-crop-protection-tentative-date",
+      "first_seen": "2026-11-11T13:46+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
+      ],
+      "name": "Crystal Crop Protection Ltd (Tentative date)",
+      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 19.0,
+      "price_band_low": 259.0,
+      "price_band_high": 272.0,
+      "open_date": "2026-11-18",
+      "close_date": "2026-11-20",
+      "listing_date": "2026-11-26",
+      "allotment_date": "2026-11-23",
+      "exchange": "NSE,BSE",
+      "site_status": "open",
+      "last_seen": "2026-11-12T14:16+05:30",
+      "status": "open",
+      "gmp_history": [
+        {
+          "at": "2026-11-11T13:46+05:30",
+          "gmp": 0.0
+        },
+        {
+          "at": "2026-11-13T14:11+05:30",
+          "gmp": 45.0
+        },
+        {
+          "at": "2026-11-14T00:12+05:30",
+          "gmp": 40.0
+        },
+        {
+          "at": "2026-11-14T13:27+05:30",
+          "gmp": 27.0
+        },
+        {
+          "at": "2026-11-15T13:53+05:30",
+          "gmp": 15.0
+        },
+        {
+          "at": "2026-11-16T14:01+05:30",
+          "gmp": 13.0
+        },
+        {
+          "at": "2026-11-17T17:52+05:30",
+          "gmp": 16.0
+        },
+        {
+          "at": "2026-11-18T02:46+05:30",
+          "gmp": 19.0
+        }
+      ],
+      "effective": {
+        "issue_price": 272.0,
+        "mf_demand_shares": null,
+        "lot_size": 55.0,
+        "net_qib_shares": 3332473.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "lot_size": 55.0,
+      "qib_shares_offered": 3332473.0,
+      "anchor_shares": 4998708.0
+    },
+    "crystal-crop-protection-tentative-date-price-lot": {
+      "slug": "crystal-crop-protection-tentative-date-price-lot",
+      "first_seen": "2026-11-12T17:15+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
+      ],
+      "name": "Crystal Crop Protection Ltd (Tentative date, price ,lot)",
+      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 19.0,
+      "price_band_low": 259.0,
+      "price_band_high": 272.0,
+      "open_date": "2026-11-18",
+      "close_date": "2026-11-20",
+      "listing_date": "2026-11-26",
+      "lot_size": 55.0,
+      "allotment_date": "2026-11-23",
+      "exchange": "NSE,BSE",
+      "site_status": "open",
+      "last_seen": "2026-11-13T03:24+05:30",
+      "status": "open",
+      "gmp_history": [
+        {
+          "at": "2026-11-12T17:15+05:30",
+          "gmp": 0.0
+        },
+        {
+          "at": "2026-11-13T14:11+05:30",
+          "gmp": 45.0
+        },
+        {
+          "at": "2026-11-14T00:12+05:30",
+          "gmp": 40.0
+        },
+        {
+          "at": "2026-11-14T13:27+05:30",
+          "gmp": 27.0
+        },
+        {
+          "at": "2026-11-15T13:53+05:30",
+          "gmp": 15.0
+        },
+        {
+          "at": "2026-11-16T14:01+05:30",
+          "gmp": 13.0
+        },
+        {
+          "at": "2026-11-17T17:52+05:30",
+          "gmp": 16.0
+        },
+        {
+          "at": "2026-11-18T02:46+05:30",
+          "gmp": 19.0
+        }
+      ],
+      "effective": {
+        "issue_price": 272.0,
+        "mf_demand_shares": null,
+        "lot_size": 55.0,
+        "net_qib_shares": 3332473.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "qib_shares_offered": 3332473.0,
+      "anchor_shares": 4998708.0
+    },
+    "crystal-crop-protection": {
+      "slug": "crystal-crop-protection",
+      "first_seen": "2026-11-13T14:11+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
+      ],
+      "name": "Crystal Crop Protection Ltd",
+      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 19.0,
+      "price_band_low": 259.0,
+      "price_band_high": 272.0,
+      "open_date": "2026-11-18",
+      "close_date": "2026-11-20",
+      "listing_date": "2026-11-26",
+      "lot_size": 55.0,
+      "allotment_date": "2026-11-23",
+      "exchange": "NSE,BSE",
+      "site_status": "open",
+      "qib_shares_offered": 3332473.0,
+      "last_seen": "2026-11-18T02:46+05:30",
+      "status": "open",
+      "gmp_history": [
+        {
+          "at": "2026-11-13T14:11+05:30",
+          "gmp": 45.0
+        },
+        {
+          "at": "2026-11-14T00:12+05:30",
+          "gmp": 40.0
+        },
+        {
+          "at": "2026-11-14T13:27+05:30",
+          "gmp": 27.0
+        },
+        {
+          "at": "2026-11-15T13:53+05:30",
+          "gmp": 15.0
+        },
+        {
+          "at": "2026-11-16T14:01+05:30",
+          "gmp": 13.0
+        },
+        {
+          "at": "2026-11-17T17:52+05:30",
+          "gmp": 16.0
+        },
+        {
+          "at": "2026-11-18T02:46+05:30",
+          "gmp": 19.0
+        }
+      ],
+      "effective": {
+        "issue_price": 272.0,
+        "mf_demand_shares": null,
+        "lot_size": 55.0,
+        "net_qib_shares": 3332473.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "anchor_shares": 4998708.0
+    },
     "foodlink-f-b-holdings-india-tentative-date-price-lot": {
       "slug": "foodlink-f-b-holdings-india-tentative-date-price-lot",
       "first_seen": "2026-11-17T15:11+05:30",
@@ -28,7 +233,7 @@
       "url": "https://www.ipopremium.in/view/ipo/1440/foodlink-fb-holdings",
       "is_sme": false,
       "exchange_tag": "MAINBOARD",
-      "gmp": 0.0,
+      "gmp": 15.0,
       "price_band_low": 180.0,
       "price_band_high": 191.0,
       "open_date": "2026-11-25",
@@ -38,12 +243,16 @@
       "allotment_date": "2026-11-30",
       "exchange": "NSE,BSE",
       "site_status": "upcoming",
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
           "at": "2026-11-17T15:11+05:30",
           "gmp": 0.0
+        },
+        {
+          "at": "2026-11-18T02:46+05:30",
+          "gmp": 15.0
         }
       ],
       "effective": {
@@ -78,7 +287,7 @@
       "site_status": "upcoming",
       "anchor_shares": 1386000.0,
       "qib_shares_offered": 936000.0,
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -122,7 +331,7 @@
       "url": "https://www.ipopremium.in/view/ipo/1434/mahanadi-coalfields",
       "is_sme": false,
       "exchange_tag": "Mainboard",
-      "gmp": 4.0,
+      "gmp": 3.65,
       "price_band_low": 129.0,
       "price_band_high": 136.0,
       "open_date": "2026-11-19",
@@ -131,7 +340,7 @@
       "allotment_date": "2026-11-25",
       "exchange": "NSE,BSE",
       "site_status": "upcoming",
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -161,6 +370,10 @@
         {
           "at": "2026-11-17T15:11+05:30",
           "gmp": 4.0
+        },
+        {
+          "at": "2026-11-18T02:46+05:30",
+          "gmp": 3.65
         }
       ],
       "effective": {
@@ -175,191 +388,6 @@
       "lot_size": 110.0,
       "qib_shares_offered": 281280428.0
     },
-    "crystal-crop-protection-tentative-date": {
-      "slug": "crystal-crop-protection-tentative-date",
-      "first_seen": "2026-11-11T13:46+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
-      ],
-      "name": "Crystal Crop Protection Ltd (Tentative date)",
-      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 16.0,
-      "price_band_low": 259.0,
-      "price_band_high": 272.0,
-      "open_date": "2026-11-18",
-      "close_date": "2026-11-20",
-      "listing_date": "2026-11-26",
-      "allotment_date": "2026-11-23",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-12T14:16+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-11T13:46+05:30",
-          "gmp": 0.0
-        },
-        {
-          "at": "2026-11-13T14:11+05:30",
-          "gmp": 45.0
-        },
-        {
-          "at": "2026-11-14T00:12+05:30",
-          "gmp": 40.0
-        },
-        {
-          "at": "2026-11-14T13:27+05:30",
-          "gmp": 27.0
-        },
-        {
-          "at": "2026-11-15T13:53+05:30",
-          "gmp": 15.0
-        },
-        {
-          "at": "2026-11-16T14:01+05:30",
-          "gmp": 13.0
-        },
-        {
-          "at": "2026-11-17T17:52+05:30",
-          "gmp": 16.0
-        }
-      ],
-      "effective": {
-        "issue_price": 272.0,
-        "mf_demand_shares": null,
-        "lot_size": 55.0,
-        "net_qib_shares": 8331181.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      },
-      "lot_size": 55.0,
-      "qib_shares_offered": 8331181.0
-    },
-    "crystal-crop-protection-tentative-date-price-lot": {
-      "slug": "crystal-crop-protection-tentative-date-price-lot",
-      "first_seen": "2026-11-12T17:15+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
-      ],
-      "name": "Crystal Crop Protection Ltd (Tentative date, price ,lot)",
-      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 16.0,
-      "price_band_low": 259.0,
-      "price_band_high": 272.0,
-      "open_date": "2026-11-18",
-      "close_date": "2026-11-20",
-      "listing_date": "2026-11-26",
-      "lot_size": 55.0,
-      "allotment_date": "2026-11-23",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-13T03:24+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-12T17:15+05:30",
-          "gmp": 0.0
-        },
-        {
-          "at": "2026-11-13T14:11+05:30",
-          "gmp": 45.0
-        },
-        {
-          "at": "2026-11-14T00:12+05:30",
-          "gmp": 40.0
-        },
-        {
-          "at": "2026-11-14T13:27+05:30",
-          "gmp": 27.0
-        },
-        {
-          "at": "2026-11-15T13:53+05:30",
-          "gmp": 15.0
-        },
-        {
-          "at": "2026-11-16T14:01+05:30",
-          "gmp": 13.0
-        },
-        {
-          "at": "2026-11-17T17:52+05:30",
-          "gmp": 16.0
-        }
-      ],
-      "effective": {
-        "issue_price": 272.0,
-        "mf_demand_shares": null,
-        "lot_size": 55.0,
-        "net_qib_shares": 8331181.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      },
-      "qib_shares_offered": 8331181.0
-    },
-    "crystal-crop-protection": {
-      "slug": "crystal-crop-protection",
-      "first_seen": "2026-11-13T14:11+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd"
-      ],
-      "name": "Crystal Crop Protection Ltd",
-      "url": "https://www.ipopremium.in/view/ipo/1438/crystal-crop-protection-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 16.0,
-      "price_band_low": 259.0,
-      "price_band_high": 272.0,
-      "open_date": "2026-11-18",
-      "close_date": "2026-11-20",
-      "listing_date": "2026-11-26",
-      "lot_size": 55.0,
-      "allotment_date": "2026-11-23",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "qib_shares_offered": 8331181.0,
-      "last_seen": "2026-11-17T17:52+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-13T14:11+05:30",
-          "gmp": 45.0
-        },
-        {
-          "at": "2026-11-14T00:12+05:30",
-          "gmp": 40.0
-        },
-        {
-          "at": "2026-11-14T13:27+05:30",
-          "gmp": 27.0
-        },
-        {
-          "at": "2026-11-15T13:53+05:30",
-          "gmp": 15.0
-        },
-        {
-          "at": "2026-11-16T14:01+05:30",
-          "gmp": 13.0
-        },
-        {
-          "at": "2026-11-17T17:52+05:30",
-          "gmp": 16.0
-        }
-      ],
-      "effective": {
-        "issue_price": 272.0,
-        "mf_demand_shares": null,
-        "lot_size": 55.0,
-        "net_qib_shares": 8331181.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
-    },
     "vedant-poly-fabs": {
       "slug": "vedant-poly-fabs",
       "first_seen": "2026-10-31T14:27+05:30",
@@ -371,7 +399,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "NSE SME (Emerge)",
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 94.0,
@@ -624,7 +652,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 120.0,
@@ -835,7 +863,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 158.0,
@@ -1046,7 +1074,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 200.0,
@@ -1238,7 +1266,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 105.0,
@@ -1414,7 +1442,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 66.0,
@@ -1635,7 +1663,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 82.0,
@@ -1797,7 +1825,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "BSE SME",
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 203.0,
@@ -1874,7 +1902,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 80.0,
@@ -2010,7 +2038,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 162.0,
@@ -2173,7 +2201,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 330.0,
@@ -2340,7 +2368,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 150.0,
@@ -2493,7 +2521,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 204.0,
@@ -2625,7 +2653,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1665.0,
@@ -2774,7 +2802,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 93.0,
@@ -2913,7 +2941,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1119.0,
@@ -3072,7 +3100,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 693.0,
@@ -3211,7 +3239,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 179.0,
@@ -3343,7 +3371,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 151.0,
@@ -3501,7 +3529,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 700.0,
@@ -3659,7 +3687,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 344.0,
@@ -3817,7 +3845,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 586.0,
@@ -3969,7 +3997,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 289.0,
@@ -4108,7 +4136,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 112.0,
@@ -4233,7 +4261,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 51.8,
@@ -4370,7 +4398,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-17T17:52+05:30",
+      "last_seen": "2026-11-18T02:46+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 271.0,
