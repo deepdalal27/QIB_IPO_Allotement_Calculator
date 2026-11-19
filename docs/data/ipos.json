@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-19T14:54+05:30",
+  "updated": "2026-11-19T17:33+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "health": {
-    "checked": "2026-11-19T14:54+05:30",
+    "checked": "2026-11-19T17:33+05:30",
     "ok": true,
     "problems": [],
     "counts": {
@@ -42,7 +42,7 @@
       "site_status": "open",
       "anchor_shares": 1386000.0,
       "qib_shares_offered": 936000.0,
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "open",
       "gmp_history": [
         {
@@ -95,27 +95,27 @@
           "label": "QIB"
         },
         "nii": {
-          "times": 3.29,
+          "times": 5.3,
           "shares_offered": 698400.0,
-          "shares_bid": 2299800.0,
+          "shares_bid": 3700200.0,
           "label": "HNIs"
         },
         "bnii": {
-          "times": 3.72,
+          "times": 6.14,
           "shares_offered": 465600.0,
-          "shares_bid": 1729800.0,
+          "shares_bid": 2859600.0,
           "label": "bHNI"
         },
         "snii": {
-          "times": 2.45,
+          "times": 3.61,
           "shares_offered": 232800.0,
-          "shares_bid": 570000.0,
+          "shares_bid": 840600.0,
           "label": "sHNI"
         },
         "total": {
-          "times": 2.55,
+          "times": 3.69,
           "shares_offered": 3264000.0,
-          "shares_bid": 8309400.0,
+          "shares_bid": 12039000.0,
           "label": "Total"
         }
       },
@@ -132,6 +132,16 @@
             "snii": 2.45,
             "total": 2.55
           }
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "times": {
+            "qib": 0.0,
+            "nii": 5.3,
+            "bnii": 6.14,
+            "snii": 3.61,
+            "total": 3.69
+          }
         }
       ]
     },
@@ -145,7 +155,7 @@
       "url": "https://www.ipopremium.in/view/ipo/1434/mahanadi-coalfields",
       "is_sme": false,
       "exchange_tag": "Mainboard",
-      "gmp": 1.9,
+      "gmp": 2.05,
       "price_band_low": 129.0,
       "price_band_high": 136.0,
       "open_date": "2026-11-19",
@@ -154,7 +164,7 @@
       "allotment_date": "2026-11-25",
       "exchange": "NSE,BSE",
       "site_status": "open",
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "open",
       "gmp_history": [
         {
@@ -200,6 +210,10 @@
         {
           "at": "2026-11-19T14:54+05:30",
           "gmp": 1.9
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "gmp": 2.05
         }
       ],
       "effective": {
@@ -218,49 +232,49 @@
         "qib": {
           "times": 1.26,
           "shares_offered": 112512173.0,
-          "shares_bid": 142061700.0,
+          "shares_bid": 142113620.0,
           "label": "QIBs"
         },
         "nii": {
-          "times": 0.06,
+          "times": 0.08,
           "shares_offered": 84384128.0,
-          "shares_bid": 5074850.0,
+          "shares_bid": 6694490.0,
           "label": "HNIs"
         },
         "bnii": {
-          "times": 0.04,
+          "times": 0.05,
           "shares_offered": 56256086.0,
-          "shares_bid": 2236630.0,
+          "shares_bid": 3072960.0,
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 0.1,
+          "times": 0.13,
           "shares_offered": 28128043.0,
-          "shares_bid": 2838220.0,
+          "shares_bid": 3621530.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 0.11,
+          "times": 0.14,
           "shares_offered": 196896299.0,
-          "shares_bid": 22620290.0,
+          "shares_bid": 26831530.0,
           "label": "Retail"
         },
         "employee": {
           "times": 0.05,
           "shares_offered": 33091815.0,
-          "shares_bid": 1498640.0,
+          "shares_bid": 1755270.0,
           "label": "Employees"
         },
         "shareholder": {
-          "times": 0.12,
+          "times": 0.15,
           "shares_offered": 66183630.0,
-          "shares_bid": 7807030.0,
+          "shares_bid": 9940700.0,
           "label": "Shareholders"
         },
         "total": {
-          "times": 0.36,
+          "times": 0.38,
           "shares_offered": 493068045.0,
-          "shares_bid": 179062510.0,
+          "shares_bid": 187335610.0,
           "label": "Total"
         }
       },
@@ -268,7 +282,7 @@
         "fii": 0.0,
         "dii": 0.0,
         "mf": 500.02,
-        "others": 1432.02
+        "others": 1432.73
       },
       "subscription_history": [
         {
@@ -282,6 +296,19 @@
             "employee": 0.05,
             "shareholder": 0.12,
             "total": 0.36
+          }
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "times": {
+            "qib": 1.26,
+            "nii": 0.08,
+            "bnii": 0.05,
+            "snii": 0.13,
+            "retail": 0.14,
+            "employee": 0.05,
+            "shareholder": 0.15,
+            "total": 0.38
           }
         }
       ]
@@ -365,51 +392,51 @@
         "qib": {
           "times": 2.23,
           "shares_offered": 3332473.0,
-          "shares_bid": 7418015.0,
+          "shares_bid": 7439795.0,
           "label": "QIBs"
         },
         "nii": {
-          "times": 2.57,
+          "times": 3.57,
           "shares_offered": 2499354.0,
-          "shares_bid": 6426365.0,
+          "shares_bid": 8930460.0,
           "label": "HNIs"
         },
         "bnii": {
-          "times": 2.27,
+          "times": 3.23,
           "shares_offered": 1666236.0,
-          "shares_bid": 3774980.0,
+          "shares_bid": 5375920.0,
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 3.18,
+          "times": 4.27,
           "shares_offered": 833118.0,
-          "shares_bid": 2651385.0,
+          "shares_bid": 3554540.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 2.86,
+          "times": 3.26,
           "shares_offered": 5831827.0,
-          "shares_bid": 16650315.0,
+          "shares_bid": 18995020.0,
           "label": "Retail"
         },
         "employee": {
-          "times": 4.84,
+          "times": 5.12,
           "shares_offered": 101215.0,
-          "shares_bid": 489555.0,
+          "shares_bid": 517825.0,
           "label": "Employees"
         },
         "total": {
-          "times": 2.63,
+          "times": 3.05,
           "shares_offered": 11764869.0,
-          "shares_bid": 30984250.0,
+          "shares_bid": 35883100.0,
           "label": "Total"
         }
       },
       "qib_split_cr": {
-        "fii": 20.0,
+        "fii": 20.15,
         "dii": 0.0,
         "mf": 91.0,
-        "others": 90.77
+        "others": 91.21
       },
       "subscription_history": [
         {
@@ -458,6 +485,18 @@
             "retail": 2.86,
             "employee": 4.84,
             "total": 2.63
+          }
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "times": {
+            "qib": 2.23,
+            "nii": 3.57,
+            "bnii": 3.23,
+            "snii": 4.27,
+            "retail": 3.26,
+            "employee": 5.12,
+            "total": 3.05
           }
         }
       ]
@@ -541,51 +580,51 @@
         "qib": {
           "times": 2.23,
           "shares_offered": 3332473.0,
-          "shares_bid": 7418015.0,
+          "shares_bid": 7439795.0,
           "label": "QIBs"
         },
         "nii": {
-          "times": 2.57,
+          "times": 3.57,
           "shares_offered": 2499354.0,
-          "shares_bid": 6426365.0,
+          "shares_bid": 8930460.0,
           "label": "HNIs"
         },
         "bnii": {
-          "times": 2.27,
+          "times": 3.23,
           "shares_offered": 1666236.0,
-          "shares_bid": 3774980.0,
+          "shares_bid": 5375920.0,
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 3.18,
+          "times": 4.27,
           "shares_offered": 833118.0,
-          "shares_bid": 2651385.0,
+          "shares_bid": 3554540.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 2.86,
+          "times": 3.26,
           "shares_offered": 5831827.0,
-          "shares_bid": 16650315.0,
+          "shares_bid": 18995020.0,
           "label": "Retail"
         },
         "employee": {
-          "times": 4.84,
+          "times": 5.12,
           "shares_offered": 101215.0,
-          "shares_bid": 489555.0,
+          "shares_bid": 517825.0,
           "label": "Employees"
         },
         "total": {
-          "times": 2.63,
+          "times": 3.05,
           "shares_offered": 11764869.0,
-          "shares_bid": 30984250.0,
+          "shares_bid": 35883100.0,
           "label": "Total"
         }
       },
       "qib_split_cr": {
-        "fii": 20.0,
+        "fii": 20.15,
         "dii": 0.0,
         "mf": 91.0,
-        "others": 90.77
+        "others": 91.21
       },
       "subscription_history": [
         {
@@ -635,6 +674,18 @@
             "employee": 4.84,
             "total": 2.63
           }
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "times": {
+            "qib": 2.23,
+            "nii": 3.57,
+            "bnii": 3.23,
+            "snii": 4.27,
+            "retail": 3.26,
+            "employee": 5.12,
+            "total": 3.05
+          }
         }
       ]
     },
@@ -659,7 +710,7 @@
       "exchange": "NSE,BSE",
       "site_status": "open",
       "qib_shares_offered": 3332473.0,
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "open",
       "gmp_history": [
         {
@@ -713,51 +764,51 @@
         "qib": {
           "times": 2.23,
           "shares_offered": 3332473.0,
-          "shares_bid": 7418015.0,
+          "shares_bid": 7439795.0,
           "label": "QIBs"
         },
         "nii": {
-          "times": 2.57,
+          "times": 3.57,
           "shares_offered": 2499354.0,
-          "shares_bid": 6426365.0,
+          "shares_bid": 8929690.0,
           "label": "HNIs"
         },
         "bnii": {
-          "times": 2.27,
+          "times": 3.23,
           "shares_offered": 1666236.0,
-          "shares_bid": 3774980.0,
+          "shares_bid": 5375920.0,
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 3.18,
+          "times": 4.27,
           "shares_offered": 833118.0,
-          "shares_bid": 2651385.0,
+          "shares_bid": 3553770.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 2.86,
+          "times": 3.26,
           "shares_offered": 5831827.0,
-          "shares_bid": 16650315.0,
+          "shares_bid": 18993535.0,
           "label": "Retail"
         },
         "employee": {
-          "times": 4.84,
+          "times": 5.12,
           "shares_offered": 101215.0,
-          "shares_bid": 489555.0,
+          "shares_bid": 517770.0,
           "label": "Employees"
         },
         "total": {
-          "times": 2.63,
+          "times": 3.05,
           "shares_offered": 11764869.0,
-          "shares_bid": 30984250.0,
+          "shares_bid": 35880790.0,
           "label": "Total"
         }
       },
       "qib_split_cr": {
-        "fii": 20.0,
+        "fii": 20.15,
         "dii": 0.0,
         "mf": 91.0,
-        "others": 90.77
+        "others": 91.21
       },
       "subscription_history": [
         {
@@ -807,6 +858,18 @@
             "employee": 4.84,
             "total": 2.63
           }
+        },
+        {
+          "at": "2026-11-19T17:33+05:30",
+          "times": {
+            "qib": 2.23,
+            "nii": 3.57,
+            "bnii": 3.23,
+            "snii": 4.27,
+            "retail": 3.26,
+            "employee": 5.12,
+            "total": 3.05
+          }
         }
       ]
     },
@@ -823,14 +886,14 @@
       "gmp": 12.0,
       "price_band_low": 180.0,
       "price_band_high": 191.0,
-      "open_date": "2026-11-25",
-      "close_date": "2026-11-27",
-      "listing_date": "2026-12-02",
+      "open_date": "2026-11-26",
+      "close_date": "2026-11-30",
+      "listing_date": "2026-12-03",
       "lot_size": 78.0,
-      "allotment_date": "2026-11-30",
+      "allotment_date": "2026-12-01",
       "exchange": "NSE,BSE",
       "site_status": "upcoming",
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -877,7 +940,7 @@
       "exchange": "NSE SME (Emerge)",
       "site_status": "upcoming",
       "qib_shares_offered": 66000.0,
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "upcoming",
       "gmp_history": [
         {
@@ -906,7 +969,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "NSE SME (Emerge)",
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 94.0,
@@ -1159,7 +1222,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 120.0,
@@ -1370,7 +1433,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 158.0,
@@ -1581,7 +1644,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 200.0,
@@ -1773,7 +1836,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 105.0,
@@ -1949,7 +2012,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 66.0,
@@ -2170,7 +2233,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 82.0,
@@ -2332,7 +2395,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "BSE SME",
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 203.0,
@@ -2409,7 +2472,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 80.0,
@@ -2545,7 +2608,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 162.0,
@@ -2708,7 +2771,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 330.0,
@@ -2875,7 +2938,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 150.0,
@@ -3028,7 +3091,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 204.0,
@@ -3160,7 +3223,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1665.0,
@@ -3309,7 +3372,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 93.0,
@@ -3448,7 +3511,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1119.0,
@@ -3607,7 +3670,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 693.0,
@@ -3746,7 +3809,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 179.0,
@@ -3878,7 +3941,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 151.0,
@@ -4036,7 +4099,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 700.0,
@@ -4194,7 +4257,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 344.0,
@@ -4352,7 +4415,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 586.0,
@@ -4504,7 +4567,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 289.0,
@@ -4643,7 +4706,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 112.0,
@@ -4768,7 +4831,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-19T14:54+05:30",
+      "last_seen": "2026-11-19T17:33+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 51.8,
