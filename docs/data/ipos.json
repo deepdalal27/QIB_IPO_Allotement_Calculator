@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-27T18:31+05:30",
+  "updated": "2026-11-28T03:47+05:30",
   "source": "IPO Premium (www.ipopremium.in) + data/overrides.json",
   "health": {
-    "checked": "2026-11-27T18:31+05:30",
+    "checked": "2026-11-28T03:47+05:30",
     "ok": false,
     "problems": [
       "Milestone Gears Ltd (Tentative Date): upcoming but missing issue_price, lot_size",
@@ -10,10 +10,11 @@
       "Encube Ethicals Ltd. (Tentative Date): upcoming but missing issue_price, lot_size"
     ],
     "counts": {
-      "open_sme": 2,
+      "open_sme": 1,
       "open_main": 3,
       "upcoming_main": 6,
       "upcoming_sme": 2,
+      "closed_sme": 1,
       "listed_sme": 18,
       "listed_main": 17
     },
@@ -44,7 +45,7 @@
       "allotment_date": "2026-12-02",
       "exchange": "NSE SME",
       "site_status": "open",
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "open",
       "gmp_history": [
         {
@@ -131,7 +132,7 @@
         "nii": {
           "times": 0.74,
           "shares_offered": 2833161.0,
-          "shares_bid": 2097342.0,
+          "shares_bid": 2100618.0,
           "label": "HNIs"
         },
         "bnii": {
@@ -141,21 +142,21 @@
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 1.0,
+          "times": 1.01,
           "shares_offered": 944387.0,
-          "shares_bid": 945984.0,
+          "shares_bid": 949260.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 4.1,
+          "times": 4.12,
           "shares_offered": 1888774.0,
-          "shares_bid": 7742670.0,
+          "shares_bid": 7783698.0,
           "label": "Retail"
         },
         "total": {
-          "times": 1.49,
+          "times": 1.5,
           "shares_offered": 10388256.0,
-          "shares_bid": 15507414.0,
+          "shares_bid": 15551718.0,
           "label": "Total"
         }
       },
@@ -219,6 +220,17 @@
             "snii": 1.0,
             "retail": 4.1,
             "total": 1.49
+          }
+        },
+        {
+          "at": "2026-11-28T03:47+05:30",
+          "times": {
+            "qib": 1.0,
+            "nii": 0.74,
+            "bnii": 0.61,
+            "snii": 1.01,
+            "retail": 4.12,
+            "total": 1.5
           }
         }
       ]
@@ -284,7 +296,7 @@
         "nii": {
           "times": 0.74,
           "shares_offered": 2833161.0,
-          "shares_bid": 2097342.0,
+          "shares_bid": 2100618.0,
           "label": "HNIs"
         },
         "bnii": {
@@ -294,21 +306,21 @@
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 1.0,
+          "times": 1.01,
           "shares_offered": 944387.0,
-          "shares_bid": 945984.0,
+          "shares_bid": 949260.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 4.1,
+          "times": 4.12,
           "shares_offered": 1888774.0,
-          "shares_bid": 7742670.0,
+          "shares_bid": 7783698.0,
           "label": "Retail"
         },
         "total": {
-          "times": 1.49,
+          "times": 1.5,
           "shares_offered": 10388256.0,
-          "shares_bid": 15507414.0,
+          "shares_bid": 15551718.0,
           "label": "Total"
         }
       },
@@ -373,6 +385,17 @@
             "retail": 4.1,
             "total": 1.49
           }
+        },
+        {
+          "at": "2026-11-28T03:47+05:30",
+          "times": {
+            "qib": 1.0,
+            "nii": 0.74,
+            "bnii": 0.61,
+            "snii": 1.01,
+            "retail": 4.12,
+            "total": 1.5
+          }
         }
       ]
     },
@@ -397,7 +420,7 @@
       "exchange": "NSE,BSE",
       "site_status": "open",
       "qib_shares_offered": 5666321.0,
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "open",
       "gmp_history": [
         {
@@ -437,7 +460,7 @@
         "nii": {
           "times": 0.74,
           "shares_offered": 2833161.0,
-          "shares_bid": 2097342.0,
+          "shares_bid": 2100618.0,
           "label": "HNIs"
         },
         "bnii": {
@@ -447,21 +470,21 @@
           "label": "HNIs 10+"
         },
         "snii": {
-          "times": 1.0,
+          "times": 1.01,
           "shares_offered": 944387.0,
-          "shares_bid": 945984.0,
+          "shares_bid": 949260.0,
           "label": "HNIs 2+"
         },
         "retail": {
-          "times": 4.1,
+          "times": 4.12,
           "shares_offered": 1888774.0,
-          "shares_bid": 7742670.0,
+          "shares_bid": 7783698.0,
           "label": "Retail"
         },
         "total": {
-          "times": 1.49,
+          "times": 1.5,
           "shares_offered": 10388256.0,
-          "shares_bid": 15507414.0,
+          "shares_bid": 15551718.0,
           "label": "Total"
         }
       },
@@ -526,8 +549,318 @@
             "retail": 4.1,
             "total": 1.49
           }
+        },
+        {
+          "at": "2026-11-28T03:47+05:30",
+          "times": {
+            "qib": 1.0,
+            "nii": 0.74,
+            "bnii": 0.61,
+            "snii": 1.01,
+            "retail": 4.12,
+            "total": 1.5
+          }
         }
       ]
+    },
+    "milestone-gears-tentative-date": {
+      "slug": "milestone-gears-tentative-date",
+      "first_seen": "2026-11-24T06:41+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1418/milestone-gears-ltd"
+      ],
+      "name": "Milestone Gears Ltd (Tentative Date)",
+      "url": "https://www.ipopremium.in/view/ipo/1418/milestone-gears-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 0.0,
+      "price_band_low": 0.0,
+      "price_band_high": 0.0,
+      "open_date": "2026-12-04",
+      "close_date": "2026-12-08",
+      "listing_date": "2026-12-11",
+      "allotment_date": "2026-12-09",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-11-24T06:41+05:30",
+          "gmp": 0.0
+        }
+      ],
+      "effective": {
+        "issue_price": 0.0,
+        "mf_demand_shares": null,
+        "lot_size": null,
+        "net_qib_shares": null,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      }
+    },
+    "travelstack-tech-tentative-date": {
+      "slug": "travelstack-tech-tentative-date",
+      "first_seen": "2026-11-27T18:31+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1457/travelstack-tech-ltd"
+      ],
+      "name": "Travelstack Tech Ltd (Tentative Date)",
+      "url": "https://www.ipopremium.in/view/ipo/1457/travelstack-tech-ltd",
+      "is_sme": false,
+      "exchange_tag": "Mainboard",
+      "open_date": "2026-12-04",
+      "close_date": "2026-12-08",
+      "listing_date": "2026-12-11",
+      "price_band_low": 0.0,
+      "price_band_high": 0.0,
+      "allotment_date": "2026-12-09",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "effective": {
+        "issue_price": 0.0,
+        "mf_demand_shares": null,
+        "lot_size": null,
+        "net_qib_shares": null,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      }
+    },
+    "encube-ethicals-tentative-date": {
+      "slug": "encube-ethicals-tentative-date",
+      "first_seen": "2026-11-24T06:41+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1437/encube-ethicals-ltd"
+      ],
+      "name": "Encube Ethicals Ltd. (Tentative Date)",
+      "url": "https://www.ipopremium.in/view/ipo/1437/encube-ethicals-ltd",
+      "is_sme": false,
+      "exchange_tag": "Mainboard",
+      "gmp": 0.0,
+      "price_band_low": 0.0,
+      "price_band_high": 0.0,
+      "open_date": "2026-12-03",
+      "close_date": "2026-12-07",
+      "listing_date": "2026-12-10",
+      "allotment_date": "2026-12-08",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-11-24T06:41+05:30",
+          "gmp": 0.0
+        }
+      ],
+      "effective": {
+        "issue_price": 0.0,
+        "mf_demand_shares": null,
+        "lot_size": null,
+        "net_qib_shares": null,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      }
+    },
+    "vishwas-refoils-consumer": {
+      "slug": "vishwas-refoils-consumer",
+      "first_seen": "2026-11-27T15:34+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1456/vishwas-refoils-consumer-ltd"
+      ],
+      "name": "Vishwas Refoils & Consumer Ltd.",
+      "url": "https://www.ipopremium.in/view/ipo/1456/vishwas-refoils-consumer-ltd",
+      "is_sme": true,
+      "exchange_tag": "BSE SME",
+      "price_band_low": 85.0,
+      "price_band_high": 90.0,
+      "open_date": "2026-12-03",
+      "close_date": "2026-12-07",
+      "listing_date": "2026-12-10",
+      "lot_size": 1600.0,
+      "allotment_date": "2026-12-08",
+      "exchange": "BSE SME",
+      "site_status": "upcoming",
+      "anchor_shares": 798400.0,
+      "qib_shares_offered": 532800.0,
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "effective": {
+        "issue_price": 90.0,
+        "mf_demand_shares": null,
+        "lot_size": 1600.0,
+        "net_qib_shares": 532800.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      }
+    },
+    "monomark-engineering-india": {
+      "slug": "monomark-engineering-india",
+      "first_seen": "2026-11-22T14:12+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1451/monomark-engineering"
+      ],
+      "name": "Monomark Engineering (India) Ltd",
+      "url": "https://www.ipopremium.in/view/ipo/1451/monomark-engineering",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 23.0,
+      "price_band_low": 60.0,
+      "price_band_high": 65.0,
+      "open_date": "2026-12-02",
+      "close_date": "2026-12-04",
+      "listing_date": "2026-12-09",
+      "allotment_date": "2026-12-07",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-11-22T14:12+05:30",
+          "gmp": 0.0
+        },
+        {
+          "at": "2026-11-23T15:10+05:30",
+          "gmp": 23.0
+        }
+      ],
+      "effective": {
+        "issue_price": 65.0,
+        "mf_demand_shares": null,
+        "lot_size": 225.0,
+        "net_qib_shares": 13484700.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "lot_size": 225.0,
+      "qib_shares_offered": 13484700.0
+    },
+    "swara-baby-products": {
+      "slug": "swara-baby-products",
+      "first_seen": "2026-11-27T04:02+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1446/swara-baby-products-ltd"
+      ],
+      "name": "Swara Baby Products Ltd",
+      "url": "https://www.ipopremium.in/view/ipo/1446/swara-baby-products-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "open_date": "2026-12-02",
+      "close_date": "2026-12-04",
+      "listing_date": "2026-12-09",
+      "price_band_low": 105.0,
+      "price_band_high": 111.0,
+      "allotment_date": "2026-12-07",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "effective": {
+        "issue_price": 111.0,
+        "mf_demand_shares": null,
+        "lot_size": 135.0,
+        "net_qib_shares": 35979729.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "lot_size": 135.0,
+      "qib_shares_offered": 35979729.0
+    },
+    "a-j-packaging": {
+      "slug": "a-j-packaging",
+      "first_seen": "2026-11-21T02:10+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1435/a-j-packaging-ltd"
+      ],
+      "name": "A J Packaging Ltd.",
+      "url": "https://www.ipopremium.in/view/ipo/1435/a-j-packaging-ltd",
+      "is_sme": true,
+      "exchange_tag": "NSE SME",
+      "gmp": 20.0,
+      "price_band_low": 175.0,
+      "price_band_high": 180.0,
+      "open_date": "2026-12-01",
+      "close_date": "2026-12-03",
+      "listing_date": "2026-12-08",
+      "allotment_date": "2026-12-04",
+      "exchange": "NSE SME (Emerge)",
+      "site_status": "upcoming",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-11-21T02:10+05:30",
+          "gmp": 0.0
+        },
+        {
+          "at": "2026-11-23T15:10+05:30",
+          "gmp": 20.0
+        }
+      ],
+      "effective": {
+        "issue_price": 180.0,
+        "mf_demand_shares": null,
+        "lot_size": 800.0,
+        "net_qib_shares": 566400.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      },
+      "lot_size": 800.0,
+      "anchor_shares": 840000.0,
+      "qib_shares_offered": 566400.0
+    },
+    "matangi-rubber": {
+      "slug": "matangi-rubber",
+      "first_seen": "2026-11-23T15:10+05:30",
+      "sources": [
+        "https://www.ipopremium.in/view/ipo/1454/matangi-rubber-ltd"
+      ],
+      "name": "Matangi Rubber Ltd",
+      "url": "https://www.ipopremium.in/view/ipo/1454/matangi-rubber-ltd",
+      "is_sme": false,
+      "exchange_tag": "MAINBOARD",
+      "gmp": 21.5,
+      "price_band_low": 163.0,
+      "price_band_high": 172.0,
+      "open_date": "2026-12-01",
+      "close_date": "2026-12-03",
+      "listing_date": "2026-12-08",
+      "lot_size": 87.0,
+      "allotment_date": "2026-12-04",
+      "exchange": "NSE,BSE",
+      "site_status": "upcoming",
+      "qib_shares_offered": 3638491.0,
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "upcoming",
+      "gmp_history": [
+        {
+          "at": "2026-11-23T15:10+05:30",
+          "gmp": 21.0
+        },
+        {
+          "at": "2026-11-23T19:03+05:30",
+          "gmp": 21.5
+        }
+      ],
+      "effective": {
+        "issue_price": 172.0,
+        "mf_demand_shares": null,
+        "lot_size": 87.0,
+        "net_qib_shares": 3638491.0,
+        "qib_times": null,
+        "listing_price": null,
+        "valid_demand_shares": null
+      }
     },
     "shree-siddhivinayak-greentech-industries": {
       "slug": "shree-siddhivinayak-greentech-industries",
@@ -550,8 +883,8 @@
       "exchange": "NSE SME (Emerge)",
       "site_status": "closed",
       "qib_shares_offered": 66000.0,
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "open",
+      "last_seen": "2026-11-28T03:47+05:30",
+      "status": "closed",
       "gmp_history": [
         {
           "at": "2026-11-19T14:54+05:30",
@@ -695,306 +1028,44 @@
             "total": 1.69
           }
         }
-      ]
-    },
-    "milestone-gears-tentative-date": {
-      "slug": "milestone-gears-tentative-date",
-      "first_seen": "2026-11-24T06:41+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1418/milestone-gears-ltd"
       ],
-      "name": "Milestone Gears Ltd (Tentative Date)",
-      "url": "https://www.ipopremium.in/view/ipo/1418/milestone-gears-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 0.0,
-      "price_band_low": 0.0,
-      "price_band_high": 0.0,
-      "open_date": "2026-12-04",
-      "close_date": "2026-12-08",
-      "listing_date": "2026-12-11",
-      "allotment_date": "2026-12-09",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-24T06:41+05:30",
-          "gmp": 0.0
-        }
-      ],
-      "effective": {
-        "issue_price": 0.0,
-        "mf_demand_shares": null,
-        "lot_size": null,
-        "net_qib_shares": null,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
-    },
-    "travelstack-tech-tentative-date": {
-      "slug": "travelstack-tech-tentative-date",
-      "first_seen": "2026-11-27T18:31+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1457/travelstack-tech-ltd"
-      ],
-      "name": "Travelstack Tech Ltd (Tentative Date)",
-      "url": "https://www.ipopremium.in/view/ipo/1457/travelstack-tech-ltd",
-      "is_sme": false,
-      "exchange_tag": "Mainboard",
-      "open_date": "2026-12-04",
-      "close_date": "2026-12-08",
-      "listing_date": "2026-12-11",
-      "price_band_low": 0.0,
-      "price_band_high": 0.0,
-      "allotment_date": "2026-12-09",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "effective": {
-        "issue_price": 0.0,
-        "mf_demand_shares": null,
-        "lot_size": null,
-        "net_qib_shares": null,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
-    },
-    "encube-ethicals-tentative-date": {
-      "slug": "encube-ethicals-tentative-date",
-      "first_seen": "2026-11-24T06:41+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1437/encube-ethicals-ltd"
-      ],
-      "name": "Encube Ethicals Ltd. (Tentative Date)",
-      "url": "https://www.ipopremium.in/view/ipo/1437/encube-ethicals-ltd",
-      "is_sme": false,
-      "exchange_tag": "Mainboard",
-      "gmp": 0.0,
-      "price_band_low": 0.0,
-      "price_band_high": 0.0,
-      "open_date": "2026-12-03",
-      "close_date": "2026-12-07",
-      "listing_date": "2026-12-10",
-      "allotment_date": "2026-12-08",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-24T06:41+05:30",
-          "gmp": 0.0
-        }
-      ],
-      "effective": {
-        "issue_price": 0.0,
-        "mf_demand_shares": null,
-        "lot_size": null,
-        "net_qib_shares": null,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
-    },
-    "vishwas-refoils-consumer": {
-      "slug": "vishwas-refoils-consumer",
-      "first_seen": "2026-11-27T15:34+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1456/vishwas-refoils-consumer-ltd"
-      ],
-      "name": "Vishwas Refoils & Consumer Ltd.",
-      "url": "https://www.ipopremium.in/view/ipo/1456/vishwas-refoils-consumer-ltd",
-      "is_sme": true,
-      "exchange_tag": "BSE SME",
-      "price_band_low": 85.0,
-      "price_band_high": 90.0,
-      "open_date": "2026-12-03",
-      "close_date": "2026-12-07",
-      "listing_date": "2026-12-10",
-      "lot_size": 1600.0,
-      "allotment_date": "2026-12-08",
-      "exchange": "BSE SME",
-      "site_status": "upcoming",
-      "anchor_shares": 798400.0,
-      "qib_shares_offered": 532800.0,
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "effective": {
-        "issue_price": 90.0,
-        "mf_demand_shares": null,
-        "lot_size": 1600.0,
-        "net_qib_shares": 532800.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
-    },
-    "monomark-engineering-india": {
-      "slug": "monomark-engineering-india",
-      "first_seen": "2026-11-22T14:12+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1451/monomark-engineering"
-      ],
-      "name": "Monomark Engineering (India) Ltd",
-      "url": "https://www.ipopremium.in/view/ipo/1451/monomark-engineering",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 23.0,
-      "price_band_low": 60.0,
-      "price_band_high": 65.0,
-      "open_date": "2026-12-02",
-      "close_date": "2026-12-04",
-      "listing_date": "2026-12-09",
-      "allotment_date": "2026-12-07",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-22T14:12+05:30",
-          "gmp": 0.0
+      "final_subscription": {
+        "qib": {
+          "times": 4.27,
+          "shares_offered": 66000.0,
+          "shares_bid": 282000.0,
+          "label": "QIB"
         },
-        {
-          "at": "2026-11-23T15:10+05:30",
-          "gmp": 23.0
-        }
-      ],
-      "effective": {
-        "issue_price": 65.0,
-        "mf_demand_shares": null,
-        "lot_size": 225.0,
-        "net_qib_shares": 13484700.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      },
-      "lot_size": 225.0,
-      "qib_shares_offered": 13484700.0
-    },
-    "swara-baby-products": {
-      "slug": "swara-baby-products",
-      "first_seen": "2026-11-27T04:02+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1446/swara-baby-products-ltd"
-      ],
-      "name": "Swara Baby Products Ltd",
-      "url": "https://www.ipopremium.in/view/ipo/1446/swara-baby-products-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "open_date": "2026-12-02",
-      "close_date": "2026-12-04",
-      "listing_date": "2026-12-09",
-      "price_band_low": 105.0,
-      "price_band_high": 111.0,
-      "allotment_date": "2026-12-07",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "effective": {
-        "issue_price": 111.0,
-        "mf_demand_shares": null,
-        "lot_size": 135.0,
-        "net_qib_shares": 35979729.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      },
-      "lot_size": 135.0,
-      "qib_shares_offered": 35979729.0
-    },
-    "a-j-packaging": {
-      "slug": "a-j-packaging",
-      "first_seen": "2026-11-21T02:10+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1435/a-j-packaging-ltd"
-      ],
-      "name": "A J Packaging Ltd.",
-      "url": "https://www.ipopremium.in/view/ipo/1435/a-j-packaging-ltd",
-      "is_sme": true,
-      "exchange_tag": "NSE SME",
-      "gmp": 20.0,
-      "price_band_low": 175.0,
-      "price_band_high": 180.0,
-      "open_date": "2026-12-01",
-      "close_date": "2026-12-03",
-      "listing_date": "2026-12-08",
-      "allotment_date": "2026-12-04",
-      "exchange": "NSE SME (Emerge)",
-      "site_status": "upcoming",
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-21T02:10+05:30",
-          "gmp": 0.0
+        "nii": {
+          "times": 0.97,
+          "shares_offered": 3100000.0,
+          "shares_bid": 2995000.0,
+          "label": "HNIs"
         },
-        {
-          "at": "2026-11-23T15:10+05:30",
-          "gmp": 20.0
-        }
-      ],
-      "effective": {
-        "issue_price": 180.0,
-        "mf_demand_shares": null,
-        "lot_size": 800.0,
-        "net_qib_shares": 566400.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      },
-      "lot_size": 800.0,
-      "anchor_shares": 840000.0,
-      "qib_shares_offered": 566400.0
-    },
-    "matangi-rubber": {
-      "slug": "matangi-rubber",
-      "first_seen": "2026-11-23T15:10+05:30",
-      "sources": [
-        "https://www.ipopremium.in/view/ipo/1454/matangi-rubber-ltd"
-      ],
-      "name": "Matangi Rubber Ltd",
-      "url": "https://www.ipopremium.in/view/ipo/1454/matangi-rubber-ltd",
-      "is_sme": false,
-      "exchange_tag": "MAINBOARD",
-      "gmp": 21.5,
-      "price_band_low": 163.0,
-      "price_band_high": 172.0,
-      "open_date": "2026-12-01",
-      "close_date": "2026-12-03",
-      "listing_date": "2026-12-08",
-      "lot_size": 87.0,
-      "allotment_date": "2026-12-04",
-      "exchange": "NSE,BSE",
-      "site_status": "upcoming",
-      "qib_shares_offered": 3638491.0,
-      "last_seen": "2026-11-27T18:31+05:30",
-      "status": "upcoming",
-      "gmp_history": [
-        {
-          "at": "2026-11-23T15:10+05:30",
-          "gmp": 21.0
+        "bnii": {
+          "times": 1.11,
+          "shares_offered": 2067000.0,
+          "shares_bid": 2286000.0,
+          "label": "bHNI"
         },
-        {
-          "at": "2026-11-23T19:03+05:30",
-          "gmp": 21.5
+        "snii": {
+          "times": 0.69,
+          "shares_offered": 1033000.0,
+          "shares_bid": 709000.0,
+          "label": "sHNI"
+        },
+        "total": {
+          "times": 1.69,
+          "shares_offered": 6266000.0,
+          "shares_bid": 10577000.0,
+          "label": "Total"
         }
-      ],
-      "effective": {
-        "issue_price": 172.0,
-        "mf_demand_shares": null,
-        "lot_size": 87.0,
-        "net_qib_shares": 3638491.0,
-        "qib_times": null,
-        "listing_price": null,
-        "valid_demand_shares": null
-      }
+      },
+      "final_net_qib_shares": 66000.0,
+      "final_qib_split_cr": {
+        "fii": 0.0
+      },
+      "final_captured_at": "2026-11-28T03:47+05:30"
     },
     "watrana-rentals": {
       "slug": "watrana-rentals",
@@ -1018,7 +1089,7 @@
       "site_status": "listed",
       "anchor_shares": 1386000.0,
       "qib_shares_offered": 936000.0,
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "gmp_history": [
         {
@@ -1252,7 +1323,7 @@
       "allotment_date": "2026-11-25",
       "exchange": "NSE,BSE",
       "site_status": "listed",
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "gmp_history": [
         {
@@ -2221,7 +2292,7 @@
       "exchange": "NSE,BSE",
       "site_status": "listed",
       "qib_shares_offered": 3332473.0,
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "gmp_history": [
         {
@@ -2527,7 +2598,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "NSE SME (Emerge)",
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 94.0,
@@ -2780,7 +2851,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 120.0,
@@ -2991,7 +3062,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 158.0,
@@ -3202,7 +3273,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 200.0,
@@ -3394,7 +3465,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 105.0,
@@ -3570,7 +3641,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 66.0,
@@ -3791,7 +3862,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 82.0,
@@ -3953,7 +4024,7 @@
       "is_sme": true,
       "gmp": 1.0,
       "exchange": "BSE SME",
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 203.0,
@@ -4030,7 +4101,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 80.0,
@@ -4166,7 +4237,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 162.0,
@@ -4329,7 +4400,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 330.0,
@@ -4496,7 +4567,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 150.0,
@@ -4649,7 +4720,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 204.0,
@@ -4781,7 +4852,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 1665.0,
@@ -4930,7 +5001,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 93.0,
@@ -5228,7 +5299,7 @@
           "label": "Total"
         }
       },
-      "last_seen": "2026-11-27T18:31+05:30",
+      "last_seen": "2026-11-28T03:47+05:30",
       "status": "listed",
       "effective": {
         "issue_price": 693.0,
